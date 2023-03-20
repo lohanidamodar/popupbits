@@ -1,7 +1,17 @@
 <script>
-    import '$lib/styles/main.scss';
+    import TopNavigation from '$lib/components/TopNavigation.svelte';
+import '$lib/styles/main.scss';
 </script>
 
 <main>
-    <slot></slot>
+    <TopNavigation />
+    <div class="content">
+        <slot></slot>
+    </div>
 </main>
+
+<style>
+    .content {
+        margin-top: 64px;
+    }
+</style>

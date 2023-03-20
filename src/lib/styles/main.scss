@@ -3,10 +3,43 @@
     --secondary: rgba(0,0,0,.5);
     --ink: #5a6159;
     --inkdark: #212529;
+    --paper: #f8f9fa;
 }
 
 html, body {
     margin: 0;
     padding: 0;
+    color: var(--ink);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--inkdark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.btn {
+    text-decoration: none;
+    background-color: var(--paper);
+    color: var(--inkdark);
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.btn-lg {
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
+.btn-primary {
+    color: var(--paper);
+    background-color: var(--primary);
+}

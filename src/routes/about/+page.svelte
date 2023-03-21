@@ -1,1 +1,5 @@
-<h1>About</h1>
+<script>
+	import PageHeader from "$lib/components/PageHeader.svelte";
+
+</script>
+<PageHeader title="About" />

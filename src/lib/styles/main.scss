@@ -1,18 +1,24 @@
 :root {
     --primary: #c4183c;
-    --secondary: rgba(0,0,0,.5);
+    --secondary: rgba(0, 0, 0, .5);
     --ink: #5a6159;
     --inkdark: #212529;
     --paper: #f8f9fa;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     color: var(--ink);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--inkdark);
 }
 
@@ -42,4 +48,29 @@ a {
 .btn-primary {
     color: var(--paper);
     background-color: var(--primary);
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 576px) {
+        max-width: 540px;
+    }
+
+    @media (min-width: 768px) {
+        max-width: 720px;
+    }
+
+    @media (min-width: 992px) {
+        max-width: 960px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 1140px;
+    }
+
 }

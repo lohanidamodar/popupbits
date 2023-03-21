@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;500;600&display=swap');
+
 :root {
     --primary: #c4183c;
     --secondary: rgba(0, 0, 0, .5);
@@ -8,6 +10,7 @@
 
 html,
 body {
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     color: var(--ink);
@@ -20,6 +23,7 @@ h4,
 h5,
 h6 {
     color: var(--inkdark);
+    font-family: 'Montserrat', sans-serif;
 }
 
 a {

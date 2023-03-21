@@ -53,6 +53,6 @@
         .description {
             flex: 2;
         }
-        margin-bottom: 16px;
+        margin-bottom: 24px;
     }
 </style>

@@ -18,6 +18,9 @@
 
 <style lang="scss">
     nav {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 600;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -28,7 +31,7 @@
         left: 0;
         right: 0;
         background-color: var(--paper);
-
+        
         .brand {
             color: var(--primary);
             font-weight: bold;
@@ -41,12 +44,16 @@
                 color: var(--ink);
                 text-decoration: underline;
             }
+            &.active {
+                color: var(--inkdark);
+            }
         }
         ul {
             list-style: none;
             margin: 0;
             padding: 0;
             li {
+                text-transform: uppercase;
                 display: inline-block;
                 a {
                     display: inline-block;

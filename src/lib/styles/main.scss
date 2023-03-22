@@ -35,6 +35,14 @@ a {
     }
 }
 
+blockquote {
+    border-left: 5px solid var(--primary);
+    padding: 8px 16px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 4px;
+}
+
 .btn {
     text-decoration: none;
     background-color: var(--inkdark);

@@ -3,6 +3,10 @@
 import '$lib/styles/main.scss';
 </script>
 
+<svelte:head>
+    <title>PopupBits - Digital bits for your organization</title>
+</svelte:head>
+
 <main>
     <TopNavigation />
     <div class="content">

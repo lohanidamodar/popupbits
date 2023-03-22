@@ -4,6 +4,10 @@
 	import projects from '$lib/data/projects.js';
 </script>
 
+<svelte:head>
+	<title>Projects - PopupBits</title>
+</svelte:head>
+
 <PageHeader title="Projects" />
 
 <div class="container">

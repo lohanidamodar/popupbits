@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let title: string = '';
-	export let subtitle: string|null;
+	export let subtitle: string|null = null;
 </script>
 
 <div>

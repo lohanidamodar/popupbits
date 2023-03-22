@@ -6,6 +6,11 @@
     export let data: PageData;
 </script>
 
+
+<svelte:head>
+	<title>Project: {data.title} - PopupBits</title>
+</svelte:head>
+
 <PageHeader title={data.title} subtitle={data.tech} />
 
 <div class="container">

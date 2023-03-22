@@ -1,6 +1,7 @@
-<script>
+<script>    
     import TopNavigation from '$lib/components/TopNavigation.svelte';
 import '$lib/styles/main.scss';
+	import { afterUpdate, beforeUpdate } from 'svelte';
 </script>
 
 <svelte:head>

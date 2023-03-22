@@ -1,17 +1,26 @@
+<script lang="ts">
+    import { page } from '$app/stores';
+	import { beforeUpdate } from 'svelte';
+    let path: string = '';
+
+    beforeUpdate(()=>{
+        path = $page.url.pathname;
+    })
+</script>
 <nav class="top-nav">
 	<a class="brand" href="https://popupbits.com"> PopupBits </a>
 	<ul>
 		<li>
-			<a href="/">Home</a>
+			<a href="/" class:active={path == '/'}>Home</a>
 		</li>
 		<li>
-			<a href="/about">About</a>
+			<a href="/about" class:active={path == '/about'}>About</a>
 		</li>
 		<li>
-			<a href="/projects">Projects</a>
+			<a href="/projects" class:active={path.includes('/projects')}>Projects</a>
 		</li>
 		<li>
-			<a href="/contact">Contact</a>
+			<a href="/contact" class:active={path == '/contact'}>Contact</a>
 		</li>
 	</ul>
 </nav>

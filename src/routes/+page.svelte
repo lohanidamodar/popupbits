@@ -12,7 +12,7 @@
 			</p>
 		</div>
 		<p>
-			<a class="btn btn-lg btn-primary" href="https://popupbits.com/contact">Lets Work Together</a>
+			<a class="btn btn-lg btn-primary" href="/contact">Lets Work Together</a>
 		</p>
 	</div>
 </section>
@@ -80,7 +80,7 @@
 	.hero {
 		height: 100vh;
 		margin-top: -64px;
-		background-image: url(http://popupbits.com/wp-content/uploads/2018/07/binary-2302728_1920.jpg);
+		background-image: url(https://popupbits.com/images/hero_bg.jpg);
 		background-size: cover;
 		background-repeat: no-repeat;
 		font-size: 1.5rem;

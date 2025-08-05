@@ -1,115 +1,171 @@
-<script>
-	// You can add interactivity or import components here if needed
+<script lang="ts">
+	import ServiceCard from '$lib/components/ServiceCard.svelte';
+	import StatCard from '$lib/components/StatCard.svelte';
+	import company from '$lib/data/company.js';
+	import services from '$lib/data/services.js';
+	import technologies from '$lib/data/technologies.js';
+	import projects from '$lib/data/projects.js';
 </script>
 
+<svelte:head>
+	<title>PopupBits - Your Vision, Our Code</title>
+	<meta
+		name="description"
+		content="Expert web development and software solutions. Transforming ideas into digital reality with modern technologies and clean code."
+	/>
+</svelte:head>
+
+<!-- Hero Section -->
 <section
-	class="hero"
-	style="text-align:center; padding:4rem 1rem; background:linear-gradient(135deg,#f8fafc 60%,#e0e7ef 100%);"
+	class="section-lg"
+	style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;"
 >
-
-	<h1 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem; color:#222;">PopupBits</h1>
-	<p style="font-size:1.25rem; color:#555; max-width:600px; margin:0 auto 2rem;">
-		Let Us Establish Your Digital Brand. We build modern, scalable web and mobile solutions for
-		startups, businesses, and individuals.
-	</p>
-	<a
-		href="/contact"
-		class="cta"
-		style="display:inline-block; padding:0.75rem 2rem; background:#2563eb; color:#fff; border-radius:2rem; font-weight:600; text-decoration:none; box-shadow:0 2px 8px #2563eb22;"
-		>Let's Work Together</a
-	>
-</section>
-
-<section class="skills" style="padding:3rem 1rem; background:#fff;">
-	<h2 style="font-size:2rem; font-weight:700; text-align:center; margin-bottom:2rem;">
-		Skills & Technologies
-	</h2>
-	<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem;">
-		<img src="/icons/html.svg" alt="HTML" title="HTML" style="width:48px;" />
-		<img src="/icons/css.svg" alt="CSS" title="CSS" style="width:48px;" />
-		<img src="/icons/js.svg" alt="JavaScript" title="JavaScript" style="width:48px;" />
-		<img src="/icons/flutter.svg" alt="Flutter" title="Flutter" style="width:48px;" />
-		<img src="/icons/appwrite.svg" alt="Appwrite" title="Appwrite" style="width:48px;" />
-		<img src="/icons/firebase.svg" alt="Firebase" title="Firebase" style="width:48px;" />
-		<img src="/icons/react.svg" alt="React JS" title="React JS" style="width:48px;" />
-	</div>
-	<p style="text-align:center; margin-top:2rem; color:#666;">
-		Over 8 years of development experience using these platforms, frameworks and languages.
-	</p>
-</section>
-
-<section class="projects" style="padding:3rem 1rem; background:#f8fafc;">
-	<h2 style="font-size:2rem; font-weight:700; text-align:center; margin-bottom:2rem;">
-		Featured Projects
-	</h2>
-	<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem;">
-		<div
-			class="project-card"
-			style="background:#fff; border-radius:1rem; box-shadow:0 2px 12px #0001; padding:2rem;"
-		>
-			<h3 style="font-size:1.25rem; font-weight:700;">Mero Tayari</h3>
-			<p style="color:#555;">
-				Nepali government exam preparation application. Reading materials, model questions, timed
-				exams, practice quizzes.
+	<div class="container">
+		<div class="text-center">
+			<h1 class="mb-4" style="color: white; font-size: 3rem; font-weight: 800;">
+				{company.tagline}
+			</h1>
+			<p
+				class="mb-4"
+				style="font-size: 1.25rem; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 2rem;"
+			>
+				Expert web development and software solutions. We transform your ideas into digital reality
+				with modern technologies and clean, maintainable code.
 			</p>
-			<div style="margin:1rem 0; color:#2563eb; font-size:0.95rem;">
-				Flutter, Firebase, React JS
+			<div class="flex-center gap-3" style="flex-wrap: wrap; justify-content: center;">
+				<a
+					href="/contact"
+					class="btn btn-lg"
+					style="background: white; color: #667eea; padding: 1rem 2rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+				>
+					Get Started
+				</a>
+				<a
+					href="/projects"
+					class="btn btn-lg"
+					style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none;"
+				>
+					View Our Work
+				</a>
 			</div>
-			<a
-				href="https://www.popupbits.com/projects/merotayari"
-				target="_blank"
-				style="color:#2563eb; text-decoration:underline;">View Project</a
-			>
-		</div>
-		<div
-			class="project-card"
-			style="background:#fff; border-radius:1rem; box-shadow:0 2px 12px #0001; padding:2rem;"
-		>
-			<h3 style="font-size:1.25rem; font-weight:700;">EPS Topik Practice</h3>
-			<p style="color:#555;">Korean language practice and exam preparation application.</p>
-			<div style="margin:1rem 0; color:#2563eb; font-size:0.95rem;">
-				Flutter, Firebase, React JS
-			</div>
-			<a
-				href="https://www.popupbits.com/projects/eps_topik_practice"
-				target="_blank"
-				style="color:#2563eb; text-decoration:underline;">View Project</a
-			>
-		</div>
-		<div
-			class="project-card"
-			style="background:#fff; border-radius:1rem; box-shadow:0 2px 12px #0001; padding:2rem;"
-		>
-			<h3 style="font-size:1.25rem; font-weight:700;">Flutter UI Challenges</h3>
-			<p style="color:#555;">100+ Open source professional UI screens implemented in Flutter.</p>
-			<div style="margin:1rem 0; color:#2563eb; font-size:0.95rem;">Flutter, Firebase</div>
-			<a
-				href="https://www.popupbits.com/projects/flutter_ui_challenges"
-				target="_blank"
-				style="color:#2563eb; text-decoration:underline;">View Project</a
-			>
 		</div>
 	</div>
 </section>
 
-<section class="contact" style="padding:3rem 1rem; background:#fff; text-align:center;">
-	<h2 style="font-size:2rem; font-weight:700; margin-bottom:1rem;">Connect With Us</h2>
-	<p style="color:#555; margin-bottom:2rem;">We would love to connect with you.</p>
-	<div style="display:flex; justify-content:center; gap:2rem; margin-bottom:2rem;">
-		<a
-			href="https://github.com/lohanidamodar"
-			target="_blank"
-			style="color:#222; font-size:1.5rem; text-decoration:none;">Github</a
-		>
-		<a
-			href="https://www.youtube.com/c/reactbits"
-			target="_blank"
-			style="color:#c4302b; font-size:1.5rem; text-decoration:none;">Youtube</a
-		>
-		<a
-			href="mailto:popupbits@gmail.com"
-			style="color:#2563eb; font-size:1.5rem; text-decoration:none;">Email</a
-		>
+<!-- Stats Section -->
+<section class="section section-gray">
+	<div class="container">
+		<div class="grid grid-cols-3" style="gap: 2rem;">
+			<StatCard stat={company.stats.experience} label="Experience" />
+			<StatCard stat={company.stats.projectsCompleted} label="Projects Completed" />
+			<StatCard stat={company.stats.clientsSatisfied} label="Clients Satisfied" />
+		</div>
 	</div>
-	<small style="color:#aaa;">Copyright © 2023 PopupBits</small>
+</section>
+
+<!-- Services Section -->
+<section class="section">
+	<div class="container">
+		<div class="mb-4 text-center">
+			<h2 class="mb-2">Our Services</h2>
+			<p class="text-secondary" style="max-width: 600px; margin: 0 auto;">
+				We offer comprehensive web development and software solutions tailored to your business
+				needs.
+			</p>
+		</div>
+		<div class="grid-auto-fit grid">
+			{#each services as service}
+				<ServiceCard
+					icon={service.icon}
+					title={service.title}
+					description={service.description}
+					features={service.features}
+				/>
+			{/each}
+		</div>
+	</div>
+</section>
+
+<!-- Technologies Section -->
+<section class="section section-gray">
+	<div class="container">
+		<div class="mb-4 text-center">
+			<h2 class="mb-2">Technologies We Use</h2>
+			<p class="text-secondary">
+				We work with modern, proven technologies to deliver robust solutions.
+			</p>
+		</div>
+		<div class="grid grid-cols-3" style="gap: 2rem; text-align: center;">
+			{#each technologies as tech}
+				<div class="card" style="padding: 1.5rem; text-align: center;">
+					<img
+						src={tech.icon}
+						alt={tech.name}
+						style="width: 48px; height: 48px; margin: 0 auto 1rem;"
+					/>
+					<h4 class="mb-1">{tech.name}</h4>
+				</div>
+			{/each}
+		</div>
+	</div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="section">
+	<div class="container">
+		<div class="mb-4 text-center">
+			<h2 class="mb-2">Featured Projects</h2>
+			<p class="text-secondary">
+				Some of our recent work that showcases our expertise and creativity.
+			</p>
+		</div>
+		<div class="grid-auto-fit grid">
+			{#each projects.slice(0, 3) as project}
+				<div class="card">
+					<img
+						src={project.image}
+						alt={project.title}
+						style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1rem;"
+					/>
+					<h4 class="mb-2">{project.title}</h4>
+					<p class="text-secondary mb-3">{project.description}</p>
+					<div class="flex flex-wrap gap-1" style="margin-bottom: 1rem;">
+						<span
+							style="background: var(--light-gray); color: var(--text-secondary); padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem;"
+						>
+							{project.tech}
+						</span>
+					</div>
+					<a
+						href={project.web || project.playStore || project.github || `/projects/${project.slug}`}
+						target="_blank"
+						class="btn btn-primary"
+					>
+						View Project
+					</a>
+				</div>
+			{/each}
+		</div>
+		<div class="mt-4 text-center">
+			<a href="/projects" class="btn btn-secondary"> View All Projects </a>
+		</div>
+	</div>
+</section>
+
+<!-- CTA Section -->
+<section class="section" style="background: var(--primary-blue); color: white;">
+	<div class="container text-center">
+		<h2 class="mb-2" style="color: white;">Ready to Start Your Project?</h2>
+		<p class="mb-4" style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 2rem;">
+			Let's discuss your ideas and turn them into reality. Get in touch with us today for a free
+			consultation.
+		</p>
+		<a
+			href="/contact"
+			class="btn btn-lg"
+			style="background: white; color: var(--primary-blue); padding: 1rem 2rem;"
+		>
+			Contact Us Today
+		</a>
+	</div>
 </section>

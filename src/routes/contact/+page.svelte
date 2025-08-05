@@ -58,10 +58,10 @@
 			<!-- Contact Form -->
 			<div class="contact-form-section">
 				<div class="contact-card card">
-					<h3>Send us a Message</h3>
+					<h3>Start Your Digital Transformation</h3>
 					<p class="text-secondary mb-3">
-						Ready to start your project? Fill out the form below and we'll get back to you within 24
-						hours.
+						Ready to transform your business with sustainable digital solutions? Fill out the form
+						below and we'll get back to you within 24 hours to discuss your transformation needs.
 					</p>
 
 					<form class="contact-form" method="POST" action="mailto:{companyData.contact.email}">
@@ -101,13 +101,14 @@
 						</div>
 
 						<div class="form-group">
-							<label for="project-type">Project Type</label>
+							<label for="project-type">Transformation Area</label>
 							<select id="project-type" name="project-type" class="form-input">
-								<option value="">Select project type</option>
-								<option value="website">Website Development</option>
-								<option value="mobile-app">Mobile App Development</option>
-								<option value="web-app">Web Application</option>
-								<option value="ecommerce">E-commerce Solution</option>
+								<option value="">Select transformation area</option>
+								<option value="digital-transformation">Digital Transformation</option>
+								<option value="process-automation">Business Process Automation</option>
+								<option value="sustainable-systems">Sustainable Tech Systems</option>
+								<option value="security-solutions">Security & Compliance</option>
+								<option value="scalable-architecture">Scalable Architecture</option>
 								<option value="other">Other</option>
 							</select>
 						</div>
@@ -124,18 +125,20 @@
 						</div>
 
 						<div class="form-group">
-							<label for="message">Project Details *</label>
+							<label for="message">Transformation Goals *</label>
 							<textarea
 								id="message"
 								name="message"
 								required
 								class="form-textarea"
 								rows="5"
-								placeholder="Tell us about your project, goals, and any specific requirements..."
+								placeholder="Tell us about your business transformation goals, current challenges, and how we can help you build sustainable digital systems..."
 							></textarea>
 						</div>
 
-						<button type="submit" class="btn btn-primary btn-lg form-submit"> Send Message </button>
+						<button type="submit" class="btn btn-primary btn-lg form-submit">
+							Start Transformation Discussion
+						</button>
 					</form>
 				</div>
 			</div>
@@ -151,19 +154,19 @@
 		</div>
 		<div class="grid grid-cols-3">
 			<div class="feature-card card text-center">
-				<div class="feature-icon">⚡</div>
-				<h4>Fast Delivery</h4>
-				<p>Quick turnaround times without compromising on quality</p>
+				<div class="feature-icon">🌱</div>
+				<h4>Sustainable Solutions</h4>
+				<p>Environmentally conscious technology choices for long-term sustainability</p>
 			</div>
 			<div class="feature-card card text-center">
-				<div class="feature-icon">🛡️</div>
-				<h4>Quality Assurance</h4>
-				<p>Rigorous testing and quality checks for all our deliverables</p>
+				<div class="feature-icon">�</div>
+				<h4>Security First</h4>
+				<p>Advanced security measures and data protection in every solution</p>
 			</div>
 			<div class="feature-card card text-center">
-				<div class="feature-icon">🤝</div>
-				<h4>Ongoing Support</h4>
-				<p>Continued support and maintenance after project completion</p>
+				<div class="feature-icon">📈</div>
+				<h4>Scalable Growth</h4>
+				<p>Systems designed to grow with your business transformation needs</p>
 			</div>
 		</div>
 	</div>

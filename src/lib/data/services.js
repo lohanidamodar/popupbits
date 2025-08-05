@@ -1,54 +1,54 @@
 export default [
   {
-    "id": "web-development",
-    "title": "Web Development",
-    "icon": "🌐",
-    "description": "Custom websites and web applications built with modern technologies. From simple landing pages to complex web platforms.",
+    "id": "digital-transformation",
+    "title": "Digital Transformation",
+    "icon": "🚀",
+    "description": "Transform your business processes with digital solutions that increase efficiency, reduce costs, and drive sustainable growth.",
     "features": [
-      "Responsive design for all devices",
-      "Modern frameworks (React, Svelte, Vue)",
-      "SEO optimization",
-      "Performance optimization",
-      "Content management systems"
+      "Process automation & optimization",
+      "Legacy system modernization",
+      "Digital workflow implementation",
+      "Data-driven decision systems",
+      "Change management support"
     ]
   },
   {
-    "id": "mobile-development",
-    "title": "Mobile App Development",
-    "icon": "📱",
-    "description": "Cross-platform mobile applications using Flutter. Build once, deploy to both iOS and Android platforms.",
+    "id": "sustainable-systems",
+    "title": "Sustainable Tech Systems",
+    "icon": "🌱",
+    "description": "Build scalable, secure, and cost-effective systems designed for long-term success and environmental responsibility.",
     "features": [
-      "Cross-platform development",
-      "Native performance",
-      "App store deployment",
-      "Offline capabilities",
-      "Push notifications"
+      "Green technology solutions",
+      "Energy-efficient architectures",
+      "Scalable cloud infrastructure",
+      "Cost optimization strategies",
+      "Sustainable development practices"
     ]
   },
   {
-    "id": "backend-development",
-    "title": "Backend & API Development",
+    "id": "secure-solutions",
+    "title": "Secure & Scalable Solutions",
+    "icon": "🔒",
+    "description": "Enterprise-grade security and scalability built into every solution to protect your business and support growth.",
+    "features": [
+      "End-to-end encryption",
+      "Multi-layer security architecture",
+      "Scalable cloud deployment",
+      "Compliance & audit support",
+      "Performance monitoring"
+    ]
+  },
+  {
+    "id": "business-automation",
+    "title": "Business Process Automation",
     "icon": "⚙️",
-    "description": "Scalable backend systems and APIs to power your applications with robust database design and integration.",
+    "description": "Streamline operations with intelligent automation that reduces manual work and increases productivity.",
     "features": [
-      "RESTful API development",
-      "Database design & optimization",
-      "Cloud integration (Firebase, Appwrite)",
-      "Authentication systems",
-      "Real-time features"
-    ]
-  },
-  {
-    "id": "ui-ux-design",
-    "title": "UI/UX Design",
-    "icon": "🎨",
-    "description": "User-centered design that creates intuitive and engaging digital experiences for your customers.",
-    "features": [
-      "User interface design",
-      "User experience optimization",
-      "Wireframing & prototyping",
-      "Design systems",
-      "Usability testing"
+      "Workflow automation",
+      "Integration with existing systems",
+      "Custom business applications",
+      "Real-time analytics & reporting",
+      "Mobile-first solutions"
     ]
   }
 ];

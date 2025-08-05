@@ -1,7 +1,7 @@
 export default {
   "name": "PopupBits",
-  "tagline": "We make websites and apps so that you don't have to.",
-  "description": "We assist businesses to go digital and make an impression among their clients. We create websites for businesses with useful features to help manage their operations and get closer to clients.",
+  "tagline": "Digital Transformation Through Sustainable Tech Solutions",
+  "description": "We assist businesses to go digital and transform their processes by helping them build sustainable systems. We help build secure, scalable, sustainable, and cost-effective tech systems that drive growth and efficiency.",
   "contact": {
     "company": "Popup Bits Pvt. Ltd.",
     "address": "Gaurighat, Kathmandu-8, Nepal",

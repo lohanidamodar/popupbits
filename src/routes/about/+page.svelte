@@ -22,15 +22,16 @@
 					{companyData.description}
 				</p>
 				<p>
-					We are a team of passionate developers and designers who believe in the power of
-					technology to transform businesses. Our mission is to help organizations leverage digital
-					solutions to reach their full potential and connect better with their customers.
+					We are a team of passionate developers and digital transformation specialists who believe
+					in the power of sustainable technology to revolutionize business operations. Our mission
+					is to help organizations embrace digital transformation through secure, scalable, and
+					environmentally conscious tech solutions.
 				</p>
 				<p>
-					With over {companyData.stats.experience} of combined experience in web and mobile development,
-					we have successfully delivered {companyData.stats.projectsCompleted} projects to satisfied
-					clients. We specialize in modern technologies and frameworks that ensure your digital solutions
-					are scalable, maintainable, and future-proof.
+					With over {companyData.stats.experience} of combined experience in digital transformation and
+					system automation, we have successfully delivered {companyData.stats.projectsCompleted} projects
+					to satisfied clients. We specialize in sustainable technologies and automation frameworks that
+					ensure your digital transformation initiatives are scalable, secure, and environmentally responsible.
 				</p>
 			</div>
 		</div>
@@ -47,17 +48,17 @@
 			<StatCard
 				stat={companyData.stats.experience}
 				label="Years of Experience"
-				description="In web and mobile development"
+				description="In digital transformation"
 			/>
 			<StatCard
 				stat={companyData.stats.projectsCompleted}
-				label="Projects Delivered"
-				description="Successfully completed projects"
+				label="Digital Solutions Delivered"
+				description="Successful transformation projects"
 			/>
 			<StatCard
 				stat={companyData.stats.clientsSatisfied}
-				label="Happy Clients"
-				description="Satisfied with our services"
+				label="Businesses Transformed"
+				description="Organizations going digital"
 			/>
 		</div>
 	</div>
@@ -69,33 +70,35 @@
 			<div class="value-card card">
 				<h3>🎯 Our Mission</h3>
 				<p>
-					To empower businesses with cutting-edge digital solutions that drive growth, improve
-					efficiency, and create meaningful connections with their customers.
+					To empower businesses with sustainable digital transformation solutions that drive
+					operational efficiency, reduce environmental impact, and create secure, scalable systems
+					for long-term growth.
 				</p>
 			</div>
 			<div class="value-card card">
 				<h3>🚀 Our Vision</h3>
 				<p>
-					To become the leading digital transformation partner for businesses in Nepal and beyond,
-					known for our innovation, quality, and customer-centric approach.
+					To become the leading digital transformation partner for businesses seeking sustainable
+					technology solutions, known for our commitment to security, scalability, and environmental
+					responsibility.
 				</p>
 			</div>
 			<div class="value-card card">
 				<h3>💎 Our Values</h3>
 				<ul>
-					<li>Quality first in everything we do</li>
-					<li>Transparent communication</li>
-					<li>Continuous learning and improvement</li>
-					<li>Customer success is our success</li>
+					<li>Sustainable technology practices</li>
+					<li>Security and data protection first</li>
+					<li>Transparent communication and process</li>
+					<li>Long-term partnership approach</li>
 				</ul>
 			</div>
 			<div class="value-card card">
 				<h3>🛠️ Our Approach</h3>
 				<ul>
-					<li>User-centered design thinking</li>
-					<li>Agile development methodology</li>
-					<li>Modern technology stack</li>
-					<li>Comprehensive testing and QA</li>
+					<li>Sustainability-first design thinking</li>
+					<li>Security-driven development</li>
+					<li>Scalable architecture planning</li>
+					<li>Continuous monitoring and optimization</li>
 				</ul>
 			</div>
 		</div>
@@ -105,11 +108,12 @@
 <section class="section section-gray">
 	<div class="container">
 		<div class="cta-card card text-center">
-			<h2>Ready to Work Together?</h2>
+			<h2>Ready to Transform Your Business?</h2>
 			<p class="mb-3">
-				Let's discuss your project and see how we can help transform your business digitally.
+				Let's discuss how we can help you build secure, scalable, and sustainable digital systems
+				that drive lasting business transformation.
 			</p>
-			<a href="/contact" class="btn btn-primary btn-lg"> Get In Touch </a>
+			<a href="/contact" class="btn btn-primary btn-lg"> Start Your Digital Journey </a>
 		</div>
 	</div>
 </section>

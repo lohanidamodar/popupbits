@@ -27,10 +27,11 @@
 			</h1>
 			<p
 				class="mb-4"
-				style="font-size: 1.25rem; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 2rem;"
+				style="font-size: 1.25rem; color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 2rem;"
 			>
-				Expert web development and software solutions. We transform your ideas into digital reality
-				with modern technologies and clean, maintainable code.
+				We help businesses transform digitally with secure, scalable, and sustainable tech systems.
+				From process automation to legacy modernization, we build cost-effective solutions that
+				drive growth and efficiency.
 			</p>
 			<div class="flex-center gap-3" style="flex-wrap: wrap; justify-content: center;">
 				<a
@@ -67,10 +68,10 @@
 <section class="section">
 	<div class="container">
 		<div class="mb-4 text-center">
-			<h2 class="mb-2">Our Services</h2>
-			<p class="text-secondary" style="max-width: 600px; margin: 0 auto;">
-				We offer comprehensive web development and software solutions tailored to your business
-				needs.
+			<h2 class="mb-2">Digital Transformation Services</h2>
+			<p class="text-secondary" style="max-width: 700px; margin: 0 auto;">
+				We help businesses go digital by building secure, scalable, and sustainable tech systems
+				that transform processes, reduce costs, and drive long-term growth.
 			</p>
 		</div>
 		<div class="grid-auto-fit grid">
@@ -155,17 +156,17 @@
 <!-- CTA Section -->
 <section class="section" style="background: var(--primary-blue); color: white;">
 	<div class="container text-center">
-		<h2 class="mb-2" style="color: white;">Ready to Start Your Project?</h2>
-		<p class="mb-4" style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 2rem;">
-			Let's discuss your ideas and turn them into reality. Get in touch with us today for a free
-			consultation.
+		<h2 class="mb-2" style="color: white;">Ready to Transform Your Business?</h2>
+		<p class="mb-4" style="color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 2rem;">
+			Let's discuss how we can help you build secure, scalable, and sustainable tech systems that
+			drive digital transformation and business growth. Get a free consultation today.
 		</p>
 		<a
 			href="/contact"
 			class="btn btn-lg"
 			style="background: white; color: var(--primary-blue); padding: 1rem 2rem;"
 		>
-			Contact Us Today
+			Start Your Digital Transformation
 		</a>
 	</div>
 </section>

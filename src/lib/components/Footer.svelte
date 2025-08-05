@@ -11,12 +11,12 @@
 	];
 
 	const services = [
-		'Web Development',
-		'Mobile App Development',
-		'Backend Development',
-		'UI/UX Design',
-		'E-commerce Solutions',
-		'API Development'
+		'Digital Transformation',
+		'Sustainable Tech Systems',
+		'Business Process Automation',
+		'Secure & Scalable Solutions',
+		'Cloud Migration & Integration',
+		'Legacy System Modernization'
 	];
 </script>
 

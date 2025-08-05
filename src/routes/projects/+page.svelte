@@ -8,7 +8,7 @@
 	<title>Projects - {companyData.name}</title>
 	<meta
 		name="description"
-		content="Explore our portfolio of web and mobile applications. See how we've helped businesses achieve their digital goals."
+		content="Explore our portfolio of digital transformation projects. See how we've helped businesses build sustainable, secure, and scalable systems."
 	/>
 </svelte:head>
 
@@ -18,8 +18,9 @@
 	<div class="container">
 		<div class="section-header mb-4 text-center">
 			<p class="section-subtitle">
-				Explore our portfolio of successful projects. From mobile apps to web platforms, we've
-				helped businesses of all sizes achieve their digital goals.
+				Explore our portfolio of successful digital transformation projects. From automated business
+				processes to scalable cloud systems, we've helped organizations build sustainable technology
+				solutions that drive growth.
 			</p>
 		</div>
 

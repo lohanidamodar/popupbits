@@ -16,7 +16,7 @@
 			<p>
 				{project.description}
 			</p>
-			<p />
+			<p></p>
 		</div>
 	</div>
 </div>

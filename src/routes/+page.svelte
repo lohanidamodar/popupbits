@@ -20,14 +20,16 @@
 <SEO data={seoData} />
 
 <!-- Hero Section -->
-<Hero variant="gradient" size="lg" title={company.tagline} subtitle={company.description}>
-	{#snippet cta()}
-		<div class="flex flex-wrap justify-center gap-4">
-			<Button href="/contact" variant="light" size="lg">Let's get started</Button>
-			<Button href="/about" variant="secondary" size="lg">Learn More</Button>
-		</div>
-	{/snippet}
-</Hero>
+<Hero
+	variant="gradient"
+	size="lg"
+	title={company.tagline}
+	subtitle={company.description}
+	buttons={[
+		{ text: "Let's get started", href: '/contact', variant: 'primary' },
+		{ text: 'Learn More', href: '/about', variant: 'secondary' }
+	]}
+/>
 
 <!-- Stats Section -->
 <Section variant="gray">

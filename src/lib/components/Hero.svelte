@@ -1,6 +1,12 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
+	interface HeroButton {
+		text: string;
+		href: string;
+		variant?: 'primary' | 'secondary';
+	}
+
 	interface HeroProps {
 		title: string;
 		subtitle?: string;
@@ -12,6 +18,7 @@
 			text: string;
 			href: string;
 		};
+		buttons?: HeroButton[];
 		variant?: 'gradient' | 'image' | 'video' | 'dark';
 		background?: 'gradient' | 'image' | 'video' | 'dark';
 		backgroundImage?: string;
@@ -27,6 +34,7 @@
 		subtitle,
 		primaryCta,
 		secondaryCta,
+		buttons,
 		variant = 'gradient',
 		background,
 		backgroundImage,
@@ -68,16 +76,29 @@
 				<div class="hero-actions">
 					{@render cta()}
 				</div>
+			{:else if buttons}
+				<div class="hero-actions">
+					{#each buttons as button}
+						<a
+							href={button.href}
+							class="hero-btn {button.variant === 'primary'
+								? 'hero-btn-primary'
+								: 'hero-btn-secondary'}"
+						>
+							{button.text}
+						</a>
+					{/each}
+				</div>
 			{:else if primaryCta || secondaryCta}
 				<div class="hero-actions">
 					{#if primaryCta}
-						<a href={primaryCta.href} class="btn btn-lg btn-light">
+						<a href={primaryCta.href} class="hero-btn hero-btn-primary">
 							{primaryCta.text}
 						</a>
 					{/if}
 
 					{#if secondaryCta}
-						<a href={secondaryCta.href} class="btn btn-lg btn-secondary">
+						<a href={secondaryCta.href} class="hero-btn hero-btn-secondary">
 							{secondaryCta.text}
 						</a>
 					{/if}
@@ -154,6 +175,53 @@
 		gap: var(--space-4);
 		justify-content: center;
 		flex-wrap: wrap;
+		margin-top: var(--space-8);
+		z-index: 10;
+		position: relative;
+	}
+
+	/* Hero button base styles */
+	.hero-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 200px;
+		min-height: 56px;
+		padding: var(--space-4) var(--space-8);
+		font-size: 1.1rem;
+		font-weight: 900;
+		text-decoration: none;
+		border-radius: var(--radius-lg);
+		border: 3px solid white;
+		transition: all 0.3s ease;
+		cursor: pointer;
+		z-index: 10;
+	}
+
+	/* Primary button - semi-transparent white background */
+	.hero-btn-primary {
+		background: rgba(255, 255, 255, 0.15);
+		color: white;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+	}
+
+	.hero-btn-primary:hover {
+		background: rgba(255, 255, 255, 0.25);
+		transform: translateY(-2px);
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+	}
+
+	/* Secondary button - darker semi-transparent background */
+	.hero-btn-secondary {
+		background: rgba(0, 0, 0, 0.3);
+		color: white;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+	}
+
+	.hero-btn-secondary:hover {
+		background: rgba(0, 0, 0, 0.4);
+		transform: translateY(-2px);
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 	}
 
 	/* Size variants */
@@ -236,7 +304,7 @@
 			align-items: center;
 		}
 
-		.hero-actions .btn {
+		.hero-btn {
 			width: 100%;
 			max-width: 280px;
 		}

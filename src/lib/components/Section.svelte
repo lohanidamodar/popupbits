@@ -73,6 +73,22 @@
 		color: white;
 	}
 
+	.section-dark h1,
+	.section-dark h2,
+	.section-dark h3,
+	.section-dark h4,
+	.section-dark h5,
+	.section-dark h6 {
+		color: white !important;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		font-weight: 800;
+	}
+
+	.section-dark p {
+		color: rgba(255, 255, 255, 0.95) !important;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
 	@media (max-width: 768px) {
 		.section-sm {
 			padding: var(--space-8) 0;

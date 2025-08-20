@@ -40,7 +40,7 @@
 
 <section class="section section-gray">
 	<div class="container">
-		<div class="section-header mb-4 text-center">
+		<div class="section-header mb-12 text-center">
 			<h2>Our Impact</h2>
 			<p class="section-subtitle">Numbers that showcase our commitment to excellence</p>
 		</div>
@@ -66,7 +66,7 @@
 
 <section class="section">
 	<div class="container">
-		<div class="grid grid-cols-2 gap-4">
+		<div class="grid grid-cols-2">
 			<div class="value-card card">
 				<h3>🎯 Our Mission</h3>
 				<p>

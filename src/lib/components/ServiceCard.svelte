@@ -1,20 +1,22 @@
 <script lang="ts">
-	export let icon: string = '';
-	export let title: string = '';
-	export let description: string = '';
-	export let features: string[] = [];
+	export let service: {
+		icon: string;
+		title: string;
+		description: string;
+		features: string[];
+	};
 </script>
 
 <div class="service-card">
 	<div class="service-icon">
-		<span class="icon-emoji">{icon}</span>
+		<span class="icon-emoji">{service.icon}</span>
 		<div class="icon-glow"></div>
 	</div>
-	<h3 class="service-title">{title}</h3>
-	<p class="service-description">{description}</p>
-	{#if features.length > 0}
+	<h3 class="service-title">{service.title}</h3>
+	<p class="service-description">{service.description}</p>
+	{#if service.features.length > 0}
 		<ul class="service-features">
-			{#each features as feature}
+			{#each service.features as feature}
 				<li>
 					<svg
 						class="check-icon"

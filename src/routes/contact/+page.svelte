@@ -15,7 +15,7 @@
 
 <section class="section">
 	<div class="container">
-		<div class="contact-grid grid grid-cols-2 gap-4">
+		<div class="contact-grid grid grid-cols-2">
 			<!-- Contact Information -->
 			<div class="contact-info">
 				<div class="contact-card card">

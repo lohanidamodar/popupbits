@@ -5,49 +5,24 @@
 	import services from '$lib/data/services.js';
 	import technologies from '$lib/data/technologies.js';
 	import projects from '$lib/data/projects.js';
+	import pricing from '$lib/data/pricing.js';
+	import PricingCard from '$lib/components/PricingCard.svelte';
 </script>
 
 <svelte:head>
-	<title>PopupBits - Your Vision, Our Code</title>
-	<meta
-		name="description"
-		content="Expert web development and software solutions. Transforming ideas into digital reality with modern technologies and clean code."
-	/>
+	<title>PopupBits - Tech Consultancy for Modern Businesses</title>
+	<meta name="description" content={company.description} />
 </svelte:head>
 
 <!-- Hero Section -->
-<section
-	class="section-lg"
-	style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;"
->
+<section class="section-lg">
 	<div class="container">
 		<div class="text-center">
-			<h1 class="mb-4" style="color: white; font-size: 3rem; font-weight: 800;">
-				{company.tagline}
-			</h1>
-			<p
-				class="mb-4"
-				style="font-size: 1.25rem; color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 2rem;"
-			>
-				We help businesses transform digitally with secure, scalable, and sustainable tech systems.
-				From process automation to legacy modernization, we build cost-effective solutions that
-				drive growth and efficiency.
-			</p>
-			<div class="flex-center gap-3" style="flex-wrap: wrap; justify-content: center;">
-				<a
-					href="/contact"
-					class="btn btn-lg"
-					style="background: white; color: #667eea; padding: 1rem 2rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
-				>
-					Get Started
-				</a>
-				<a
-					href="/projects"
-					class="btn btn-lg"
-					style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none;"
-				>
-					View Our Work
-				</a>
+			<h1 class="mb-4">{company.tagline}</h1>
+			<p class="mb-4">{company.description}</p>
+			<div class="flex-center gap-3">
+				<a href="/contact" class="btn btn-lg btn-primary"> Let's get started </a>
+				<a href="/about" class="btn btn-lg btn-secondary"> My Approach & Experience </a>
 			</div>
 		</div>
 	</div>
@@ -68,13 +43,13 @@
 <section class="section">
 	<div class="container">
 		<div class="mb-4 text-center">
-			<h2 class="mb-2">Digital Transformation Services</h2>
+			<h2 class="mb-2">How We Can Help Your Business</h2>
 			<p class="text-secondary" style="max-width: 700px; margin: 0 auto;">
-				We help businesses go digital by building secure, scalable, and sustainable tech systems
-				that transform processes, reduce costs, and drive long-term growth.
+				With over 8 years of experience, we provide comprehensive consulting services to help your
+				business thrive in the digital age.
 			</p>
 		</div>
-		<div class="grid-auto-fit grid">
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 			{#each services as service}
 				<ServiceCard
 					icon={service.icon}
@@ -114,59 +89,75 @@
 <!-- Featured Projects Section -->
 <section class="section">
 	<div class="container">
-		<div class="mb-4 text-center">
+		<div class="mb-8 text-center">
 			<h2 class="mb-2">Featured Projects</h2>
 			<p class="text-secondary">
-				Some of our recent work that showcases our expertise and creativity.
+				Highlighting some of our most impactful and successful projects
 			</p>
 		</div>
-		<div class="grid-auto-fit grid">
-			{#each projects.slice(0, 3) as project}
-				<div class="card">
-					<img
-						src={project.image}
-						alt={project.title}
-						style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1rem;"
-					/>
-					<h4 class="mb-2">{project.title}</h4>
-					<p class="text-secondary mb-3">{project.description}</p>
-					<div class="flex flex-wrap gap-1" style="margin-bottom: 1rem;">
-						<span
-							style="background: var(--light-gray); color: var(--text-secondary); padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem;"
-						>
-							{project.tech}
-						</span>
+
+		<div class="space-y-12">
+			{#each projects.slice(0, 3) as project, i}
+				<div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+					<div class={`md:col-span-2 ${i % 2 !== 0 ? 'md:order-last' : ''}`}>
+						<a href={project.web || project.playStore || project.github || `/projects/${project.slug}`} target="_blank">
+							<img src={project.image} alt={project.title} class="rounded-lg shadow-lg" />
+						</a>
 					</div>
-					<a
-						href={project.web || project.playStore || project.github || `/projects/${project.slug}`}
-						target="_blank"
-						class="btn btn-primary"
-					>
-						View Project
-					</a>
+					<div class="md:col-span-3">
+						<p class="text-sm text-primary-500 font-semibold">{project.category || 'CASE STUDY'}</p>
+						<h3 class="text-2xl font-bold mt-2 mb-4">{project.title}</h3>
+						<p class="text-secondary mb-4">{project.description}</p>
+						<div class="flex flex-wrap gap-2 mb-4">
+							{#each project.tags || [] as tag}
+								<span
+									class="text-sm"
+									style="background-color: var(--chip-bg); color: var(--chip-color); padding: 4px 8px; border-radius: 4px;"
+									>{tag}</span
+								>
+							{/each}
+						</div>
+						<a
+							href={project.web || project.playStore || project.github || `/projects/${project.slug}`}
+							target="_blank"
+							class="btn btn-primary"
+						>
+							View Project
+						</a>
+					</div>
 				</div>
 			{/each}
 		</div>
-		<div class="mt-4 text-center">
+
+		<div class="mt-12 text-center">
 			<a href="/projects" class="btn btn-secondary"> View All Projects </a>
 		</div>
 	</div>
 </section>
 
+<!-- Pricing Section -->
+<section class="section section-gray">
+	<div class="container">
+		<div class="mb-8 text-center">
+			<h2 class="mb-2">For everyone, from startups to enterprises</h2>
+			<p class="text-secondary">Affordable pricing plans to suit your needs</p>
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+			{#each pricing as plan}
+				<PricingCard plan={plan} />
+			{/each}
+		</div>
+	</div>
+</section>
+
 <!-- CTA Section -->
-<section class="section" style="background: var(--primary-blue); color: white;">
+<section class="section cta-section">
 	<div class="container text-center">
-		<h2 class="mb-2" style="color: white;">Ready to Transform Your Business?</h2>
-		<p class="mb-4" style="color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 2rem;">
-			Let's discuss how we can help you build secure, scalable, and sustainable tech systems that
-			drive digital transformation and business growth. Get a free consultation today.
+		<h2 class="mb-2">Ready to Transform Your Business?</h2>
+		<p class="mb-4">
+			Let's work together to build scalable solutions that drive growth and innovation for your
+			company.
 		</p>
-		<a
-			href="/contact"
-			class="btn btn-lg"
-			style="background: white; color: var(--primary-blue); padding: 1rem 2rem;"
-		>
-			Start Your Digital Transformation
-		</a>
+		<a href="/contact" class="btn btn-lg btn-light"> Get Started Today </a>
 	</div>
 </section>

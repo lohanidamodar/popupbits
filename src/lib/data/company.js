@@ -1,7 +1,7 @@
 export default {
   "name": "PopupBits",
-  "tagline": "Digital Transformation Through Sustainable Tech Solutions",
-  "description": "We assist businesses to go digital and transform their processes by helping them build sustainable systems. We help build secure, scalable, sustainable, and cost-effective tech systems that drive growth and efficiency.",
+  "tagline": "Tech Consultancy for Modern Businesses",
+  "description": "We help businesses systematize processes, build scalable projects, and integrate technology effectively. We consult on technical decisions, architect scalable solutions, and guide teams to create systems that drive measurable improvements.",
   "contact": {
     "company": "Popup Bits Pvt. Ltd.",
     "address": "Gaurighat, Kathmandu-8, Nepal",

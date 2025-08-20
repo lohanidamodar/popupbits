@@ -1,54 +1,54 @@
 export default [
   {
-    "id": "digital-transformation",
-    "title": "Digital Transformation",
-    "icon": "🚀",
-    "description": "Transform your business processes with digital solutions that increase efficiency, reduce costs, and drive sustainable growth.",
+    "id": "system-architecture",
+    "title": "System Architecture & Design",
+    "icon": "🏗️",
+    "description": "We design and build systems that scale effectively. From database optimization to API planning, we help create solid technical foundations.",
     "features": [
-      "Process automation & optimization",
-      "Legacy system modernization",
-      "Digital workflow implementation",
-      "Data-driven decision systems",
-      "Change management support"
+      "System design & architecture review",
+      "Database design & optimization",
+      "API planning & integration strategies",
+      "Performance optimization",
+      "Technology stack recommendations"
     ]
   },
   {
-    "id": "sustainable-systems",
-    "title": "Sustainable Tech Systems",
-    "icon": "🌱",
-    "description": "Build scalable, secure, and cost-effective systems designed for long-term success and environmental responsibility.",
+    "id": "process-automation",
+    "title": "Process Automation",
+    "icon": "⚡",
+    "description": "We identify bottlenecks and automate workflows to improve efficiency and scalability for your business.",
     "features": [
-      "Green technology solutions",
-      "Energy-efficient architectures",
-      "Scalable cloud infrastructure",
-      "Cost optimization strategies",
-      "Sustainable development practices"
-    ]
-  },
-  {
-    "id": "secure-solutions",
-    "title": "Secure & Scalable Solutions",
-    "icon": "🔒",
-    "description": "Enterprise-grade security and scalability built into every solution to protect your business and support growth.",
-    "features": [
-      "End-to-end encryption",
-      "Multi-layer security architecture",
-      "Scalable cloud deployment",
-      "Compliance & audit support",
-      "Performance monitoring"
-    ]
-  },
-  {
-    "id": "business-automation",
-    "title": "Business Process Automation",
-    "icon": "⚙️",
-    "description": "Streamline operations with intelligent automation that reduces manual work and increases productivity.",
-    "features": [
-      "Workflow automation",
+      "Workflow analysis & optimization",
+      "Automation planning & implementation",
       "Integration with existing systems",
-      "Custom business applications",
-      "Real-time analytics & reporting",
-      "Mobile-first solutions"
+      "Custom dashboard creation",
+      "Scalable automation solutions"
+    ]
+  },
+  {
+    "id": "team-leadership",
+    "title": "Team Leadership & Mentoring",
+    "icon": "👥",
+    "description": "We empower your development team with technical mentoring, best practices, and improved workflows.",
+    "features": [
+      "Technical mentoring & coaching",
+      "Development workflow setup",
+      "Code review processes",
+      "Team productivity improvement",
+      "Engineering skill development"
+    ]
+  },
+  {
+    "id": "flutter-consultancy",
+    "title": "Flutter App Development",
+    "icon": "📱",
+    "description": "We help startups and established companies build high-quality, scalable, and maintainable mobile apps with Flutter.",
+    "features": [
+      "Full-cycle Flutter development",
+      "UI/UX design and implementation",
+      "Firebase and backend integration",
+      "Performance optimization",
+      "CI/CD and deployment"
     ]
   }
 ];

@@ -1,58 +1,49 @@
 export default [
-  {
-    "id": "startup",
-    "name": "Startup Package",
-    "price": "NPR 25,000",
-    "originalPrice": "NPR 35,000",
-    "discount": "30% OFF",
-    "duration": "one-time",
-    "description": "Perfect for startups needing a complete digital presence",
-    "features": [
-      "Professional website design",
-      "Mobile-responsive layout",
-      "Basic SEO optimization",
-      "Contact form integration",
-      "Social media integration",
-      "1 month support"
-    ],
-    "popular": false
-  },
-  {
-    "id": "business",
-    "name": "Business Growth",
-    "price": "NPR 50,000",
-    "originalPrice": "NPR 70,000",
-    "discount": "30% OFF",
-    "duration": "one-time",
-    "description": "Comprehensive solution for growing businesses",
-    "features": [
-      "Custom web application",
-      "Admin dashboard",
-      "Database integration",
-      "User authentication",
-      "Payment integration",
-      "3 months support",
-      "Mobile app (optional)"
-    ],
-    "popular": true
-  },
-  {
-    "id": "enterprise",
-    "name": "Enterprise Solution",
-    "price": "NPR 1,50,000",
-    "originalPrice": "NPR 2,00,000",
-    "discount": "25% OFF",
-    "duration": "one-time",
-    "description": "Complete digital transformation for established businesses",
-    "features": [
-      "Custom enterprise application",
-      "Advanced backend systems",
-      "Multi-platform support",
-      "Advanced analytics",
-      "Custom integrations",
-      "6 months support",
-      "Training & documentation"
-    ],
-    "popular": false
-  }
+    {
+        title: 'Startup Consultation',
+        price: '5,888',
+        originalPrice: '8,888',
+        per: 'session',
+        description: 'Perfect for startups needing guidance on tech decisions and business strategy.',
+        features: [
+            'Business model validation',
+            'Technology stack recommendations',
+            'MVP planning and roadmap',
+            'Cost-effective solution design',
+            '2-hour dedicated remote session'
+        ],
+        popular: false
+    },
+    {
+        title: 'Digital Transformation',
+        price: '20,888',
+        originalPrice: '30,888',
+        per: 'month',
+        description: 'Intensive support for businesses digitizing operations and processes.',
+        features: [
+            'Complete digital transformation roadmap',
+            'Legacy system modernization planning',
+            'Automation implementation',
+            'Staff training and change management',
+            '6 hours remote + 2 hours on-site consultation',
+            'Documentation and handover'
+        ],
+        popular: true
+    },
+    {
+        title: 'Business Growth Package',
+        price: '30,888',
+        originalPrice: '44,888',
+        per: 'month',
+        description: 'Comprehensive monthly support for established businesses ready to scale.',
+        features: [
+            'Process automation and optimization',
+            'System architecture and scalability planning',
+            'Team mentoring and training',
+            'Monthly strategy reviews',
+            '10 hours remote + 5 hours on-site consultation',
+            'Ongoing WhatsApp/Email support'
+        ],
+        popular: false
+    }
 ];

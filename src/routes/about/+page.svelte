@@ -105,16 +105,14 @@
 	</div>
 </section>
 
-<section class="section section-gray">
-	<div class="container">
-		<div class="cta-card card text-center">
-			<h2>Ready to Transform Your Business?</h2>
-			<p class="mb-3">
-				Let's discuss how we can help you build secure, scalable, and sustainable digital systems
-				that drive lasting business transformation.
-			</p>
-			<a href="/contact" class="btn btn-primary btn-lg"> Start Your Digital Journey </a>
-		</div>
+<section class="section hero-section">
+	<div class="container text-center">
+		<h2>Ready to Transform Your Business?</h2>
+		<p class="mb-8">
+			Let's discuss how we can help you build secure, scalable, and sustainable digital systems that
+			drive lasting business transformation.
+		</p>
+		<a href="/contact" class="btn btn-lg btn-light"> Start Your Digital Journey </a>
 	</div>
 </section>
 
@@ -185,22 +183,6 @@
 		margin: 0;
 	}
 
-	.cta-card {
-		background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
-		color: white;
-		padding: 4rem 2rem;
-	}
-
-	.cta-card h2 {
-		color: white;
-		margin-bottom: 1rem;
-	}
-
-	.cta-card p {
-		color: rgba(255, 255, 255, 0.9);
-		font-size: 1.125rem;
-	}
-
 	@media (max-width: 768px) {
 		.quote {
 			font-size: 1.25rem;
@@ -209,10 +191,6 @@
 
 		.lead {
 			font-size: 1.125rem;
-		}
-
-		.cta-card {
-			padding: 3rem 1.5rem;
 		}
 	}
 </style>

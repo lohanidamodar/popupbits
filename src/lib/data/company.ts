@@ -17,7 +17,7 @@ export const company = {
 	legalName: 'Popup Bits Pvt. Ltd.',
 	tagline: 'A Kathmandu studio building apps for the way Nepal uses tech',
 	description:
-		'We design and build our own products — calendars, learning apps, games — and take on selected client work in Flutter, web, and platform engineering.',
+		'We design and ship our own products, and partner with businesses to build full-stack apps, custom SaaS platforms, AI-integrated systems, and the automation that runs them — on web, mobile, and desktop.',
 	founder: 'Damodar Lohani',
 	established: 2016,
 	url: 'https://popupbits.com',
@@ -47,18 +47,20 @@ export const company = {
 	] satisfies CompanyStat[],
 	consulting: {
 		blurb:
-			'We take on a small number of consulting engagements each year — usually Flutter app builds, design systems, or backend platform work.',
+			'We build end-to-end business solutions — full-stack apps on Node.js and PHP, custom SaaS platforms, AI-integrated products, and the automation that ties them together. One team, shipping on web, mobile, and desktop.',
 		capabilities: [
-			'Flutter apps end-to-end',
-			'Svelte / web platforms',
-			'Firebase & Appwrite backends',
-			'Design systems & UI engineering'
+			'Full-stack apps — Node.js & PHP stacks',
+			'Custom SaaS platforms, end to end',
+			'Mobile, web, and desktop applications',
+			'AI-integrated products and workflows',
+			'Business systems and process automation',
+			'Integrations, APIs, and platform engineering'
 		]
 	},
 	seo: {
 		defaultTitle: 'Popup Bits — a Kathmandu studio',
 		defaultDescription:
-			'Popup Bits is a Kathmandu-based software studio building apps like Mero Patro, Mero Nepali, SpellCraft, and Bhadama — and taking on selected client work.',
+			'Popup Bits is a Kathmandu studio shipping its own apps and building full-stack platforms, SaaS, AI-integrated products, and business automation for clients across web, mobile, and desktop.',
 		ogImage: '/images/og-image.jpg',
 		twitterHandle: '@lohanidamodar'
 	}

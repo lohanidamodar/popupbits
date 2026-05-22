@@ -24,8 +24,9 @@
 		reference for Flutter developers. Some of those grew into products people now use every day.
 	</p>
 	<p>
-		Today we still ship our own apps and take a handful of consulting engagements each year, mostly
-		Flutter app builds, design systems, and backend platform work.
+		Today we still ship our own apps, and we partner with businesses to build full-stack
+		applications, custom SaaS platforms, AI-integrated products, and the automation that runs
+		them — on web, mobile, and desktop. We work primarily with the Node.js and PHP stacks.
 	</p>
 	<p>
 		The studio is led by <strong>{company.founder}</strong> and based in {company.contact.address

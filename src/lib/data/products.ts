@@ -25,6 +25,28 @@ export type Product = {
 
 export const products: Product[] = [
 	{
+		slug: 'bhadama',
+		name: 'Bhadama',
+		tagline: 'Rent, list, borrow — the local-first marketplace.',
+		description:
+			'Bhadama is a local rental and listing marketplace — tools, gear, and short-term items, neighbour to neighbour.',
+		themeClass: 'theme-bhadama',
+		platforms: ['android', 'web'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=app.bhadama.bhadama',
+				kind: 'play'
+			},
+			{ label: 'Visit Bhadama', href: 'https://bhadama.app', kind: 'web' }
+		],
+		screenshots: [],
+		tech: ['Flutter', 'Appwrite'],
+		status: 'beta',
+		featured: true,
+		year: 2024
+	},
+	{
 		slug: 'mero-patro',
 		name: 'Mero Patro',
 		tagline: 'The Nepali calendar, the way Nepalis use it.',
@@ -81,28 +103,6 @@ export const products: Product[] = [
 		status: 'live',
 		featured: true,
 		year: 2023
-	},
-	{
-		slug: 'bhadama',
-		name: 'Bhadama',
-		tagline: 'Rent, list, borrow — the local-first marketplace.',
-		description:
-			'Bhadama is a local rental and listing marketplace — tools, gear, and short-term items, neighbour to neighbour.',
-		themeClass: 'theme-bhadama',
-		platforms: ['android', 'web'],
-		links: [
-			{
-				label: 'Get on Play Store',
-				href: 'https://play.google.com/store/apps/details?id=app.bhadama.bhadama',
-				kind: 'play'
-			},
-			{ label: 'Visit Bhadama', href: 'https://bhadama.app', kind: 'web' }
-		],
-		screenshots: [],
-		tech: ['Flutter', 'Appwrite'],
-		status: 'beta',
-		featured: true,
-		year: 2024
 	},
 	{
 		slug: 'ui-challenges-flutter',

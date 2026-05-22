@@ -1,0 +1,118 @@
+@import './lib/design-system/colors_and_type.css';
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* ---------- Tailwind theme: maps DS tokens to Tailwind/shadcn-svelte variables ---------- */
+@theme {
+	/* Fonts */
+	--font-sans: var(--font-sans, 'Nunito', ui-sans-serif, system-ui, sans-serif);
+	--font-display: var(--font-display, 'Baloo 2', ui-sans-serif, system-ui, sans-serif);
+	--font-mono: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+
+	/* Radii */
+	--radius: var(--r-md, 14px);
+	--radius-sm: var(--r-sm, 10px);
+	--radius-md: var(--r-md, 14px);
+	--radius-lg: var(--r-lg, 20px);
+	--radius-xl: var(--r-xl, 28px);
+
+	/* Shadows */
+	--shadow-xs: var(--sh-xs);
+	--shadow-sm: var(--sh-sm);
+	--shadow-md: var(--sh-md);
+	--shadow-lg: var(--sh-lg);
+	--shadow-xl: var(--sh-xl);
+}
+
+/* ----------------------------------------------------------------------------
+ * Semantic UI vars (prefixed --ui-*) intentionally do NOT reuse names the DS
+ * already owns. The DS scopes --accent / --accent-soft / --accent-ink inside
+ * .theme-popupbits (and friends), which would shadow any :root override.
+ * ---------------------------------------------------------------------------- */
+@layer base {
+	:root {
+		--ui-background: var(--n-50, #fafaf7);
+		--ui-foreground: var(--n-900, #121310);
+		--ui-card: var(--n-0, #ffffff);
+		--ui-card-foreground: var(--n-900, #121310);
+		--ui-popover: var(--n-0, #ffffff);
+		--ui-popover-foreground: var(--n-900, #121310);
+		--ui-primary: var(--accent, #ff5a3c);
+		--ui-primary-foreground: #ffffff;
+		--ui-secondary: var(--n-100, #f2f3ef);
+		--ui-secondary-foreground: var(--n-900, #121310);
+		--ui-muted: var(--n-100, #f2f3ef);
+		--ui-muted-foreground: var(--n-600, #55584f);
+		--ui-accent: var(--accent-soft, #ffe3dc);
+		--ui-accent-foreground: var(--accent, #ff5a3c);
+		--ui-destructive: var(--danger, #e85a4f);
+		--ui-destructive-foreground: #ffffff;
+		--ui-border: var(--n-200, #e6e7e1);
+		--ui-input: var(--n-200, #e6e7e1);
+		--ui-ring: var(--accent, #ff5a3c);
+	}
+
+	.dark {
+		--ui-background: var(--n-900, #121310);
+		--ui-foreground: var(--n-50, #fafaf7);
+		--ui-card: var(--n-800, #22241f);
+		--ui-card-foreground: var(--n-50, #fafaf7);
+		--ui-popover: var(--n-800, #22241f);
+		--ui-popover-foreground: var(--n-50, #fafaf7);
+		--ui-primary: var(--accent, #ff7a5e);
+		--ui-primary-foreground: #ffffff;
+		--ui-secondary: var(--n-700, #373a33);
+		--ui-secondary-foreground: var(--n-50, #fafaf7);
+		--ui-muted: var(--n-700, #373a33);
+		--ui-muted-foreground: var(--n-300, #d4d6ce);
+		--ui-accent: var(--n-700, #373a33);
+		--ui-accent-foreground: var(--accent-soft, #ffe3dc);
+		--ui-destructive: var(--danger, #e85a4f);
+		--ui-destructive-foreground: #1a0d0c;
+		--ui-border: var(--n-700, #373a33);
+		--ui-input: var(--n-700, #373a33);
+		--ui-ring: var(--accent, #ff7a5e);
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background-color: var(--ui-background);
+		color: var(--ui-foreground);
+		font-family: var(--font-sans);
+		-webkit-font-smoothing: antialiased;
+	}
+}
+
+/* ----------------------------------------------------------------------------
+ * Re-export the --ui-* vars as Tailwind --color-* names. Tailwind v4 only
+ * emits color utilities (text-primary, bg-accent, border-border, etc.) for
+ * names declared under @theme.
+ * ---------------------------------------------------------------------------- */
+@theme inline {
+	--color-background: var(--ui-background);
+	--color-foreground: var(--ui-foreground);
+	--color-card: var(--ui-card);
+	--color-card-foreground: var(--ui-card-foreground);
+	--color-popover: var(--ui-popover);
+	--color-popover-foreground: var(--ui-popover-foreground);
+	--color-primary: var(--ui-primary);
+	--color-primary-foreground: var(--ui-primary-foreground);
+	--color-secondary: var(--ui-secondary);
+	--color-secondary-foreground: var(--ui-secondary-foreground);
+	--color-muted: var(--ui-muted);
+	--color-muted-foreground: var(--ui-muted-foreground);
+	--color-accent: var(--ui-accent);
+	--color-accent-foreground: var(--ui-accent-foreground);
+	--color-destructive: var(--ui-destructive);
+	--color-destructive-foreground: var(--ui-destructive-foreground);
+	--color-border: var(--ui-border);
+	--color-input: var(--ui-input);
+	--color-ring: var(--ui-ring);
+}

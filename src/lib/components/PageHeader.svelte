@@ -1,41 +1,16 @@
 <script lang="ts">
-	export let title: string = '';
-	export let subtitle: string|null = null;
+	let { eyebrow, title, subtitle }: { eyebrow?: string; title: string; subtitle?: string } =
+		$props();
 </script>
 
-<div>
-	<h1>{title}</h1>
-	{#if subtitle}
-		<h2>{subtitle}</h2>
+<header class="max-w-6xl mx-auto px-6 pt-24 pb-12">
+	{#if eyebrow}
+		<p class="t-eyebrow uppercase tracking-widest text-sm font-semibold text-primary mb-3">
+			{eyebrow}
+		</p>
 	{/if}
-</div>
-
-<style lang="scss">
-	div {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 20px;
-		flex-direction: column;
-
-		h1 {
-			margin-bottom: 1rem;
-			padding-bottom: 1rem;
-			position: relative;
-			overflow: hidden;
-			&::after {
-				content: '';
-				height: 0.1em;
-				background: var(--primary);
-				width: 100%;
-				margin-left: -100%;
-				position: absolute;
-				bottom: 0;
-			}
-		}
-
-		h2 {
-			font-weight: 500;
-		}
-	}
-</style>
+	<h1 class="font-display text-5xl font-extrabold tracking-tight">{title}</h1>
+	{#if subtitle}
+		<p class="text-lg text-muted-foreground mt-4 max-w-2xl">{subtitle}</p>
+	{/if}
+</header>

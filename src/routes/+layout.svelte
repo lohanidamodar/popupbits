@@ -1,22 +1,20 @@
-<script>    
-    import TopNavigation from '$lib/components/TopNavigation.svelte';
-import '$lib/styles/main.scss';
-	import { afterUpdate, beforeUpdate } from 'svelte';
+<script lang="ts">
+	import '../app.css';
+	import { ModeWatcher } from 'mode-watcher';
+	import { Toaster } from '$lib/components/ui/sonner/index.js';
+	import SiteNav from '$lib/components/SiteNav.svelte';
+	import SiteFooter from '$lib/components/SiteFooter.svelte';
+
+	let { children } = $props();
 </script>
 
-<svelte:head>
-    <title>PopupBits - Digital bits for your organization</title>
-</svelte:head>
+<ModeWatcher />
+<Toaster richColors closeButton />
 
-<main>
-    <TopNavigation />
-    <div class="content">
-        <slot></slot>
-    </div>
-</main>
-
-<style>
-    .content {
-        margin-top: 64px;
-    }
-</style>
+<div class="arch-utility theme-popupbits min-h-dvh flex flex-col">
+	<SiteNav />
+	<main class="flex-1">
+		{@render children?.()}
+	</main>
+	<SiteFooter />
+</div>

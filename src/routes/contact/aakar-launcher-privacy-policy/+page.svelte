@@ -92,8 +92,8 @@
 
 	<h2>Contact</h2>
 	<p>
-		Questions about this policy or about Aakar?
-		Email <a href="mailto:{company.contact.email}">{company.contact.email}</a> or use the
-		<a href="/contact">contact form</a>.
+		Questions about this policy or about Aakar? Email
+		<a href="mailto:{company.contact.email}">{company.contact.email}</a> or visit our
+		<a href="/contact">contact page</a>.
 	</p>
 </article>

@@ -116,7 +116,7 @@ export const products: Product[] = [
 		description:
 			'A long-running open-source reference app with 100+ production-quality UI screens implemented in Flutter — used by thousands of developers learning the framework.',
 		themeClass: 'theme-popupbits',
-		platforms: ['android'],
+		platforms: ['android', 'ios'],
 		links: [
 			{
 				label: 'Get on Play Store',
@@ -124,7 +124,7 @@ export const products: Product[] = [
 				kind: 'play'
 			},
 			{
-				label: 'Source on GitHub',
+				label: 'iOS / Source on GitHub',
 				href: 'https://github.com/lohanidamodar/flutter_ui_challenges',
 				kind: 'github'
 			}

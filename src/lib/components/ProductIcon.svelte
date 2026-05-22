@@ -26,21 +26,42 @@
 		'ui-challenges-flutter': LayoutDashboard
 	};
 
-	const sizeClasses: Record<Size, { box: string; icon: string; img: string }> = {
-		sm: { box: 'h-12 w-12 rounded-xl', icon: 'size-6', img: 'h-12 w-12 rounded-xl' },
-		md: { box: 'h-20 w-20 rounded-2xl', icon: 'size-10', img: 'h-20 w-20 rounded-2xl' },
-		lg: { box: 'h-32 w-32 rounded-3xl', icon: 'size-16', img: 'h-32 w-32 rounded-3xl' }
+	const sizeClasses: Record<Size, { box: string; icon: string }> = {
+		sm: { box: 'h-12 w-12 rounded-xl', icon: 'size-6' },
+		md: { box: 'h-20 w-20 rounded-2xl', icon: 'size-10' },
+		lg: { box: 'h-32 w-32 rounded-3xl', icon: 'size-16' }
 	};
 
 	const Icon = $derived(iconMap[product.slug] ?? Box);
 	const sizes = $derived(sizeClasses[size]);
 </script>
 
-{#if product.iconSrc}
+{#if product.iconBgSrc}
+	<!--
+		Adaptive-icon style: background fills the tile, foreground sits on top with a
+		16% inset on each side, matching Android's launcher rendering.
+	-->
+	<div
+		class={`relative overflow-hidden shadow-md ${sizes.box} ${className}`}
+		style:background-image={`url('${product.iconBgSrc}')`}
+		style:background-size="cover"
+		style:background-position="center"
+		aria-hidden="true"
+	>
+		{#if product.iconSrc}
+			<img
+				src={product.iconSrc}
+				alt=""
+				class="absolute inset-[16%] w-[68%] h-[68%] object-contain"
+				loading="lazy"
+			/>
+		{/if}
+	</div>
+{:else if product.iconSrc}
 	<img
 		src={product.iconSrc}
 		alt=""
-		class={`${sizes.img} object-cover shadow-md ${className}`}
+		class={`${sizes.box} object-cover shadow-md ${className}`}
 		loading="lazy"
 	/>
 {:else}

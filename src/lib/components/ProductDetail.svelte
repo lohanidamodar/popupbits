@@ -55,6 +55,14 @@
 				<Badge variant="outline">{t}</Badge>
 			{/each}
 		</div>
+
+		{#if product.privacyHref}
+			<p class="mt-12 text-sm text-muted-foreground">
+				<a class="underline-offset-4 hover:underline" href={product.privacyHref}>
+					Privacy policy
+				</a>
+			</p>
+		{/if}
 	</section>
 
 	{#if product.screenshots.length > 0}

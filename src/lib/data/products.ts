@@ -17,6 +17,8 @@ export type Product = {
 	platforms: ProductPlatform[];
 	links: ProductLink[];
 	iconSrc?: string;
+	iconBgSrc?: string;
+	privacyHref?: string;
 	screenshots: string[];
 	tech: string[];
 	status: ProductStatus;
@@ -63,7 +65,9 @@ export const products: Product[] = [
 				kind: 'github'
 			}
 		],
-		iconSrc: '/products/aakar/icon.png',
+		iconSrc: '/products/aakar/icon-foreground.png',
+		iconBgSrc: '/products/aakar/icon-background.png',
+		privacyHref: '/contact/aakar-launcher-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter', 'Riverpod'],
 		status: 'coming-soon',

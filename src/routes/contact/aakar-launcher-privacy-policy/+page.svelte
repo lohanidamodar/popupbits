@@ -44,6 +44,14 @@
 			app icons if you turn the feature on.
 		</li>
 		<li>
+			<strong>Contacts access</strong> (optional) — used only so the launcher's search can include
+			your contacts alongside apps and lets you call or message someone directly from the search
+			bar. Contact data is read on demand, used only to render results on your screen, and is
+			never transmitted off your device, logged, or shared with anyone. The permission can be
+			revoked at any time from Android's settings; the rest of the launcher continues to work
+			without it.
+		</li>
+		<li>
 			<strong>Other system permissions</strong> the launcher may request (e.g. wallpaper) are used
 			only for the corresponding on-device feature and are never transmitted off your device.
 		</li>

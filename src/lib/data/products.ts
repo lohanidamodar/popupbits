@@ -48,13 +48,14 @@ export const products: Product[] = [
 		description:
 			'Mero Nepali teaches the Devanagari alphabet, numbers, and core vocabulary through bright, friendly lessons — for children and anyone starting fresh.',
 		themeClass: 'theme-meronepali',
-		platforms: ['android'],
+		platforms: ['android', 'web'],
 		links: [
 			{
 				label: 'Get on Play Store',
 				href: 'https://play.google.com/store/apps/details?id=com.popupbits.meronepali',
 				kind: 'play'
-			}
+			},
+			{ label: 'Visit Mero Nepali', href: 'https://www.meronepali.org/', kind: 'web' }
 		],
 		icon: '/products/mero-nepali/icon.svg',
 		screenshots: [],
@@ -96,7 +97,7 @@ export const products: Product[] = [
 		links: [
 			{
 				label: 'Get on Play Store',
-				href: 'https://play.google.com/store/apps/details?id=com.popupbits.bhadama',
+				href: 'https://play.google.com/store/apps/details?id=app.bhadama.bhadama',
 				kind: 'play'
 			},
 			{ label: 'Visit Bhadama', href: 'https://bhadama.app', kind: 'web' }

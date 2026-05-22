@@ -20,7 +20,7 @@ export const seo = content.seo;
 export const navigation = content.navigation;
 
 // Utility functions for filtering and accessing data
-export const getServicesByCategory = (category) => {
+export const getServicesByCategory = (/** @type {string} */ category) => {
     if (category === 'all') return services;
     return services.filter(service => service.category.toLowerCase() === category.toLowerCase());
 };
@@ -29,12 +29,12 @@ export const getFeaturedProjects = () => {
     return projects.filter(project => project.featured);
 };
 
-export const getProjectsByCategory = (category) => {
+export const getProjectsByCategory = (/** @type {string} */ category) => {
     if (category === 'all') return projects;
     return projects.filter(project => project.category.toLowerCase() === category.toLowerCase());
 };
 
-export const getTechnologiesByCategory = (category) => {
+export const getTechnologiesByCategory = (/** @type {string} */ category) => {
     if (category === 'all') return technologies;
     return technologies.filter(tech => tech.category.toLowerCase() === category.toLowerCase());
 };
@@ -48,11 +48,11 @@ export const getFeaturedBlogPosts = () => {
 };
 
 // SEO helper functions
-export const getPageTitle = (pageTitle) => {
+export const getPageTitle = (/** @type {string} */ pageTitle) => {
     return pageTitle ? `${pageTitle} - ${site.name}` : seo.defaultTitle;
 };
 
-export const getPageDescription = (pageDescription) => {
+export const getPageDescription = (/** @type {string} */ pageDescription) => {
     return pageDescription || seo.defaultDescription;
 };
 

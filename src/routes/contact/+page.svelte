@@ -19,7 +19,7 @@
 			<!-- Contact Information -->
 			<div class="contact-info">
 				<div class="contact-card card">
-					<h2 class="contact-title">{companyData.contact.company}</h2>
+					<h2 class="contact-title">{companyData.legalName}</h2>
 
 					<div class="contact-item">
 						<h4>📍 Address</h4>

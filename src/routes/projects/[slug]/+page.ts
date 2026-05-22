@@ -15,9 +15,9 @@ export const load: PageLoad = ({ params }) => {
         tech: project.tech,
         image: project.image,
         slug: project.slug,
-        github: project.github || null,
-        web: project.web || null,
-        playStore: project.playStore || null,
-        appStore: project.appStore || null
+        github: project.links?.github || null,
+        web: project.links?.web || null,
+        playStore: project.links?.playStore || null,
+        appStore: (project.links as Record<string, string | null>)?.appStore || null
     };
 };

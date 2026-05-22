@@ -16,6 +16,7 @@ export type Product = {
 	themeClass: string;
 	platforms: ProductPlatform[];
 	links: ProductLink[];
+	iconSrc?: string;
 	screenshots: string[];
 	tech: string[];
 	status: ProductStatus;
@@ -40,6 +41,7 @@ export const products: Product[] = [
 			},
 			{ label: 'Visit Bhadama', href: 'https://bhadama.app', kind: 'web' }
 		],
+		iconSrc: '/products/bhadama/icon.png',
 		screenshots: [],
 		tech: ['Flutter', 'Appwrite'],
 		status: 'beta',
@@ -55,6 +57,7 @@ export const products: Product[] = [
 		themeClass: 'theme-meropatro',
 		platforms: ['web'],
 		links: [{ label: 'Open Mero Patro', href: 'https://meropatro.purkha.org/', kind: 'web' }],
+		iconSrc: '/products/mero-patro/icon.svg',
 		screenshots: [],
 		tech: ['Svelte', 'TypeScript', 'PWA'],
 		status: 'live',
@@ -72,11 +75,12 @@ export const products: Product[] = [
 		links: [
 			{
 				label: 'Get on Play Store',
-				href: 'https://play.google.com/store/apps/details?id=com.popupbits.meronepali',
+				href: 'https://play.google.com/store/apps/details?id=dev.appwriters.mero_nepali',
 				kind: 'play'
 			},
 			{ label: 'Visit Mero Nepali', href: 'https://www.meronepali.org/', kind: 'web' }
 		],
+		iconSrc: '/products/mero-nepali/icon.png',
 		screenshots: [],
 		tech: ['Flutter', 'Firebase'],
 		status: 'live',
@@ -98,6 +102,7 @@ export const products: Product[] = [
 				kind: 'play'
 			}
 		],
+		iconSrc: '/products/spellcraft/icon.png',
 		screenshots: [],
 		tech: ['Flutter'],
 		status: 'live',
@@ -115,7 +120,7 @@ export const products: Product[] = [
 		links: [
 			{
 				label: 'Get on Play Store',
-				href: 'https://play.google.com/store/apps/details?id=com.lohanidamodar.fluc',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.flutteruichallenges',
 				kind: 'play'
 			},
 			{
@@ -124,6 +129,7 @@ export const products: Product[] = [
 				kind: 'github'
 			}
 		],
+		iconSrc: '/products/ui-challenges-flutter/icon.png',
 		screenshots: [],
 		tech: ['Flutter', 'Open source'],
 		status: 'live',

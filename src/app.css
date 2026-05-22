@@ -1,6 +1,8 @@
 @import './lib/design-system/colors_and_type.css';
 @import 'tailwindcss';
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 

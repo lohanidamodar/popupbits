@@ -75,22 +75,6 @@ export const products: Product[] = [
 		year: 2026
 	},
 	{
-		slug: 'mero-patro',
-		name: 'Mero Patro',
-		tagline: 'The Nepali calendar, the way Nepalis use it.',
-		description:
-			'Mero Patro is a Nepali calendar (Bikram Sambat) with tithis, festivals, panchanga, and date conversion — built for everyday use in Nepal and the diaspora.',
-		themeClass: 'theme-meropatro',
-		platforms: ['web'],
-		links: [{ label: 'Open Mero Patro', href: 'https://meropatro.purkha.org/', kind: 'web' }],
-		iconSrc: '/products/mero-patro/icon.svg',
-		screenshots: [],
-		tech: ['Svelte', 'TypeScript', 'PWA'],
-		status: 'live',
-		featured: true,
-		year: 2020
-	},
-	{
 		slug: 'mero-nepali',
 		name: 'Mero Nepali',
 		tagline: 'Learn Nepali, designed for kids and absolute beginners.',
@@ -161,6 +145,22 @@ export const products: Product[] = [
 		status: 'live',
 		featured: true,
 		year: 2018
+	},
+	{
+		slug: 'mero-patro',
+		name: 'Mero Patro',
+		tagline: 'The Nepali calendar, the way Nepalis use it.',
+		description:
+			'Mero Patro is a Nepali calendar (Bikram Sambat) with tithis, festivals, panchanga, and date conversion — built for everyday use in Nepal and the diaspora.',
+		themeClass: 'theme-meropatro',
+		platforms: ['web'],
+		links: [{ label: 'Open Mero Patro', href: 'https://meropatro.purkha.org/', kind: 'web' }],
+		iconSrc: '/products/mero-patro/icon.svg',
+		screenshots: [],
+		tech: ['Svelte', 'TypeScript', 'PWA'],
+		status: 'live',
+		featured: true,
+		year: 2020
 	}
 ];
 

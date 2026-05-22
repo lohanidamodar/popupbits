@@ -60,9 +60,9 @@ export const products: Product[] = [
 		platforms: ['android'],
 		links: [
 			{
-				label: 'Source on GitHub',
-				href: 'https://github.com/lohanidamodar/aakar',
-				kind: 'github'
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.aakar',
+				kind: 'play'
 			}
 		],
 		iconSrc: '/products/aakar/icon-foreground.png',

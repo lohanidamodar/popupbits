@@ -13,3 +13,6 @@ export type {
 	ProductPlatform,
 	ProductStatus
 } from './data/products.js';
+
+export { default as SEO } from './components/SEO.svelte';
+export { default as PageHeader } from './components/PageHeader.svelte';

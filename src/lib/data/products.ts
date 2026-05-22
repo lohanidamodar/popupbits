@@ -51,30 +51,6 @@ export const products: Product[] = [
 		year: 2024
 	},
 	{
-		slug: 'aakar',
-		name: 'Aakar Launcher',
-		tagline: 'A polished, fully customizable Android home launcher.',
-		description:
-			'Aakar is an Android home launcher built to fit anyone from grandparents to power users — clean defaults, deep customization where you want it. Coming soon to the Play Store.',
-		themeClass: 'theme-popupbits',
-		platforms: ['android'],
-		links: [
-			{
-				label: 'Get on Play Store',
-				href: 'https://play.google.com/store/apps/details?id=com.popupbits.aakar',
-				kind: 'play'
-			}
-		],
-		iconSrc: '/products/aakar/icon-foreground.png',
-		iconBgSrc: '/products/aakar/icon-background.png',
-		privacyHref: '/contact/aakar-launcher-privacy-policy',
-		screenshots: [],
-		tech: ['Flutter', 'Riverpod'],
-		status: 'coming-soon',
-		featured: true,
-		year: 2026
-	},
-	{
 		slug: 'mero-nepali',
 		name: 'Mero Nepali',
 		tagline: 'Learn Nepali, designed for kids and absolute beginners.',
@@ -97,6 +73,30 @@ export const products: Product[] = [
 		featured: true,
 		year: 2022
 	},
+	{
+		slug: 'aakar',
+		name: 'Aakar Launcher',
+		tagline: 'A polished, fully customizable Android home launcher.',
+		description:
+			'Aakar is an Android home launcher built to fit anyone from grandparents to power users — clean defaults, deep customization where you want it. Coming soon to the Play Store.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.aakar',
+				kind: 'play'
+			}
+		],
+		iconSrc: '/products/aakar/icon-foreground.png',
+		iconBgSrc: '/products/aakar/icon-background.png',
+		privacyHref: '/contact/aakar-launcher-privacy-policy',
+		screenshots: [],
+		tech: ['Flutter', 'Riverpod'],
+		status: 'coming-soon',
+		featured: true,
+		year: 2026
+	},	
 	{
 		slug: 'spellcraft',
 		name: 'SpellCraft',

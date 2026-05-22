@@ -1,21 +1,31 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
-	import { Button } from '$lib/components/ui/button/index.js';
-	import { Input } from '$lib/components/ui/input/index.js';
-	import { Textarea } from '$lib/components/ui/textarea/index.js';
-	import { Label } from '$lib/components/ui/label/index.js';
 	import { company } from '$lib';
-	import { Mail, MapPin, Phone } from '@lucide/svelte';
+	import { Mail, MapPin, Phone, ArrowRight } from '@lucide/svelte';
 
-	let name = $state('');
-	let email = $state('');
-	let message = $state('');
+	type Prompt = { title: string; description: string; subject: string };
 
-	const mailtoHref = $derived(
-		`mailto:${company.contact.email}` +
-			`?subject=${encodeURIComponent('Hello from ' + (name || 'popupbits.com'))}` +
-			`&body=${encodeURIComponent(message || '') + '\n\n— ' + (name || '') + ' <' + (email || '') + '>'}`
-	);
+	const prompts: Prompt[] = [
+		{
+			title: 'Start a project',
+			description:
+				"Full-stack app, custom SaaS, AI integration, or business automation — tell us what you're building.",
+			subject: 'Project enquiry'
+		},
+		{
+			title: 'Aakar Launcher beta',
+			description: 'Want early access, or have feedback on the launcher? Reach out here.',
+			subject: 'Aakar Launcher beta'
+		},
+		{
+			title: 'Just saying hi',
+			description: 'Questions about one of our products, a bug report, or just to chat.',
+			subject: 'Hello from popupbits.com'
+		}
+	];
+
+	const mailto = (subject: string) =>
+		`mailto:${company.contact.email}?subject=${encodeURIComponent(subject)}`;
 </script>
 
 <svelte:head>
@@ -25,39 +35,35 @@
 
 <PageHeader
 	eyebrow="Contact"
-	title="Tell us about your project."
-	subtitle="Fill the form and your email client will open with a pre-filled draft, or reach us directly via the channels below."
+	title="Get in touch."
+	subtitle="We reply to every email — usually within a couple of days. Pick what fits and write to us directly."
 />
 
-<section class="max-w-5xl mx-auto px-6 pb-24 grid gap-12 md:grid-cols-[2fr_1fr]">
-	<form
-		class="space-y-6"
-		onsubmit={(e) => {
-			e.preventDefault();
-			window.location.href = mailtoHref;
-		}}
-	>
-		<div class="space-y-2">
-			<Label for="name">Your name</Label>
-			<Input id="name" bind:value={name} required />
-		</div>
-		<div class="space-y-2">
-			<Label for="email">Email</Label>
-			<Input id="email" type="email" bind:value={email} required />
-		</div>
-		<div class="space-y-2">
-			<Label for="message">What's on your mind?</Label>
-			<Textarea id="message" bind:value={message} rows={6} required />
-		</div>
-		<Button type="submit" size="lg">Open my email client</Button>
-	</form>
+<section class="max-w-5xl mx-auto px-6 pb-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+	{#each prompts as p (p.title)}
+		<a
+			href={mailto(p.subject)}
+			class="group rounded-2xl border border-border bg-card hover:border-primary/40 hover:shadow-md transition p-6 flex flex-col"
+		>
+			<h2 class="font-display text-xl font-bold mb-2">{p.title}</h2>
+			<p class="text-sm text-muted-foreground flex-1">{p.description}</p>
+			<div class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+				Email us <ArrowRight class="size-4 group-hover:translate-x-0.5 transition-transform" />
+			</div>
+		</a>
+	{/each}
+</section>
 
-	<aside class="space-y-6 text-sm">
+<section class="max-w-5xl mx-auto px-6 pb-24">
+	<div class="rounded-2xl border border-border bg-muted/30 p-8 grid gap-8 md:grid-cols-3">
 		<div class="flex gap-3 items-start">
 			<Mail class="size-5 text-primary mt-0.5 shrink-0" />
 			<div>
-				<div class="font-semibold">Email</div>
-				<a class="text-muted-foreground hover:underline" href="mailto:{company.contact.email}">
+				<div class="font-semibold text-sm">Email</div>
+				<a
+					class="text-sm text-muted-foreground hover:text-foreground hover:underline"
+					href="mailto:{company.contact.email}"
+				>
 					{company.contact.email}
 				</a>
 			</div>
@@ -65,20 +71,20 @@
 		<div class="flex gap-3 items-start">
 			<Phone class="size-5 text-primary mt-0.5 shrink-0" />
 			<div>
-				<div class="font-semibold">Phone</div>
-				<div class="text-muted-foreground">{company.contact.phone}</div>
+				<div class="font-semibold text-sm">Phone</div>
+				<div class="text-sm text-muted-foreground">{company.contact.phone}</div>
+				<div class="text-xs text-muted-foreground mt-1">{company.contact.timezone}</div>
 			</div>
 		</div>
 		<div class="flex gap-3 items-start">
 			<MapPin class="size-5 text-primary mt-0.5 shrink-0" />
 			<div>
-				<div class="font-semibold">{company.contact.address.city}</div>
-				<div class="text-muted-foreground">
+				<div class="font-semibold text-sm">{company.contact.address.city}</div>
+				<div class="text-sm text-muted-foreground">
 					{company.contact.address.street}, Ward {company.contact.address.zone},<br />
 					{company.contact.address.city}, {company.contact.address.country}
 				</div>
-				<div class="text-muted-foreground mt-1">{company.contact.timezone}</div>
 			</div>
 		</div>
-	</aside>
+	</div>
 </section>

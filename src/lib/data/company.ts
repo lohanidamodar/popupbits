@@ -22,7 +22,7 @@ export const company = {
 	established: 2016,
 	url: 'https://popupbits.com',
 	contact: {
-		email: 'popupbits@gmail.com',
+		email: 'info@popupbits.com.np',
 		phone: '+977-9823341413',
 		address: {
 			street: 'Gaurighat',
@@ -37,7 +37,7 @@ export const company = {
 		youtube: 'https://www.youtube.com/c/reactbits',
 		linkedin: 'https://linkedin.com/in/lohanidamodar',
 		twitter: 'https://twitter.com/lohanidamodar',
-		email: 'mailto:popupbits@gmail.com'
+		email: 'mailto:info@popupbits.com.np'
 	} satisfies SocialLinks,
 	stats: [
 		{ value: '8+', label: 'Years shipping', description: 'building products since 2016' },

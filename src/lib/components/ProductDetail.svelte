@@ -3,6 +3,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { ExternalLink, CodeXml, PlayCircle, Globe } from '@lucide/svelte';
+	import ProductIcon from './ProductIcon.svelte';
 
 	let { product }: { product: Product } = $props();
 
@@ -17,7 +18,7 @@
 <div class={`${product.themeClass}`}>
 	<header class="bg-accent text-accent-foreground">
 		<div class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-8">
-			<img src={product.icon} alt="" class="h-24 w-24 rounded-3xl shadow-md" />
+			<ProductIcon {product} size="lg" />
 			<div>
 				<div class="flex flex-wrap items-center gap-2 mb-3">
 					{#each product.platforms as p (p)}

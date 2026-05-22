@@ -16,7 +16,6 @@ export type Product = {
 	themeClass: string;
 	platforms: ProductPlatform[];
 	links: ProductLink[];
-	icon: string;
 	screenshots: string[];
 	tech: string[];
 	status: ProductStatus;
@@ -34,7 +33,6 @@ export const products: Product[] = [
 		themeClass: 'theme-meropatro',
 		platforms: ['web'],
 		links: [{ label: 'Open Mero Patro', href: 'https://meropatro.purkha.org/', kind: 'web' }],
-		icon: '/products/mero-patro/icon.svg',
 		screenshots: [],
 		tech: ['Svelte', 'TypeScript', 'PWA'],
 		status: 'live',
@@ -57,7 +55,6 @@ export const products: Product[] = [
 			},
 			{ label: 'Visit Mero Nepali', href: 'https://www.meronepali.org/', kind: 'web' }
 		],
-		icon: '/products/mero-nepali/icon.svg',
 		screenshots: [],
 		tech: ['Flutter', 'Firebase'],
 		status: 'live',
@@ -79,7 +76,6 @@ export const products: Product[] = [
 				kind: 'play'
 			}
 		],
-		icon: '/products/spellcraft/icon.svg',
 		screenshots: [],
 		tech: ['Flutter'],
 		status: 'live',
@@ -102,7 +98,6 @@ export const products: Product[] = [
 			},
 			{ label: 'Visit Bhadama', href: 'https://bhadama.app', kind: 'web' }
 		],
-		icon: '/products/bhadama/icon.svg',
 		screenshots: [],
 		tech: ['Flutter', 'Appwrite'],
 		status: 'beta',
@@ -129,7 +124,6 @@ export const products: Product[] = [
 				kind: 'github'
 			}
 		],
-		icon: '/products/ui-challenges-flutter/icon.svg',
 		screenshots: [],
 		tech: ['Flutter', 'Open source'],
 		status: 'live',

@@ -2,6 +2,7 @@
 	import type { Product } from '$lib/data/products.js';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
+	import ProductIcon from './ProductIcon.svelte';
 
 	let { product }: { product: Product } = $props();
 
@@ -19,14 +20,7 @@
 >
 	<Card.Root class="h-full transition-shadow group-hover:shadow-lg overflow-hidden">
 		<Card.Header class="flex flex-row items-center gap-4">
-			<img
-				src={product.icon}
-				alt=""
-				width="48"
-				height="48"
-				class="h-12 w-12 rounded-xl"
-				loading="lazy"
-			/>
+			<ProductIcon {product} size="sm" />
 			<div class="flex-1">
 				<Card.Title class="text-lg">{product.name}</Card.Title>
 				<Card.Description class="text-xs">{product.tagline}</Card.Description>

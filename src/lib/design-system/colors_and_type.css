@@ -1,0 +1,501 @@
+/*
+ * Vendored from https://github.com/lohanidamodar/popup-bits-design-system
+ * Upstream SHA: c8c7cc3b5cb12fcc79ce7491b4bc7138e6034c25
+ * Fetched: 2026-05-22T07:29:53Z
+ * To update: re-run the script in plan Task 4 Step 2.
+ */
+/* ============================================================
+   Popup Bits — Design Tokens
+   Colors & Type foundation shared across all products.
+
+   ARCHITECTURE
+   ------------
+   This file has three layers, layered most-universal → most-specific:
+
+     1. BASE layer  (:root) — neutrals, type scale, spacing, radii,
+        shadows, motion. Never product-specific. Every product inherits.
+     2. PRODUCT THEMES  (.theme-{product}) — override ONLY the accent
+        triplet (--accent, --accent-soft, --accent-ink) plus any
+        flavor bits (e.g. font swap). Scoped to a wrapping element so
+        multiple themes can coexist on one page.
+     3. ARCHETYPE PRESETS  (.arch-{kid|cultural|utility|marketplace})
+        — high-level opinionated defaults for a new product category.
+        New products start from an archetype, then layer a theme.
+
+   HOW TO ADD A NEW PRODUCT
+   ------------------------
+   1. Pick an archetype:  kid | cultural | utility | marketplace
+   2. Pick an accent hex + two derivatives (soft / ink).
+   3. Add a `.theme-{yourproduct}` block under PRODUCT THEMES below
+      that sets --accent / --accent-soft / --accent-ink.
+   4. Wrap your product surface in:
+        <div class="arch-cultural theme-jyotish"> ... </div>
+   That's it — all components pick up the overrides automatically.
+   ============================================================ */
+
+/* ---------- Fonts ----------
+   Primary Latin: Nunito (friendly, rounded sans — matches the
+     playful Flutter / Material feel seen across apps).
+   Devanagari:   Mukta (clean Devanagari, pairs with Nunito).
+   Display:      Baloo 2 (soft, rounded display for headings,
+     echoes the rounded-square icon language).
+   Mono:         JetBrains Mono (for code/dev surfaces — UI
+     Challenges app).
+   If you have official Popup Bits fonts, replace these.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Mukta:wght@300;400;500;600;700;800&family=Baloo+2:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+:root {
+  /* ---------- Brand palette ----------
+     Each product owns an accent. The set is pulled from
+     observed app UIs and Play Store icons. */
+
+  /* Popup Bits (corporate / studio) */
+  --pb-ink:          #0E1726;   /* deep navy — studio mark */
+  --pb-accent:       #FF5A3C;   /* warm orange-red — playful pop */
+  --pb-accent-soft:  #FFE3DC;
+
+  /* Mero Nepali — kids' Nepali learning */
+  --mn-green:        #2E9E6D;   /* primary */
+  --mn-green-deep:   #1F7B54;
+  --mn-green-soft:   #E7F5EE;
+  --mn-sky:          #8FD3FF;   /* sky-scene background */
+  --mn-sun:          #FFC93C;   /* balloon yellow / sun */
+  --mn-red:          #E85A4F;   /* balloon red */
+  --mn-blue:         #4A90E2;   /* balloon blue */
+  --mn-pink:         #FF9AB2;   /* kid illustration highlight */
+  --mn-grass:        #6FBF73;
+
+  /* SpellCraft — spelling / dictation */
+  --sc-deep:         #0F2A4A;   /* navy backdrop */
+  --sc-deep-2:       #1B3E6E;
+  --sc-teal:         #49B6B6;   /* microphone accent */
+  --sc-mint:         #7CE0C9;
+  --sc-gold:         #F6C95B;   /* stars / rewards */
+  --sc-coral:        #FF7E6B;
+
+  /* Mero Patro — Nepali calendar (BS/AD) */
+  --mp-saffron:      #E85D2F;   /* Nepal-flag saffron-red */
+  --mp-crimson:      #C6162E;   /* BS calendar highlight */
+  --mp-indigo:       #2D3E7C;
+  --mp-cream:        #FFF7E8;
+  --mp-ink:          #1B1F2A;
+
+  /* ---------- Neutral scale (shared) ---------- */
+  --n-0:   #FFFFFF;
+  --n-50:  #FAFAF7;  /* warm paper — default bg */
+  --n-100: #F2F3EF;
+  --n-200: #E6E7E1;
+  --n-300: #D4D6CE;
+  --n-400: #A8ABA1;
+  --n-500: #7A7D73;
+  --n-600: #55584F;
+  --n-700: #373A33;
+  --n-800: #22241F;
+  --n-900: #121310;
+
+  /* ---------- Semantic (light) ---------- */
+  --bg:           var(--n-50);
+  --bg-raised:    var(--n-0);
+  --bg-sunken:    var(--n-100);
+  --fg:           var(--n-900);
+  --fg-muted:     var(--n-600);
+  --fg-subtle:    var(--n-500);
+  --fg-inverse:   var(--n-0);
+  --border:       var(--n-200);
+  --border-strong:var(--n-300);
+
+  --success: #2E9E6D;
+  --warning: #F6B13C;
+  --danger:  #E85A4F;
+  --info:    #4A90E2;
+
+  /* Default brand accent = Popup Bits orange.
+     Product pages override --accent at a scoped element. */
+  --accent:       var(--pb-accent);
+  --accent-soft:  var(--pb-accent-soft);
+  --accent-ink:   var(--pb-ink);
+
+  /* Additional upcoming-product palettes (already tokenised so
+     theme blocks below stay DRY). Iterate these with the team. */
+  /* Jyotish — astrology / panchang */
+  --jy-indigo:   #3B2F8C;
+  --jy-gold:     #E0A93B;
+  --jy-plum:     #5A1E4A;
+  --jy-parchment:#FFF4DC;
+
+  /* Sanskrit — classical language learning */
+  --sk-saffron:  #D98A2B;
+  --sk-maroon:   #7A1E1E;
+  --sk-sand:     #F4E7C8;
+  --sk-ink:      #2A1A0E;
+
+  /* Rent / marketplace — housing & goods */
+  --rn-teal:     #0E8A8A;
+  --rn-teal-soft:#D6EFEE;
+  --rn-slate:    #1F2A3A;
+  --rn-sun:      #F2B544;
+
+  /* ---------- Typography scale ---------- */
+  --font-sans:    "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-deva:    "Mukta", "Noto Sans Devanagari", "Nunito", sans-serif;
+  --font-display: "Baloo 2", "Nunito", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --fs-xs:   12px;
+  --fs-sm:   14px;
+  --fs-base: 16px;
+  --fs-md:   18px;
+  --fs-lg:   20px;
+  --fs-xl:   24px;
+  --fs-2xl:  32px;
+  --fs-3xl:  40px;
+  --fs-4xl:  56px;
+  --fs-5xl:  72px;
+
+  --lh-tight:  1.15;
+  --lh-snug:   1.3;
+  --lh-normal: 1.5;
+  --lh-loose:  1.7;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+  --fw-black:   800;
+
+  /* ---------- Spacing (4pt base) ---------- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+
+  /* ---------- Radii ----------
+     Products use generous, friendly rounding.
+     'squircle' = rounded-square icon shape (iOS/Play style). */
+  --r-xs:  6px;
+  --r-sm:  10px;
+  --r-md:  14px;
+  --r-lg:  20px;
+  --r-xl:  28px;
+  --r-2xl: 36px;
+  --r-pill: 999px;
+  --r-squircle: 28%;   /* use as % of side for the app-icon shape */
+
+  /* ---------- Shadows ----------
+     Soft, low-contrast, layered — matches the card-heavy Flutter
+     Material feel. No hard drop shadows. */
+  --sh-xs:  0 1px 2px rgba(18, 19, 16, .05);
+  --sh-sm:  0 2px 6px rgba(18, 19, 16, .07);
+  --sh-md:  0 6px 16px rgba(18, 19, 16, .09);
+  --sh-lg:  0 14px 32px rgba(18, 19, 16, .12);
+  --sh-xl:  0 24px 48px rgba(18, 19, 16, .16);
+  /* Inner for pressed states */
+  --sh-inset: inset 0 2px 4px rgba(18, 19, 16, .08);
+  /* Colored halo — used on focus rings / CTAs */
+  --sh-ring:  0 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent);
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(.2, .8, .2, 1);
+  --ease-in-out: cubic-bezier(.6, 0, .2, 1);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);   /* playful bounce */
+  --t-fast:   120ms;
+  --t-med:    220ms;
+  --t-slow:   360ms;
+
+  /* ---------- Z layers ---------- */
+  --z-base:   1;
+  --z-raised: 10;
+  --z-sticky: 100;
+  --z-overlay:1000;
+  --z-modal:  2000;
+  --z-toast:  3000;
+}
+
+/* ============================================================
+   ARCHETYPE PRESETS
+   Opinionated defaults by product category. Layer BEFORE the theme:
+     <div class="arch-kid theme-meronepali"> ... </div>
+   ============================================================ */
+
+/* Kid — Mero Nepali, SpellCraft-mini-games, future children's apps.
+   Rounder, bouncier, more saturated, illustration-first. */
+.arch-kid {
+  --font-display: "Baloo 2", "Nunito", sans-serif;
+  --r-md: 18px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+  --ease-out: var(--ease-spring);   /* bouncier entrances */
+  --t-med: 280ms;
+}
+
+/* Cultural — Mero Patro, Jyotish (astrology), Sanskrit learning.
+   More Devanagari emphasis, warmer paper backgrounds, tighter radii,
+   subtler animation. */
+.arch-cultural {
+  --bg:       #FFF7E8;             /* warm cream, paper feel */
+  --bg-raised: #FFFFFF;
+  --bg-sunken: #F6ECD6;
+  --font-display: "Mukta", "Baloo 2", serif;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --t-med: 220ms;
+}
+
+/* Utility — calendars, tools, dev-facing apps. Clean, neutral,
+   dense but airy. The Mero Patro web app sits here too. */
+.arch-utility {
+  --r-md: 12px;
+  --r-lg: 16px;
+  --t-med: 180ms;
+}
+
+/* Marketplace — rental app, future listings/commerce surfaces.
+   Trust-forward: confident borders, tighter spacing, stronger
+   information density. */
+.arch-marketplace {
+  --bg:       #FBFBF9;
+  --bg-raised: #FFFFFF;
+  --border:    #E1E3DD;
+  --border-strong: #C7CAC1;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --t-med: 160ms;
+}
+
+/* ============================================================
+   PRODUCT THEMES
+   Scope an element with one of these classes and every component
+   inside picks up the accent. Safe to nest.
+   ============================================================ */
+
+.theme-popupbits {
+  --accent:      #FF5A3C;
+  --accent-soft: #FFE3DC;
+  --accent-ink:  #0E1115;
+}
+.theme-popupbits-bold {
+  --accent:      #C8F23C;
+  --accent-soft: #EEFAC8;
+  --accent-ink:  #0E1115;
+}
+.theme-meropatro {
+  --accent:      #C8372D;
+  --accent-soft: #FBE9E5;
+  --accent-ink:  #1A1A1A;
+}
+.theme-meropatro-bold {
+  --accent:      #E8832A;
+  --accent-soft: #FCEBD4;
+  --accent-ink:  #111418;
+}
+.theme-meronepali {
+  --accent:      #4FA8D8;
+  --accent-soft: #E3F2FB;
+  --accent-ink:  #1C4A6A;
+}
+.theme-meronepali-bold {
+  --accent:      #2EB872;
+  --accent-soft: #DFF6E8;
+  --accent-ink:  #F5A524;
+}
+.theme-spellcraft {
+  --accent:      #E6B949;
+  --accent-soft: #2A1E57;
+  --accent-ink:  #34C58A;
+  --bg:          #1A0F3D;
+  --bg-raised:   #2A1E57;
+  --bg-sunken:   #0E0729;
+  --fg:          #F3EFFF;
+  --fg-muted:    #B8ADE0;
+  --border:      #3B2E77;
+}
+.theme-spellcraft-bold {
+  --accent:      #D84DD4;
+  --accent-soft: #1A0F3D;
+  --accent-ink:  #54E3E8;
+  --bg:          #0E0729;
+  --bg-raised:   #1A0F3D;
+  --bg-sunken:   #080319;
+  --fg:          #F3EFFF;
+  --fg-muted:    #B8ADE0;
+  --border:      #2E1F6B;
+}
+.theme-jyotish {
+  --accent:      #E9C46A;
+  --accent-soft: #1B2454;
+  --accent-ink:  #F4A259;
+  --bg:          #0F1638;
+  --bg-raised:   #1B2454;
+  --bg-sunken:   #080D22;
+  --fg:          #F5F0E1;
+  --fg-muted:    #B9B19A;
+  --border:      #2A3573;
+}
+.theme-jyotish-bold {
+  --accent:      #F4A259;
+  --accent-soft: #2A1450;
+  --accent-ink:  #E9C46A;
+  --bg:          #1A0A3E;
+  --bg-raised:   #2A1450;
+  --bg-sunken:   #0F0428;
+  --fg:          #F5F0E1;
+  --fg-muted:    #B9A8D4;
+  --border:      #3B1F6B;
+}
+.theme-sanskrit {
+  --accent:      #8C1D1D;
+  --accent-soft: #F2E6C8;
+  --accent-ink:  #B8862B;
+}
+.theme-sanskrit-bold {
+  --accent:      #B8862B;
+  --accent-soft: #F2E6C8;
+  --accent-ink:  #5A0F0F;
+}
+.theme-rent {
+  --accent:      #0E8A8A;
+  --accent-soft: #D6EFEE;
+  --accent-ink:  #0B2A38;
+}
+.theme-rent-bold {
+  --accent:      #14B8A6;
+  --accent-soft: #E6FBF7;
+  --accent-ink:  #1F2937;
+}
+
+/* ---------- Dark mode ----------
+   Only SpellCraft ships a real dark theme in-product today;
+   the rest are light-first. Exposed as a token set for agents
+   to use when designing a dark surface. */
+[data-theme="dark"] {
+  --bg:        #0B1220;
+  --bg-raised: #121B2E;
+  --bg-sunken: #0A101C;
+  --fg:        #F1F3F5;
+  --fg-muted:  #AEB6C2;
+  --fg-subtle: #7C8796;
+  --border:    #1E2A42;
+  --border-strong: #2B3A58;
+}
+
+/* ============================================================
+   Semantic type presets.
+   Apply as utility classes OR copy the declarations into your
+   own components. Devanagari gets a slightly larger size +
+   looser line-height because Mukta's x-height reads smaller.
+   ============================================================ */
+
+.t-display {
+  font-family: var(--font-display);
+  font-size: var(--fs-5xl);
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-black);
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+.t-h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.015em;
+  color: var(--fg);
+}
+.t-h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-snug);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+.t-h3 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-snug);
+  font-weight: var(--fw-bold);
+  color: var(--fg);
+}
+.t-h4 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+  font-weight: var(--fw-bold);
+  color: var(--fg);
+}
+.t-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.t-lead {
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  font-weight: var(--fw-regular);
+  color: var(--fg-muted);
+}
+.t-body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+}
+.t-body-sm {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+}
+.t-caption {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-snug);
+  color: var(--fg-subtle);
+}
+.t-deva {
+  font-family: var(--font-deva);
+  line-height: var(--lh-loose);
+}
+.t-deva-display {
+  font-family: var(--font-deva);
+  font-size: calc(var(--fs-4xl) * 1.1);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  color: var(--fg);
+}
+.t-code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xs);
+  padding: 2px 6px;
+}
+
+/* ---- Local stub: bhadama product theme (not yet in upstream DS) ---- */
+.theme-bhadama {
+  --t-accent: #6366f1;
+  --t-accent-strong: #4f46e5;
+  --t-accent-soft: #eef2ff;
+  --t-on-accent: #ffffff;
+}
+.theme-bhadama-bold {
+  --t-accent: #4f46e5;
+  --t-accent-strong: #4338ca;
+  --t-accent-soft: #e0e7ff;
+  --t-on-accent: #ffffff;
+}

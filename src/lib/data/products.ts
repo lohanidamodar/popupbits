@@ -33,7 +33,7 @@ export const products: Product[] = [
 			'Mero Patro is a Nepali calendar (Bikram Sambat) with tithis, festivals, panchanga, and date conversion — built for everyday use in Nepal and the diaspora.',
 		themeClass: 'theme-meropatro',
 		platforms: ['web'],
-		links: [{ label: 'Open Mero Patro', href: 'https://meropatro.com', kind: 'web' }],
+		links: [{ label: 'Open Mero Patro', href: 'https://meropatro.purkha.org/', kind: 'web' }],
 		icon: '/products/mero-patro/icon.svg',
 		screenshots: [],
 		tech: ['Svelte', 'TypeScript', 'PWA'],
@@ -93,7 +93,14 @@ export const products: Product[] = [
 			'Bhadama is a local rental and listing marketplace — tools, gear, and short-term items, neighbour to neighbour.',
 		themeClass: 'theme-bhadama',
 		platforms: ['android', 'web'],
-		links: [{ label: 'Visit Bhadama', href: 'https://bhadama.app', kind: 'web' }],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.bhadama',
+				kind: 'play'
+			},
+			{ label: 'Visit Bhadama', href: 'https://bhadama.app', kind: 'web' }
+		],
 		icon: '/products/bhadama/icon.svg',
 		screenshots: [],
 		tech: ['Flutter', 'Appwrite'],
@@ -127,28 +134,6 @@ export const products: Product[] = [
 		status: 'live',
 		featured: true,
 		year: 2018
-	},
-	{
-		slug: 'mero-tayari',
-		name: 'Mero Tayari',
-		tagline: 'Practice for Nepali government exams.',
-		description:
-			'Reading materials, model questions, timed practice exams, and quizzes for Loksewa and other Nepali government exams.',
-		themeClass: 'theme-popupbits',
-		platforms: ['android'],
-		links: [
-			{
-				label: 'Get on Play Store',
-				href: 'https://play.google.com/store/apps/details?id=com.popupbits.merotayari',
-				kind: 'play'
-			}
-		],
-		icon: '/products/mero-tayari/icon.svg',
-		screenshots: [],
-		tech: ['Flutter', 'Firebase'],
-		status: 'live',
-		featured: false,
-		year: 2023
 	}
 ];
 

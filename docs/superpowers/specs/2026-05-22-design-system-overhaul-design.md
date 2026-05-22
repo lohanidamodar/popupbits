@@ -30,17 +30,17 @@ Rebuild the popupbits.com site to:
 
 ## 3. Stack
 
-| Concern | Choice |
-|---|---|
-| Framework | SvelteKit 2 (latest) on Svelte 5 (latest), runes mode only |
-| Language | TypeScript everywhere (`.ts`, `<script lang="ts">`); data files migrate `.js` → `.ts` |
-| Package manager / runtime | **bun** (install, run, build, test). Remove `pnpm-lock.yaml` from history references; `bun.lock` already present. |
-| Styling | **Tailwind v4** with DS tokens wired through `@theme` |
-| Component library | **shadcn-svelte** (Bits UI primitives + Tailwind) for Button, Card, Sheet, Dialog, NavigationMenu, Tabs, Badge, Separator, Form, Input, Textarea, Toast/Sonner, ModeToggle |
-| Design system | `colors_and_type.css` from popup-bits-design-system — base tokens, archetype `arch-utility`, theme `theme-popupbits`. Light + dark via `mode-watcher` + `data-theme`. |
-| Icons | `@lucide/svelte` (matches shadcn-svelte) |
-| Build target | `@sveltejs/adapter-auto` (keeps Vercel deploy working) |
-| Testing | Vitest with browser project (Playwright provider) — keep current setup; rewrite smoke tests against new home page |
+| Concern                   | Choice                                                                                                                                                                     |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Framework                 | SvelteKit 2 (latest) on Svelte 5 (latest), runes mode only                                                                                                                 |
+| Language                  | TypeScript everywhere (`.ts`, `<script lang="ts">`); data files migrate `.js` → `.ts`                                                                                      |
+| Package manager / runtime | **bun** (install, run, build, test). Remove `pnpm-lock.yaml` from history references; `bun.lock` already present.                                                          |
+| Styling                   | **Tailwind v4** with DS tokens wired through `@theme`                                                                                                                      |
+| Component library         | **shadcn-svelte** (Bits UI primitives + Tailwind) for Button, Card, Sheet, Dialog, NavigationMenu, Tabs, Badge, Separator, Form, Input, Textarea, Toast/Sonner, ModeToggle |
+| Design system             | `colors_and_type.css` from popup-bits-design-system — base tokens, archetype `arch-utility`, theme `theme-popupbits`. Light + dark via `mode-watcher` + `data-theme`.      |
+| Icons                     | `@lucide/svelte` (matches shadcn-svelte)                                                                                                                                   |
+| Build target              | `@sveltejs/adapter-auto` (keeps Vercel deploy working)                                                                                                                     |
+| Testing                   | Vitest with browser project (Playwright provider) — keep current setup; rewrite smoke tests against new home page                                                          |
 
 ---
 
@@ -113,18 +113,18 @@ Owned products live in `src/lib/data/products.ts` (replaces `projects.js`):
 
 ```ts
 export type Product = {
-  slug: string;
-  name: string;
-  tagline: string;
-  description: string;
-  themeClass: string;           // e.g. "theme-meropatro"
-  platforms: ("web" | "android" | "ios")[];
-  links: { label: string; href: string; kind: "play" | "web" | "github" | "other" }[];
-  icon: string;                 // /static/products/<slug>/icon.svg
-  screenshots: string[];        // /static/products/<slug>/shot-*.png
-  tech: string[];
-  status: "live" | "beta" | "pipeline";
-  featured: boolean;            // surfaced on /
+	slug: string;
+	name: string;
+	tagline: string;
+	description: string;
+	themeClass: string; // e.g. "theme-meropatro"
+	platforms: ('web' | 'android' | 'ios')[];
+	links: { label: string; href: string; kind: 'play' | 'web' | 'github' | 'other' }[];
+	icon: string; // /static/products/<slug>/icon.svg
+	screenshots: string[]; // /static/products/<slug>/shot-*.png
+	tech: string[];
+	status: 'live' | 'beta' | 'pipeline';
+	featured: boolean; // surfaced on /
 };
 ```
 
@@ -165,18 +165,18 @@ src/lib/components/SEO.svelte            (kept, lightly refactored to runes)
 
 ### New (post-overhaul) in `src/lib/components/`
 
-| Component | Purpose |
-|---|---|
-| `SiteNav.svelte` | Sticky top nav with mobile Sheet drawer |
-| `SiteFooter.svelte` | Footer with Kathmandu block, links, social |
-| `Hero.svelte` | Reusable hero with title/subtitle/CTAs/accent variants |
-| `PageHeader.svelte` | Inner-page header (smaller hero) |
-| `ProductCard.svelte` | Product tile (icon, name, tagline, platform badges, link) |
-| `ProductDetail.svelte` | Detail page composition (hero + gallery + meta) |
-| `StatsBand.svelte` | Values/stats band on home |
-| `ConsultingSection.svelte` | Consulting hook on home |
-| `ThemeToggle.svelte` | Light/dark toggle wrapper around mode-watcher |
-| `SEO.svelte` | (kept, refactored) |
+| Component                  | Purpose                                                   |
+| -------------------------- | --------------------------------------------------------- |
+| `SiteNav.svelte`           | Sticky top nav with mobile Sheet drawer                   |
+| `SiteFooter.svelte`        | Footer with Kathmandu block, links, social                |
+| `Hero.svelte`              | Reusable hero with title/subtitle/CTAs/accent variants    |
+| `PageHeader.svelte`        | Inner-page header (smaller hero)                          |
+| `ProductCard.svelte`       | Product tile (icon, name, tagline, platform badges, link) |
+| `ProductDetail.svelte`     | Detail page composition (hero + gallery + meta)           |
+| `StatsBand.svelte`         | Values/stats band on home                                 |
+| `ConsultingSection.svelte` | Consulting hook on home                                   |
+| `ThemeToggle.svelte`       | Light/dark toggle wrapper around mode-watcher             |
+| `SEO.svelte`               | (kept, refactored)                                        |
 
 Plus shadcn-svelte primitives under `src/lib/components/ui/` per shadcn-svelte conventions: `button`, `card`, `sheet`, `dialog`, `navigation-menu`, `tabs`, `badge`, `separator`, `input`, `textarea`, `label`, `sonner`.
 
@@ -209,12 +209,12 @@ After Phase 0, the app should build, render a blank but correctly themed shell, 
 
 These streams have **no shared file conflicts** and can run concurrently after Phase 0 lands.
 
-| Stream | Owns | Files |
-|---|---|---|
-| **A. Home page** | New home composition | `src/routes/+page.svelte`, `src/lib/components/{Hero,StatsBand,ConsultingSection}.svelte`, `src/lib/data/company.ts` |
-| **B. Products** | Products data + list + detail | `src/lib/data/products.ts`, `src/routes/products/+page.svelte`, `src/routes/products/[slug]/+page.svelte`, `src/routes/products/[slug]/+page.ts`, `src/lib/components/{ProductCard,ProductDetail}.svelte`, redirects from /projects |
-| **C. About + Contact** | Static content pages | `src/routes/about/+page.svelte`, `src/routes/contact/+page.svelte`, contact mailto form; keep `flutter-ui-challenges-privacy-policy` page (restyle only) |
-| **D. Chrome** | Site nav + footer + SEO + theme toggle | `src/lib/components/{SiteNav,SiteFooter,ThemeToggle,SEO}.svelte` |
+| Stream                 | Owns                                   | Files                                                                                                                                                                                                                               |
+| ---------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **A. Home page**       | New home composition                   | `src/routes/+page.svelte`, `src/lib/components/{Hero,StatsBand,ConsultingSection}.svelte`, `src/lib/data/company.ts`                                                                                                                |
+| **B. Products**        | Products data + list + detail          | `src/lib/data/products.ts`, `src/routes/products/+page.svelte`, `src/routes/products/[slug]/+page.svelte`, `src/routes/products/[slug]/+page.ts`, `src/lib/components/{ProductCard,ProductDetail}.svelte`, redirects from /projects |
+| **C. About + Contact** | Static content pages                   | `src/routes/about/+page.svelte`, `src/routes/contact/+page.svelte`, contact mailto form; keep `flutter-ui-challenges-privacy-policy` page (restyle only)                                                                            |
+| **D. Chrome**          | Site nav + footer + SEO + theme toggle | `src/lib/components/{SiteNav,SiteFooter,ThemeToggle,SEO}.svelte`                                                                                                                                                                    |
 
 Each stream is owned by one subagent dispatched via the Agent tool. The plan (next step, written by `writing-plans`) defines a per-stream task list with explicit acceptance criteria so streams can run in parallel without coordination.
 

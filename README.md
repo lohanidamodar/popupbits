@@ -1,38 +1,35 @@
-# sv
+# popupbits.com
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+The website for [Popup Bits](https://popupbits.com) — a Kathmandu studio building apps like
+Mero Patro, Mero Nepali, SpellCraft, Bhadama, and UI Challenges – Flutter.
 
-## Creating a project
+Built with SvelteKit 2 + Svelte 5 (runes), Tailwind v4, shadcn-svelte, and the
+[Popup Bits Design System](https://github.com/lohanidamodar/popup-bits-design-system).
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Develop
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun install
+bun run dev
 ```
 
-## Building
-
-To create a production version of your app:
+## Build
 
 ```bash
-npm run build
+bun run build
+bun run preview
 ```
 
-You can preview the production build with `npm run preview`.
+## Check / test
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```bash
+bun run check
+bun run test
+```
+
+## Design system
+
+The design tokens live in `src/lib/design-system/colors_and_type.css`, vendored from
+the upstream repo. See `src/lib/design-system/README.md` for refresh instructions.
+The root layout wraps everything in `<div class="arch-utility theme-popupbits">`;
+per-product detail pages swap in the product's own `.theme-*` class.

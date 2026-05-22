@@ -2,10 +2,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Check } from '@lucide/svelte';
 
-	let {
-		blurb,
-		capabilities
-	}: { blurb: string; capabilities: readonly string[] } = $props();
+	let { blurb, capabilities }: { blurb: string; capabilities: readonly string[] } = $props();
 </script>
 
 <section class="max-w-6xl mx-auto px-6 py-24 grid gap-12 md:grid-cols-[1fr_1fr] md:items-center">

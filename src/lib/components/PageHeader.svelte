@@ -1,9 +1,6 @@
 <script lang="ts">
-	let {
-		eyebrow,
-		title,
-		subtitle
-	}: { eyebrow?: string; title: string; subtitle?: string } = $props();
+	let { eyebrow, title, subtitle }: { eyebrow?: string; title: string; subtitle?: string } =
+		$props();
 </script>
 
 <header class="max-w-6xl mx-auto px-6 pt-24 pb-12">

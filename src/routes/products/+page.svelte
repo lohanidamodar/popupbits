@@ -25,10 +25,7 @@
 	<meta name="description" content="Apps and products built by Popup Bits." />
 </svelte:head>
 
-<PageHeader
-	title="Products"
-	subtitle="Apps and games we design, build, and ship from Kathmandu."
-/>
+<PageHeader title="Products" subtitle="Apps and games we design, build, and ship from Kathmandu." />
 
 <section class="max-w-6xl mx-auto px-6 pb-24">
 	<div class="flex flex-wrap gap-2 mb-8" role="tablist" aria-label="Filter by platform">

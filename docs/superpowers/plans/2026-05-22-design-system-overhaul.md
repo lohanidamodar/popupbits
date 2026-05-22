@@ -27,6 +27,7 @@
 ### Task 1: Switch tooling to bun, clean legacy lockfiles
 
 **Files:**
+
 - Modify: `package.json`
 - Delete: `pnpm-lock.yaml` (already deleted, ensure removal is staged)
 - Keep: `bun.lock`
@@ -125,6 +126,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 2: Bring Svelte / SvelteKit / Vite / Tailwind to latest
 
 **Files:**
+
 - Modify: `package.json`
 
 - [ ] **Step 1: Update core deps to latest**
@@ -167,6 +169,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 3: Install shadcn-svelte ecosystem + runtime libs
 
 **Files:**
+
 - Modify: `package.json`
 
 - [ ] **Step 1: Install runtime libraries**
@@ -197,6 +200,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 4: Vendor the popup-bits-design-system CSS
 
 **Files:**
+
 - Create: `src/lib/design-system/colors_and_type.css`
 - Create: `src/lib/design-system/README.md`
 
@@ -289,6 +293,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 5: Rewrite `src/app.css` from scratch (Tailwind v4 + DS tokens)
 
 **Files:**
+
 - Modify: `src/app.css` (full rewrite)
 
 - [ ] **Step 1: Replace `src/app.css` entirely with the following content**
@@ -412,6 +417,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 6: Initialise shadcn-svelte components
 
 **Files:**
+
 - Create: `components.json`
 - Create: `src/lib/utils.ts`
 - Create: `src/lib/components/ui/**` (multiple)
@@ -424,17 +430,17 @@ bunx shadcn-svelte@latest init
 
 When prompted:
 
-| Prompt | Answer |
-|---|---|
-| TypeScript | yes |
-| Style | default |
-| Base color | neutral |
-| Where is your global CSS? | `src/app.css` |
-| Components alias | `$lib/components` |
-| Utils alias | `$lib/utils` |
-| UI components alias | `$lib/components/ui` |
-| Hooks alias | `$lib/hooks` |
-| Lib alias | `$lib` |
+| Prompt                    | Answer               |
+| ------------------------- | -------------------- |
+| TypeScript                | yes                  |
+| Style                     | default              |
+| Base color                | neutral              |
+| Where is your global CSS? | `src/app.css`        |
+| Components alias          | `$lib/components`    |
+| Utils alias               | `$lib/utils`         |
+| UI components alias       | `$lib/components/ui` |
+| Hooks alias               | `$lib/hooks`         |
+| Lib alias                 | `$lib`               |
 
 If the CLI errors on existing `src/app.css` because it doesn't recognise the `@theme` block, accept its proposed file write but immediately re-apply the Task 5 file content afterwards (`git checkout src/app.css` and then re-write it).
 
@@ -468,6 +474,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 7: Replace root layout with arch+theme wrapper, mode-watcher, and new chrome slots
 
 **Files:**
+
 - Modify: `src/routes/+layout.svelte`
 - Create: `src/lib/components/SiteNav.svelte` (placeholder — Task replaced by Stream D in Phase 1)
 - Create: `src/lib/components/SiteFooter.svelte` (placeholder — Task replaced by Stream D)
@@ -557,6 +564,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 8: Wire `/projects` → `/products` redirects
 
 **Files:**
+
 - Create: `src/hooks.server.ts`
 
 - [ ] **Step 1: Create the redirect hook**
@@ -608,12 +616,12 @@ After Phase 0, four streams are independent. Dispatch one subagent per stream. E
 
 **File-ownership map (no overlap):**
 
-| Stream | Files owned (exclusive) |
-|---|---|
-| A. Products | `src/lib/data/products.ts`, `src/lib/data/company.ts`, `src/routes/products/**`, `src/lib/components/ProductCard.svelte`, `src/lib/components/ProductDetail.svelte`, `static/products/**` |
-| B. Home page | `src/routes/+page.svelte`, `src/lib/components/{Hero,StatsBand,ConsultingSection}.svelte` |
-| C. About + Contact | `src/routes/about/+page.svelte`, `src/routes/contact/+page.svelte`, `src/routes/contact/flutter-ui-challenges-privacy-policy/+page.svelte`, `src/lib/components/PageHeader.svelte` |
-| D. Chrome | `src/lib/components/{SiteNav,SiteFooter,ThemeToggle,SEO}.svelte`, `src/lib/index.ts`, `src/app.html` (if needed) |
+| Stream             | Files owned (exclusive)                                                                                                                                                                   |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A. Products        | `src/lib/data/products.ts`, `src/lib/data/company.ts`, `src/routes/products/**`, `src/lib/components/ProductCard.svelte`, `src/lib/components/ProductDetail.svelte`, `static/products/**` |
+| B. Home page       | `src/routes/+page.svelte`, `src/lib/components/{Hero,StatsBand,ConsultingSection}.svelte`                                                                                                 |
+| C. About + Contact | `src/routes/about/+page.svelte`, `src/routes/contact/+page.svelte`, `src/routes/contact/flutter-ui-challenges-privacy-policy/+page.svelte`, `src/lib/components/PageHeader.svelte`        |
+| D. Chrome          | `src/lib/components/{SiteNav,SiteFooter,ThemeToggle,SEO}.svelte`, `src/lib/index.ts`, `src/app.html` (if needed)                                                                          |
 
 `src/lib/data/company.ts` is shared read-only between A, B, C, D — Stream A writes it; others import it. Stream A MUST land first (it produces the data file). To unblock the others without serial waiting, **A's first task (Task 9) writes only `company.ts` and `products.ts`** before any UI work — once those exist (commit 1 of Stream A), Streams B/C/D can start in parallel with A's remaining tasks.
 
@@ -624,6 +632,7 @@ After Phase 0, four streams are independent. Dispatch one subagent per stream. E
 ### Task 9: Define data files (company.ts, products.ts)
 
 **Files:**
+
 - Create: `src/lib/data/company.ts`
 - Create: `src/lib/data/products.ts`
 - Modify: `src/lib/index.ts`
@@ -871,11 +880,7 @@ export function getProductBySlug(slug: string): Product | undefined {
 export { company } from './data/company.js';
 export type { Company, CompanyStat, SocialLinks } from './data/company.js';
 
-export {
-	products,
-	featuredProducts,
-	getProductBySlug
-} from './data/products.js';
+export { products, featuredProducts, getProductBySlug } from './data/products.js';
 export type {
 	Product,
 	ProductLink,
@@ -922,6 +927,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 10: Build ProductCard component
 
 **Files:**
+
 - Create: `src/lib/components/ProductCard.svelte`
 
 - [ ] **Step 1: Write `ProductCard.svelte`**
@@ -998,6 +1004,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 11: Build /products list page
 
 **Files:**
+
 - Create: `src/routes/products/+page.svelte`
 - Create: `src/routes/products/+page.ts`
 
@@ -1026,9 +1033,7 @@ export const load: PageLoad = () => {
 	let filter = $state<'all' | 'web' | 'android' | 'ios'>('all');
 
 	const filtered = $derived(
-		filter === 'all'
-			? data.products
-			: data.products.filter((p) => p.platforms.includes(filter))
+		filter === 'all' ? data.products : data.products.filter((p) => p.platforms.includes(filter))
 	);
 
 	const filters: { label: string; value: typeof filter }[] = [
@@ -1044,10 +1049,7 @@ export const load: PageLoad = () => {
 	<meta name="description" content="Apps and products built by Popup Bits." />
 </svelte:head>
 
-<PageHeader
-	title="Products"
-	subtitle="Apps and games we design, build, and ship from Kathmandu."
-/>
+<PageHeader title="Products" subtitle="Apps and games we design, build, and ship from Kathmandu." />
 
 <section class="max-w-6xl mx-auto px-6 pb-24">
 	<div class="flex flex-wrap gap-2 mb-8" role="tablist" aria-label="Filter by platform">
@@ -1086,6 +1088,7 @@ export const load: PageLoad = () => {
 > <script lang="ts">
 > 	let { title, subtitle = '' }: { title: string; subtitle?: string } = $props();
 > </script>
+>
 > <header class="max-w-6xl mx-auto px-6 pt-24 pb-12">
 > 	<h1 class="font-display text-5xl font-extrabold tracking-tight">{title}</h1>
 > 	{#if subtitle}
@@ -1121,6 +1124,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 12: Build /products/[slug] detail page
 
 **Files:**
+
 - Create: `src/routes/products/[slug]/+page.ts`
 - Create: `src/routes/products/[slug]/+page.svelte`
 - Create: `src/lib/components/ProductDetail.svelte`
@@ -1279,6 +1283,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 13: Hero component
 
 **Files:**
+
 - Create: `src/lib/components/Hero.svelte`
 - Delete: `src/lib/components/Hero.svelte` (legacy — overwritten in the same step)
 
@@ -1360,6 +1365,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 14: StatsBand component
 
 **Files:**
+
 - Create: `src/lib/components/StatsBand.svelte`
 
 - [ ] **Step 1: Write `src/lib/components/StatsBand.svelte`**
@@ -1400,6 +1406,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 15: ConsultingSection component
 
 **Files:**
+
 - Create: `src/lib/components/ConsultingSection.svelte`
 
 - [ ] **Step 1: Write `src/lib/components/ConsultingSection.svelte`**
@@ -1409,10 +1416,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Check } from '@lucide/svelte';
 
-	let {
-		blurb,
-		capabilities
-	}: { blurb: string; capabilities: readonly string[] } = $props();
+	let { blurb, capabilities }: { blurb: string; capabilities: readonly string[] } = $props();
 </script>
 
 <section class="max-w-6xl mx-auto px-6 py-24 grid gap-12 md:grid-cols-[1fr_1fr] md:items-center">
@@ -1453,6 +1457,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 16: Compose new home page
 
 **Files:**
+
 - Modify: `src/routes/+page.svelte` (full rewrite)
 - Delete (later, in Phase 2): every legacy component still referenced
 
@@ -1549,17 +1554,15 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 17: PageHeader (canonical)
 
 **Files:**
+
 - Create or replace: `src/lib/components/PageHeader.svelte`
 
 - [ ] **Step 1: Overwrite `src/lib/components/PageHeader.svelte`**
 
 ```svelte
 <script lang="ts">
-	let {
-		eyebrow,
-		title,
-		subtitle
-	}: { eyebrow?: string; title: string; subtitle?: string } = $props();
+	let { eyebrow, title, subtitle }: { eyebrow?: string; title: string; subtitle?: string } =
+		$props();
 </script>
 
 <header class="max-w-6xl mx-auto px-6 pt-24 pb-12">
@@ -1589,6 +1592,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 18: About page
 
 **Files:**
+
 - Modify (full rewrite): `src/routes/about/+page.svelte`
 
 - [ ] **Step 1: Overwrite `src/routes/about/+page.svelte`**
@@ -1624,7 +1628,8 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 		Flutter app builds, design systems, and backend platform work.
 	</p>
 	<p>
-		The studio is led by <strong>{company.founder}</strong> and based in {company.contact.address.city},
+		The studio is led by <strong>{company.founder}</strong> and based in {company.contact.address
+			.city},
 		{company.contact.address.country}.
 	</p>
 </section>
@@ -1663,6 +1668,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 19: Contact page (with mailto form)
 
 **Files:**
+
 - Modify (full rewrite): `src/routes/contact/+page.svelte`
 
 - [ ] **Step 1: Overwrite `src/routes/contact/+page.svelte`**
@@ -1781,6 +1787,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 20: Restyle privacy policy page
 
 **Files:**
+
 - Modify: `src/routes/contact/flutter-ui-challenges-privacy-policy/+page.svelte`
 
 - [ ] **Step 1: Read the current content (don't lose the legal copy)**
@@ -1841,6 +1848,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 21: ThemeToggle
 
 **Files:**
+
 - Create: `src/lib/components/ThemeToggle.svelte`
 
 - [ ] **Step 1: Write `src/lib/components/ThemeToggle.svelte`**
@@ -1884,6 +1892,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 22: SiteNav
 
 **Files:**
+
 - Modify (full rewrite): `src/lib/components/SiteNav.svelte`
 
 - [ ] **Step 1: Overwrite `src/lib/components/SiteNav.svelte`**
@@ -1904,7 +1913,8 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 
 	let mobileOpen = $state(false);
 
-	const isActive = (href: string) => page.url.pathname === href || page.url.pathname.startsWith(href + '/');
+	const isActive = (href: string) =>
+		page.url.pathname === href || page.url.pathname.startsWith(href + '/');
 </script>
 
 <nav class="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur">
@@ -2000,6 +2010,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 23: SiteFooter
 
 **Files:**
+
 - Modify (full rewrite): `src/lib/components/SiteFooter.svelte`
 
 - [ ] **Step 1: Overwrite `src/lib/components/SiteFooter.svelte`**
@@ -2052,22 +2063,44 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 		</div>
 	</div>
 	<div class="border-t border-border">
-		<div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+		<div
+			class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between"
+		>
 			<div class="text-xs text-muted-foreground">© {year} {company.legalName}</div>
 			<div class="flex gap-1">
-				<a class="p-2 text-muted-foreground hover:text-foreground" href={company.social.github} aria-label="GitHub">
+				<a
+					class="p-2 text-muted-foreground hover:text-foreground"
+					href={company.social.github}
+					aria-label="GitHub"
+				>
 					<Github class="size-5" />
 				</a>
-				<a class="p-2 text-muted-foreground hover:text-foreground" href={company.social.linkedin} aria-label="LinkedIn">
+				<a
+					class="p-2 text-muted-foreground hover:text-foreground"
+					href={company.social.linkedin}
+					aria-label="LinkedIn"
+				>
 					<Linkedin class="size-5" />
 				</a>
-				<a class="p-2 text-muted-foreground hover:text-foreground" href={company.social.twitter} aria-label="Twitter / X">
+				<a
+					class="p-2 text-muted-foreground hover:text-foreground"
+					href={company.social.twitter}
+					aria-label="Twitter / X"
+				>
 					<Twitter class="size-5" />
 				</a>
-				<a class="p-2 text-muted-foreground hover:text-foreground" href={company.social.youtube} aria-label="YouTube">
+				<a
+					class="p-2 text-muted-foreground hover:text-foreground"
+					href={company.social.youtube}
+					aria-label="YouTube"
+				>
 					<Youtube class="size-5" />
 				</a>
-				<a class="p-2 text-muted-foreground hover:text-foreground" href={company.social.email} aria-label="Email">
+				<a
+					class="p-2 text-muted-foreground hover:text-foreground"
+					href={company.social.email}
+					aria-label="Email"
+				>
 					<Mail class="size-5" />
 				</a>
 			</div>
@@ -2090,6 +2123,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 24: SEO component (refactor to runes, drop legacy data deps)
 
 **Files:**
+
 - Modify (full rewrite): `src/lib/components/SEO.svelte`
 - Modify: `src/lib/index.ts` (already exports company; just add SEO?)
 
@@ -2279,6 +2313,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>" 2>/dev/nul
 ### Task 27: Rewrite the smoke test
 
 **Files:**
+
 - Modify: `src/routes/page.svelte.test.ts`
 
 - [ ] **Step 1: Read the current test to keep the imports / setup style**
@@ -2328,6 +2363,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
 ### Task 28: Final check + build + README update
 
 **Files:**
+
 - Modify: `README.md`
 
 - [ ] **Step 1: Run the full check / lint / build**
@@ -2344,7 +2380,7 @@ Expected: all three succeed. If `bun run lint` fails on formatting only, run `bu
 
 Overwrite `README.md` with:
 
-```markdown
+````markdown
 # popupbits.com
 
 The website for [Popup Bits](https://popupbits.com) — a Kathmandu studio building apps like
@@ -2359,6 +2395,7 @@ Built with SvelteKit 2 + Svelte 5 (runes), Tailwind v4, shadcn-svelte, and the
 bun install
 bun run dev
 ```
+````
 
 ## Build
 
@@ -2380,7 +2417,8 @@ The design tokens live in `src/lib/design-system/colors_and_type.css`, vendored 
 the upstream repo. See `src/lib/design-system/README.md` for refresh instructions.
 The root layout wraps everything in `<div class="arch-utility theme-popupbits">`;
 per-product detail pages swap in the product's own `.theme-*` class.
-```
+
+````
 
 - [ ] **Step 3: Commit**
 
@@ -2389,7 +2427,7 @@ git add README.md
 git commit -m "docs: rewrite README for the new stack and DS
 
 Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>"
-```
+````
 
 ---
 
@@ -2430,4 +2468,3 @@ kill %1 2>/dev/null
 - Bhadama theme stub added to vendored CSS in Task 4.
 - `/projects` redirects covered both directory deletion (Task 12) and runtime redirect (Task 8).
 - Privacy policy URL is preserved verbatim — Task 20 keeps the path.
-

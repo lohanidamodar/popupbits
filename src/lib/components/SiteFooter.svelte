@@ -45,22 +45,44 @@
 		</div>
 	</div>
 	<div class="border-t border-border">
-		<div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+		<div
+			class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between"
+		>
 			<div class="text-xs text-muted-foreground">© {year} {company.legalName}</div>
 			<div class="flex gap-1">
-				<a class="p-2 text-muted-foreground hover:text-foreground" href={company.social.github} aria-label="GitHub">
+				<a
+					class="p-2 text-muted-foreground hover:text-foreground"
+					href={company.social.github}
+					aria-label="GitHub"
+				>
 					<CodeXml class="size-5" />
 				</a>
-				<a class="p-2 text-muted-foreground hover:text-foreground" href={company.social.linkedin} aria-label="LinkedIn">
+				<a
+					class="p-2 text-muted-foreground hover:text-foreground"
+					href={company.social.linkedin}
+					aria-label="LinkedIn"
+				>
 					<Link class="size-5" />
 				</a>
-				<a class="p-2 text-muted-foreground hover:text-foreground" href={company.social.twitter} aria-label="Twitter / X">
+				<a
+					class="p-2 text-muted-foreground hover:text-foreground"
+					href={company.social.twitter}
+					aria-label="Twitter / X"
+				>
 					<AtSign class="size-5" />
 				</a>
-				<a class="p-2 text-muted-foreground hover:text-foreground" href={company.social.youtube} aria-label="YouTube">
+				<a
+					class="p-2 text-muted-foreground hover:text-foreground"
+					href={company.social.youtube}
+					aria-label="YouTube"
+				>
 					<Play class="size-5" />
 				</a>
-				<a class="p-2 text-muted-foreground hover:text-foreground" href={company.social.email} aria-label="Email">
+				<a
+					class="p-2 text-muted-foreground hover:text-foreground"
+					href={company.social.email}
+					aria-label="Email"
+				>
 					<Mail class="size-5" />
 				</a>
 			</div>

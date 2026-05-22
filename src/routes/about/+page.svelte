@@ -28,7 +28,8 @@
 		Flutter app builds, design systems, and backend platform work.
 	</p>
 	<p>
-		The studio is led by <strong>{company.founder}</strong> and based in {company.contact.address.city},
+		The studio is led by <strong>{company.founder}</strong> and based in {company.contact.address
+			.city},
 		{company.contact.address.country}.
 	</p>
 </section>

@@ -43,180 +43,180 @@
      Challenges app).
    If you have official Popup Bits fonts, replace these.
 */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Mukta:wght@300;400;500;600;700;800&family=Baloo+2:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Mukta:wght@300;400;500;600;700;800&family=Baloo+2:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root {
-  /* ---------- Brand palette ----------
+	/* ---------- Brand palette ----------
      Each product owns an accent. The set is pulled from
      observed app UIs and Play Store icons. */
 
-  /* Popup Bits (corporate / studio) */
-  --pb-ink:          #0E1726;   /* deep navy — studio mark */
-  --pb-accent:       #FF5A3C;   /* warm orange-red — playful pop */
-  --pb-accent-soft:  #FFE3DC;
+	/* Popup Bits (corporate / studio) */
+	--pb-ink: #0e1726; /* deep navy — studio mark */
+	--pb-accent: #ff5a3c; /* warm orange-red — playful pop */
+	--pb-accent-soft: #ffe3dc;
 
-  /* Mero Nepali — kids' Nepali learning */
-  --mn-green:        #2E9E6D;   /* primary */
-  --mn-green-deep:   #1F7B54;
-  --mn-green-soft:   #E7F5EE;
-  --mn-sky:          #8FD3FF;   /* sky-scene background */
-  --mn-sun:          #FFC93C;   /* balloon yellow / sun */
-  --mn-red:          #E85A4F;   /* balloon red */
-  --mn-blue:         #4A90E2;   /* balloon blue */
-  --mn-pink:         #FF9AB2;   /* kid illustration highlight */
-  --mn-grass:        #6FBF73;
+	/* Mero Nepali — kids' Nepali learning */
+	--mn-green: #2e9e6d; /* primary */
+	--mn-green-deep: #1f7b54;
+	--mn-green-soft: #e7f5ee;
+	--mn-sky: #8fd3ff; /* sky-scene background */
+	--mn-sun: #ffc93c; /* balloon yellow / sun */
+	--mn-red: #e85a4f; /* balloon red */
+	--mn-blue: #4a90e2; /* balloon blue */
+	--mn-pink: #ff9ab2; /* kid illustration highlight */
+	--mn-grass: #6fbf73;
 
-  /* SpellCraft — spelling / dictation */
-  --sc-deep:         #0F2A4A;   /* navy backdrop */
-  --sc-deep-2:       #1B3E6E;
-  --sc-teal:         #49B6B6;   /* microphone accent */
-  --sc-mint:         #7CE0C9;
-  --sc-gold:         #F6C95B;   /* stars / rewards */
-  --sc-coral:        #FF7E6B;
+	/* SpellCraft — spelling / dictation */
+	--sc-deep: #0f2a4a; /* navy backdrop */
+	--sc-deep-2: #1b3e6e;
+	--sc-teal: #49b6b6; /* microphone accent */
+	--sc-mint: #7ce0c9;
+	--sc-gold: #f6c95b; /* stars / rewards */
+	--sc-coral: #ff7e6b;
 
-  /* Mero Patro — Nepali calendar (BS/AD) */
-  --mp-saffron:      #E85D2F;   /* Nepal-flag saffron-red */
-  --mp-crimson:      #C6162E;   /* BS calendar highlight */
-  --mp-indigo:       #2D3E7C;
-  --mp-cream:        #FFF7E8;
-  --mp-ink:          #1B1F2A;
+	/* Mero Patro — Nepali calendar (BS/AD) */
+	--mp-saffron: #e85d2f; /* Nepal-flag saffron-red */
+	--mp-crimson: #c6162e; /* BS calendar highlight */
+	--mp-indigo: #2d3e7c;
+	--mp-cream: #fff7e8;
+	--mp-ink: #1b1f2a;
 
-  /* ---------- Neutral scale (shared) ---------- */
-  --n-0:   #FFFFFF;
-  --n-50:  #FAFAF7;  /* warm paper — default bg */
-  --n-100: #F2F3EF;
-  --n-200: #E6E7E1;
-  --n-300: #D4D6CE;
-  --n-400: #A8ABA1;
-  --n-500: #7A7D73;
-  --n-600: #55584F;
-  --n-700: #373A33;
-  --n-800: #22241F;
-  --n-900: #121310;
+	/* ---------- Neutral scale (shared) ---------- */
+	--n-0: #ffffff;
+	--n-50: #fafaf7; /* warm paper — default bg */
+	--n-100: #f2f3ef;
+	--n-200: #e6e7e1;
+	--n-300: #d4d6ce;
+	--n-400: #a8aba1;
+	--n-500: #7a7d73;
+	--n-600: #55584f;
+	--n-700: #373a33;
+	--n-800: #22241f;
+	--n-900: #121310;
 
-  /* ---------- Semantic (light) ---------- */
-  --bg:           var(--n-50);
-  --bg-raised:    var(--n-0);
-  --bg-sunken:    var(--n-100);
-  --fg:           var(--n-900);
-  --fg-muted:     var(--n-600);
-  --fg-subtle:    var(--n-500);
-  --fg-inverse:   var(--n-0);
-  --border:       var(--n-200);
-  --border-strong:var(--n-300);
+	/* ---------- Semantic (light) ---------- */
+	--bg: var(--n-50);
+	--bg-raised: var(--n-0);
+	--bg-sunken: var(--n-100);
+	--fg: var(--n-900);
+	--fg-muted: var(--n-600);
+	--fg-subtle: var(--n-500);
+	--fg-inverse: var(--n-0);
+	--border: var(--n-200);
+	--border-strong: var(--n-300);
 
-  --success: #2E9E6D;
-  --warning: #F6B13C;
-  --danger:  #E85A4F;
-  --info:    #4A90E2;
+	--success: #2e9e6d;
+	--warning: #f6b13c;
+	--danger: #e85a4f;
+	--info: #4a90e2;
 
-  /* Default brand accent = Popup Bits orange.
+	/* Default brand accent = Popup Bits orange.
      Product pages override --accent at a scoped element. */
-  --accent:       var(--pb-accent);
-  --accent-soft:  var(--pb-accent-soft);
-  --accent-ink:   var(--pb-ink);
+	--accent: var(--pb-accent);
+	--accent-soft: var(--pb-accent-soft);
+	--accent-ink: var(--pb-ink);
 
-  /* Additional upcoming-product palettes (already tokenised so
+	/* Additional upcoming-product palettes (already tokenised so
      theme blocks below stay DRY). Iterate these with the team. */
-  /* Jyotish — astrology / panchang */
-  --jy-indigo:   #3B2F8C;
-  --jy-gold:     #E0A93B;
-  --jy-plum:     #5A1E4A;
-  --jy-parchment:#FFF4DC;
+	/* Jyotish — astrology / panchang */
+	--jy-indigo: #3b2f8c;
+	--jy-gold: #e0a93b;
+	--jy-plum: #5a1e4a;
+	--jy-parchment: #fff4dc;
 
-  /* Sanskrit — classical language learning */
-  --sk-saffron:  #D98A2B;
-  --sk-maroon:   #7A1E1E;
-  --sk-sand:     #F4E7C8;
-  --sk-ink:      #2A1A0E;
+	/* Sanskrit — classical language learning */
+	--sk-saffron: #d98a2b;
+	--sk-maroon: #7a1e1e;
+	--sk-sand: #f4e7c8;
+	--sk-ink: #2a1a0e;
 
-  /* Rent / marketplace — housing & goods */
-  --rn-teal:     #0E8A8A;
-  --rn-teal-soft:#D6EFEE;
-  --rn-slate:    #1F2A3A;
-  --rn-sun:      #F2B544;
+	/* Rent / marketplace — housing & goods */
+	--rn-teal: #0e8a8a;
+	--rn-teal-soft: #d6efee;
+	--rn-slate: #1f2a3a;
+	--rn-sun: #f2b544;
 
-  /* ---------- Typography scale ---------- */
-  --font-sans:    "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-deva:    "Mukta", "Noto Sans Devanagari", "Nunito", sans-serif;
-  --font-display: "Baloo 2", "Nunito", system-ui, sans-serif;
-  --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+	/* ---------- Typography scale ---------- */
+	--font-sans: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	--font-deva: 'Mukta', 'Noto Sans Devanagari', 'Nunito', sans-serif;
+	--font-display: 'Baloo 2', 'Nunito', system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --fs-xs:   12px;
-  --fs-sm:   14px;
-  --fs-base: 16px;
-  --fs-md:   18px;
-  --fs-lg:   20px;
-  --fs-xl:   24px;
-  --fs-2xl:  32px;
-  --fs-3xl:  40px;
-  --fs-4xl:  56px;
-  --fs-5xl:  72px;
+	--fs-xs: 12px;
+	--fs-sm: 14px;
+	--fs-base: 16px;
+	--fs-md: 18px;
+	--fs-lg: 20px;
+	--fs-xl: 24px;
+	--fs-2xl: 32px;
+	--fs-3xl: 40px;
+	--fs-4xl: 56px;
+	--fs-5xl: 72px;
 
-  --lh-tight:  1.15;
-  --lh-snug:   1.3;
-  --lh-normal: 1.5;
-  --lh-loose:  1.7;
+	--lh-tight: 1.15;
+	--lh-snug: 1.3;
+	--lh-normal: 1.5;
+	--lh-loose: 1.7;
 
-  --fw-regular: 400;
-  --fw-medium:  500;
-  --fw-semi:    600;
-  --fw-bold:    700;
-  --fw-black:   800;
+	--fw-regular: 400;
+	--fw-medium: 500;
+	--fw-semi: 600;
+	--fw-bold: 700;
+	--fw-black: 800;
 
-  /* ---------- Spacing (4pt base) ---------- */
-  --sp-1:  4px;
-  --sp-2:  8px;
-  --sp-3:  12px;
-  --sp-4:  16px;
-  --sp-5:  20px;
-  --sp-6:  24px;
-  --sp-8:  32px;
-  --sp-10: 40px;
-  --sp-12: 48px;
-  --sp-16: 64px;
-  --sp-20: 80px;
+	/* ---------- Spacing (4pt base) ---------- */
+	--sp-1: 4px;
+	--sp-2: 8px;
+	--sp-3: 12px;
+	--sp-4: 16px;
+	--sp-5: 20px;
+	--sp-6: 24px;
+	--sp-8: 32px;
+	--sp-10: 40px;
+	--sp-12: 48px;
+	--sp-16: 64px;
+	--sp-20: 80px;
 
-  /* ---------- Radii ----------
+	/* ---------- Radii ----------
      Products use generous, friendly rounding.
      'squircle' = rounded-square icon shape (iOS/Play style). */
-  --r-xs:  6px;
-  --r-sm:  10px;
-  --r-md:  14px;
-  --r-lg:  20px;
-  --r-xl:  28px;
-  --r-2xl: 36px;
-  --r-pill: 999px;
-  --r-squircle: 28%;   /* use as % of side for the app-icon shape */
+	--r-xs: 6px;
+	--r-sm: 10px;
+	--r-md: 14px;
+	--r-lg: 20px;
+	--r-xl: 28px;
+	--r-2xl: 36px;
+	--r-pill: 999px;
+	--r-squircle: 28%; /* use as % of side for the app-icon shape */
 
-  /* ---------- Shadows ----------
+	/* ---------- Shadows ----------
      Soft, low-contrast, layered — matches the card-heavy Flutter
      Material feel. No hard drop shadows. */
-  --sh-xs:  0 1px 2px rgba(18, 19, 16, .05);
-  --sh-sm:  0 2px 6px rgba(18, 19, 16, .07);
-  --sh-md:  0 6px 16px rgba(18, 19, 16, .09);
-  --sh-lg:  0 14px 32px rgba(18, 19, 16, .12);
-  --sh-xl:  0 24px 48px rgba(18, 19, 16, .16);
-  /* Inner for pressed states */
-  --sh-inset: inset 0 2px 4px rgba(18, 19, 16, .08);
-  /* Colored halo — used on focus rings / CTAs */
-  --sh-ring:  0 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent);
+	--sh-xs: 0 1px 2px rgba(18, 19, 16, 0.05);
+	--sh-sm: 0 2px 6px rgba(18, 19, 16, 0.07);
+	--sh-md: 0 6px 16px rgba(18, 19, 16, 0.09);
+	--sh-lg: 0 14px 32px rgba(18, 19, 16, 0.12);
+	--sh-xl: 0 24px 48px rgba(18, 19, 16, 0.16);
+	/* Inner for pressed states */
+	--sh-inset: inset 0 2px 4px rgba(18, 19, 16, 0.08);
+	/* Colored halo — used on focus rings / CTAs */
+	--sh-ring: 0 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent);
 
-  /* ---------- Motion ---------- */
-  --ease-out:    cubic-bezier(.2, .8, .2, 1);
-  --ease-in-out: cubic-bezier(.6, 0, .2, 1);
-  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);   /* playful bounce */
-  --t-fast:   120ms;
-  --t-med:    220ms;
-  --t-slow:   360ms;
+	/* ---------- Motion ---------- */
+	--ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+	--ease-in-out: cubic-bezier(0.6, 0, 0.2, 1);
+	--ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* playful bounce */
+	--t-fast: 120ms;
+	--t-med: 220ms;
+	--t-slow: 360ms;
 
-  /* ---------- Z layers ---------- */
-  --z-base:   1;
-  --z-raised: 10;
-  --z-sticky: 100;
-  --z-overlay:1000;
-  --z-modal:  2000;
-  --z-toast:  3000;
+	/* ---------- Z layers ---------- */
+	--z-base: 1;
+	--z-raised: 10;
+	--z-sticky: 100;
+	--z-overlay: 1000;
+	--z-modal: 2000;
+	--z-toast: 3000;
 }
 
 /* ============================================================
@@ -228,47 +228,47 @@
 /* Kid — Mero Nepali, SpellCraft-mini-games, future children's apps.
    Rounder, bouncier, more saturated, illustration-first. */
 .arch-kid {
-  --font-display: "Baloo 2", "Nunito", sans-serif;
-  --r-md: 18px;
-  --r-lg: 24px;
-  --r-xl: 32px;
-  --ease-out: var(--ease-spring);   /* bouncier entrances */
-  --t-med: 280ms;
+	--font-display: 'Baloo 2', 'Nunito', sans-serif;
+	--r-md: 18px;
+	--r-lg: 24px;
+	--r-xl: 32px;
+	--ease-out: var(--ease-spring); /* bouncier entrances */
+	--t-med: 280ms;
 }
 
 /* Cultural — Mero Patro, Jyotish (astrology), Sanskrit learning.
    More Devanagari emphasis, warmer paper backgrounds, tighter radii,
    subtler animation. */
 .arch-cultural {
-  --bg:       #FFF7E8;             /* warm cream, paper feel */
-  --bg-raised: #FFFFFF;
-  --bg-sunken: #F6ECD6;
-  --font-display: "Mukta", "Baloo 2", serif;
-  --r-lg: 18px;
-  --r-xl: 24px;
-  --t-med: 220ms;
+	--bg: #fff7e8; /* warm cream, paper feel */
+	--bg-raised: #ffffff;
+	--bg-sunken: #f6ecd6;
+	--font-display: 'Mukta', 'Baloo 2', serif;
+	--r-lg: 18px;
+	--r-xl: 24px;
+	--t-med: 220ms;
 }
 
 /* Utility — calendars, tools, dev-facing apps. Clean, neutral,
    dense but airy. The Mero Patro web app sits here too. */
 .arch-utility {
-  --r-md: 12px;
-  --r-lg: 16px;
-  --t-med: 180ms;
+	--r-md: 12px;
+	--r-lg: 16px;
+	--t-med: 180ms;
 }
 
 /* Marketplace — rental app, future listings/commerce surfaces.
    Trust-forward: confident borders, tighter spacing, stronger
    information density. */
 .arch-marketplace {
-  --bg:       #FBFBF9;
-  --bg-raised: #FFFFFF;
-  --border:    #E1E3DD;
-  --border-strong: #C7CAC1;
-  --r-md: 10px;
-  --r-lg: 14px;
-  --r-xl: 20px;
-  --t-med: 160ms;
+	--bg: #fbfbf9;
+	--bg-raised: #ffffff;
+	--border: #e1e3dd;
+	--border-strong: #c7cac1;
+	--r-md: 10px;
+	--r-lg: 14px;
+	--r-xl: 20px;
+	--t-med: 160ms;
 }
 
 /* ============================================================
@@ -278,113 +278,113 @@
    ============================================================ */
 
 .theme-popupbits {
-  --accent:      #FF5A3C;
-  --accent-soft: #FFE3DC;
-  --accent-ink:  #0E1115;
+	--accent: #ff5a3c;
+	--accent-soft: #ffe3dc;
+	--accent-ink: #0e1115;
 }
 .theme-popupbits-bold {
-  --accent:      #C8F23C;
-  --accent-soft: #EEFAC8;
-  --accent-ink:  #0E1115;
+	--accent: #c8f23c;
+	--accent-soft: #eefac8;
+	--accent-ink: #0e1115;
 }
 .theme-meropatro {
-  --accent:      #C8372D;
-  --accent-soft: #FBE9E5;
-  --accent-ink:  #1A1A1A;
+	--accent: #c8372d;
+	--accent-soft: #fbe9e5;
+	--accent-ink: #1a1a1a;
 }
 .theme-meropatro-bold {
-  --accent:      #E8832A;
-  --accent-soft: #FCEBD4;
-  --accent-ink:  #111418;
+	--accent: #e8832a;
+	--accent-soft: #fcebd4;
+	--accent-ink: #111418;
 }
 .theme-meronepali {
-  --accent:      #4FA8D8;
-  --accent-soft: #E3F2FB;
-  --accent-ink:  #1C4A6A;
+	--accent: #4fa8d8;
+	--accent-soft: #e3f2fb;
+	--accent-ink: #1c4a6a;
 }
 .theme-meronepali-bold {
-  --accent:      #2EB872;
-  --accent-soft: #DFF6E8;
-  --accent-ink:  #F5A524;
+	--accent: #2eb872;
+	--accent-soft: #dff6e8;
+	--accent-ink: #f5a524;
 }
 .theme-spellcraft {
-  --accent:      #E6B949;
-  --accent-soft: #2A1E57;
-  --accent-ink:  #34C58A;
-  --bg:          #1A0F3D;
-  --bg-raised:   #2A1E57;
-  --bg-sunken:   #0E0729;
-  --fg:          #F3EFFF;
-  --fg-muted:    #B8ADE0;
-  --border:      #3B2E77;
+	--accent: #e6b949;
+	--accent-soft: #2a1e57;
+	--accent-ink: #34c58a;
+	--bg: #1a0f3d;
+	--bg-raised: #2a1e57;
+	--bg-sunken: #0e0729;
+	--fg: #f3efff;
+	--fg-muted: #b8ade0;
+	--border: #3b2e77;
 }
 .theme-spellcraft-bold {
-  --accent:      #D84DD4;
-  --accent-soft: #1A0F3D;
-  --accent-ink:  #54E3E8;
-  --bg:          #0E0729;
-  --bg-raised:   #1A0F3D;
-  --bg-sunken:   #080319;
-  --fg:          #F3EFFF;
-  --fg-muted:    #B8ADE0;
-  --border:      #2E1F6B;
+	--accent: #d84dd4;
+	--accent-soft: #1a0f3d;
+	--accent-ink: #54e3e8;
+	--bg: #0e0729;
+	--bg-raised: #1a0f3d;
+	--bg-sunken: #080319;
+	--fg: #f3efff;
+	--fg-muted: #b8ade0;
+	--border: #2e1f6b;
 }
 .theme-jyotish {
-  --accent:      #E9C46A;
-  --accent-soft: #1B2454;
-  --accent-ink:  #F4A259;
-  --bg:          #0F1638;
-  --bg-raised:   #1B2454;
-  --bg-sunken:   #080D22;
-  --fg:          #F5F0E1;
-  --fg-muted:    #B9B19A;
-  --border:      #2A3573;
+	--accent: #e9c46a;
+	--accent-soft: #1b2454;
+	--accent-ink: #f4a259;
+	--bg: #0f1638;
+	--bg-raised: #1b2454;
+	--bg-sunken: #080d22;
+	--fg: #f5f0e1;
+	--fg-muted: #b9b19a;
+	--border: #2a3573;
 }
 .theme-jyotish-bold {
-  --accent:      #F4A259;
-  --accent-soft: #2A1450;
-  --accent-ink:  #E9C46A;
-  --bg:          #1A0A3E;
-  --bg-raised:   #2A1450;
-  --bg-sunken:   #0F0428;
-  --fg:          #F5F0E1;
-  --fg-muted:    #B9A8D4;
-  --border:      #3B1F6B;
+	--accent: #f4a259;
+	--accent-soft: #2a1450;
+	--accent-ink: #e9c46a;
+	--bg: #1a0a3e;
+	--bg-raised: #2a1450;
+	--bg-sunken: #0f0428;
+	--fg: #f5f0e1;
+	--fg-muted: #b9a8d4;
+	--border: #3b1f6b;
 }
 .theme-sanskrit {
-  --accent:      #8C1D1D;
-  --accent-soft: #F2E6C8;
-  --accent-ink:  #B8862B;
+	--accent: #8c1d1d;
+	--accent-soft: #f2e6c8;
+	--accent-ink: #b8862b;
 }
 .theme-sanskrit-bold {
-  --accent:      #B8862B;
-  --accent-soft: #F2E6C8;
-  --accent-ink:  #5A0F0F;
+	--accent: #b8862b;
+	--accent-soft: #f2e6c8;
+	--accent-ink: #5a0f0f;
 }
 .theme-rent {
-  --accent:      #0E8A8A;
-  --accent-soft: #D6EFEE;
-  --accent-ink:  #0B2A38;
+	--accent: #0e8a8a;
+	--accent-soft: #d6efee;
+	--accent-ink: #0b2a38;
 }
 .theme-rent-bold {
-  --accent:      #14B8A6;
-  --accent-soft: #E6FBF7;
-  --accent-ink:  #1F2937;
+	--accent: #14b8a6;
+	--accent-soft: #e6fbf7;
+	--accent-ink: #1f2937;
 }
 
 /* ---------- Dark mode ----------
    Only SpellCraft ships a real dark theme in-product today;
    the rest are light-first. Exposed as a token set for agents
    to use when designing a dark surface. */
-[data-theme="dark"] {
-  --bg:        #0B1220;
-  --bg-raised: #121B2E;
-  --bg-sunken: #0A101C;
-  --fg:        #F1F3F5;
-  --fg-muted:  #AEB6C2;
-  --fg-subtle: #7C8796;
-  --border:    #1E2A42;
-  --border-strong: #2B3A58;
+[data-theme='dark'] {
+	--bg: #0b1220;
+	--bg-raised: #121b2e;
+	--bg-sunken: #0a101c;
+	--fg: #f1f3f5;
+	--fg-muted: #aeb6c2;
+	--fg-subtle: #7c8796;
+	--border: #1e2a42;
+	--border-strong: #2b3a58;
 }
 
 /* ============================================================
@@ -395,107 +395,107 @@
    ============================================================ */
 
 .t-display {
-  font-family: var(--font-display);
-  font-size: var(--fs-5xl);
-  line-height: var(--lh-tight);
-  font-weight: var(--fw-black);
-  letter-spacing: -0.02em;
-  color: var(--fg);
+	font-family: var(--font-display);
+	font-size: var(--fs-5xl);
+	line-height: var(--lh-tight);
+	font-weight: var(--fw-black);
+	letter-spacing: -0.02em;
+	color: var(--fg);
 }
 .t-h1 {
-  font-family: var(--font-display);
-  font-size: var(--fs-4xl);
-  line-height: var(--lh-tight);
-  font-weight: var(--fw-bold);
-  letter-spacing: -0.015em;
-  color: var(--fg);
+	font-family: var(--font-display);
+	font-size: var(--fs-4xl);
+	line-height: var(--lh-tight);
+	font-weight: var(--fw-bold);
+	letter-spacing: -0.015em;
+	color: var(--fg);
 }
 .t-h2 {
-  font-family: var(--font-display);
-  font-size: var(--fs-3xl);
-  line-height: var(--lh-snug);
-  font-weight: var(--fw-bold);
-  letter-spacing: -0.01em;
-  color: var(--fg);
+	font-family: var(--font-display);
+	font-size: var(--fs-3xl);
+	line-height: var(--lh-snug);
+	font-weight: var(--fw-bold);
+	letter-spacing: -0.01em;
+	color: var(--fg);
 }
 .t-h3 {
-  font-family: var(--font-sans);
-  font-size: var(--fs-2xl);
-  line-height: var(--lh-snug);
-  font-weight: var(--fw-bold);
-  color: var(--fg);
+	font-family: var(--font-sans);
+	font-size: var(--fs-2xl);
+	line-height: var(--lh-snug);
+	font-weight: var(--fw-bold);
+	color: var(--fg);
 }
 .t-h4 {
-  font-family: var(--font-sans);
-  font-size: var(--fs-xl);
-  line-height: var(--lh-snug);
-  font-weight: var(--fw-bold);
-  color: var(--fg);
+	font-family: var(--font-sans);
+	font-size: var(--fs-xl);
+	line-height: var(--lh-snug);
+	font-weight: var(--fw-bold);
+	color: var(--fg);
 }
 .t-eyebrow {
-  font-family: var(--font-sans);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-bold);
-  line-height: 1;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
+	font-family: var(--font-sans);
+	font-size: var(--fs-xs);
+	font-weight: var(--fw-bold);
+	line-height: 1;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--fg-muted);
 }
 .t-lead {
-  font-family: var(--font-sans);
-  font-size: var(--fs-md);
-  line-height: var(--lh-loose);
-  font-weight: var(--fw-regular);
-  color: var(--fg-muted);
+	font-family: var(--font-sans);
+	font-size: var(--fs-md);
+	line-height: var(--lh-loose);
+	font-weight: var(--fw-regular);
+	color: var(--fg-muted);
 }
 .t-body {
-  font-family: var(--font-sans);
-  font-size: var(--fs-base);
-  line-height: var(--lh-normal);
-  color: var(--fg);
+	font-family: var(--font-sans);
+	font-size: var(--fs-base);
+	line-height: var(--lh-normal);
+	color: var(--fg);
 }
 .t-body-sm {
-  font-family: var(--font-sans);
-  font-size: var(--fs-sm);
-  line-height: var(--lh-normal);
-  color: var(--fg);
+	font-family: var(--font-sans);
+	font-size: var(--fs-sm);
+	line-height: var(--lh-normal);
+	color: var(--fg);
 }
 .t-caption {
-  font-family: var(--font-sans);
-  font-size: var(--fs-xs);
-  line-height: var(--lh-snug);
-  color: var(--fg-subtle);
+	font-family: var(--font-sans);
+	font-size: var(--fs-xs);
+	line-height: var(--lh-snug);
+	color: var(--fg-subtle);
 }
 .t-deva {
-  font-family: var(--font-deva);
-  line-height: var(--lh-loose);
+	font-family: var(--font-deva);
+	line-height: var(--lh-loose);
 }
 .t-deva-display {
-  font-family: var(--font-deva);
-  font-size: calc(var(--fs-4xl) * 1.1);
-  font-weight: var(--fw-bold);
-  line-height: var(--lh-snug);
-  color: var(--fg);
+	font-family: var(--font-deva);
+	font-size: calc(var(--fs-4xl) * 1.1);
+	font-weight: var(--fw-bold);
+	line-height: var(--lh-snug);
+	color: var(--fg);
 }
 .t-code {
-  font-family: var(--font-mono);
-  font-size: 0.92em;
-  background: var(--bg-sunken);
-  border: 1px solid var(--border);
-  border-radius: var(--r-xs);
-  padding: 2px 6px;
+	font-family: var(--font-mono);
+	font-size: 0.92em;
+	background: var(--bg-sunken);
+	border: 1px solid var(--border);
+	border-radius: var(--r-xs);
+	padding: 2px 6px;
 }
 
 /* ---- Local stub: bhadama product theme (not yet in upstream DS) ---- */
 .theme-bhadama {
-  --t-accent: #6366f1;
-  --t-accent-strong: #4f46e5;
-  --t-accent-soft: #eef2ff;
-  --t-on-accent: #ffffff;
+	--t-accent: #6366f1;
+	--t-accent-strong: #4f46e5;
+	--t-accent-soft: #eef2ff;
+	--t-on-accent: #ffffff;
 }
 .theme-bhadama-bold {
-  --t-accent: #4f46e5;
-  --t-accent-strong: #4338ca;
-  --t-accent-soft: #e0e7ff;
-  --t-on-accent: #ffffff;
+	--t-accent: #4f46e5;
+	--t-accent-strong: #4338ca;
+	--t-accent-soft: #e0e7ff;
+	--t-on-accent: #ffffff;
 }

@@ -1,5 +1,5 @@
 export type ProductPlatform = 'web' | 'android' | 'ios';
-export type ProductStatus = 'live' | 'beta' | 'pipeline';
+export type ProductStatus = 'live' | 'beta' | 'pipeline' | 'coming-soon';
 export type ProductLinkKind = 'play' | 'web' | 'github' | 'other';
 
 export type ProductLink = {
@@ -47,6 +47,28 @@ export const products: Product[] = [
 		status: 'beta',
 		featured: true,
 		year: 2024
+	},
+	{
+		slug: 'aakar',
+		name: 'Aakar Launcher',
+		tagline: 'A polished, fully customizable Android home launcher.',
+		description:
+			'Aakar is an Android home launcher built to fit anyone from grandparents to power users — clean defaults, deep customization where you want it. Coming soon to the Play Store.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Source on GitHub',
+				href: 'https://github.com/lohanidamodar/aakar',
+				kind: 'github'
+			}
+		],
+		iconSrc: '/products/aakar/icon.png',
+		screenshots: [],
+		tech: ['Flutter', 'Riverpod'],
+		status: 'coming-soon',
+		featured: true,
+		year: 2026
 	},
 	{
 		slug: 'mero-patro',
@@ -143,3 +165,16 @@ export const featuredProducts = products.filter((p) => p.featured);
 export function getProductBySlug(slug: string): Product | undefined {
 	return products.find((p) => p.slug === slug);
 }
+
+export const statusLabels: Record<ProductStatus, string> = {
+	live: 'Live',
+	beta: 'Beta',
+	pipeline: 'Pipeline',
+	'coming-soon': 'Coming soon'
+};
+
+export const platformLabels: Record<ProductPlatform, string> = {
+	web: 'Web',
+	android: 'Android',
+	ios: 'iOS'
+};

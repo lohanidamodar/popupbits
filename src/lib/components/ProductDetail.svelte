@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Product } from '$lib/data/products.js';
+	import { type Product, platformLabels, statusLabels } from '$lib/data/products.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { ExternalLink, CodeXml, PlayCircle, Globe } from '@lucide/svelte';
@@ -22,10 +22,10 @@
 			<div>
 				<div class="flex flex-wrap items-center gap-2 mb-3">
 					{#each product.platforms as p (p)}
-						<Badge variant="secondary" class="capitalize">{p}</Badge>
+						<Badge variant="secondary">{platformLabels[p]}</Badge>
 					{/each}
 					{#if product.status !== 'live'}
-						<Badge variant="outline" class="capitalize">{product.status}</Badge>
+						<Badge variant="outline">{statusLabels[product.status]}</Badge>
 					{/if}
 				</div>
 				<h1 class="font-display text-4xl md:text-5xl font-extrabold tracking-tight">

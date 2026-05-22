@@ -1,16 +1,10 @@
 <script lang="ts">
-	import type { Product } from '$lib/data/products.js';
+	import { type Product, platformLabels, statusLabels } from '$lib/data/products.js';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import ProductIcon from './ProductIcon.svelte';
 
 	let { product }: { product: Product } = $props();
-
-	const platformLabels: Record<Product['platforms'][number], string> = {
-		web: 'Web',
-		android: 'Android',
-		ios: 'iOS'
-	};
 </script>
 
 <a
@@ -34,7 +28,7 @@
 				<Badge variant="secondary">{platformLabels[p]}</Badge>
 			{/each}
 			{#if product.status !== 'live'}
-				<Badge variant="outline">{product.status}</Badge>
+				<Badge variant="outline">{statusLabels[product.status]}</Badge>
 			{/if}
 		</Card.Footer>
 	</Card.Root>

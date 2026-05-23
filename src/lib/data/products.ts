@@ -19,6 +19,7 @@ export type Product = {
 	iconSrc?: string;
 	iconBgSrc?: string;
 	privacyHref?: string;
+	accountDeletionHref?: string;
 	screenshots: string[];
 	tech: string[];
 	status: ProductStatus;
@@ -93,6 +94,24 @@ export const products: Product[] = [
 		privacyHref: '/contact/aakar-launcher-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter', 'Riverpod'],
+		status: 'coming-soon',
+		featured: true,
+		year: 2026
+	},
+	{
+		slug: 'achiver',
+		name: 'Achiver',
+		tagline: 'Pomodoro and project-based time tracking.',
+		description:
+			'Achiver pairs the Pomodoro technique with project time tracking — focus in timed sessions, then see exactly where your hours went. Sync across devices with your account. Coming soon to the Play Store.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [],
+		iconSrc: '/products/achiver/icon.png',
+		privacyHref: '/contact/achiver-privacy-policy',
+		accountDeletionHref: '/contact/achiver-delete-account',
+		screenshots: [],
+		tech: ['Flutter', 'Appwrite', 'Riverpod', 'Drift'],
 		status: 'coming-soon',
 		featured: true,
 		year: 2026

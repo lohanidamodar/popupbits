@@ -56,11 +56,18 @@
 			{/each}
 		</div>
 
-		{#if product.privacyHref}
-			<p class="mt-12 text-sm text-muted-foreground">
-				<a class="underline-offset-4 hover:underline" href={product.privacyHref}>
-					Privacy policy
-				</a>
+		{#if product.privacyHref || product.accountDeletionHref}
+			<p class="mt-12 text-sm text-muted-foreground flex flex-wrap gap-x-4 gap-y-2">
+				{#if product.privacyHref}
+					<a class="underline-offset-4 hover:underline" href={product.privacyHref}>
+						Privacy policy
+					</a>
+				{/if}
+				{#if product.accountDeletionHref}
+					<a class="underline-offset-4 hover:underline" href={product.accountDeletionHref}>
+						Delete your account
+					</a>
+				{/if}
 			</p>
 		{/if}
 	</section>

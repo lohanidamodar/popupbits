@@ -35,14 +35,13 @@
 		<li>All of your projects.</li>
 		<li>All of your pomodoro sessions and time entries.</li>
 		<li>Any preferences and settings tied to your account.</li>
-		<li>The locally cached copy of your data on the device you signed out from.</li>
 	</ul>
 
 	<h2>What is retained, and for how long</h2>
 	<p>
 		For routine security and abuse-prevention, our backend may retain minimal authentication
 		and access logs (e.g. failed sign-in attempts associated with the email address) for up to
-		<strong>30 days</strong> after deletion, after which they are erased automatically. No content
+		<strong>7 days</strong> after deletion, after which they are erased automatically. No content
 		(projects, time entries, etc.) is retained.
 	</p>
 

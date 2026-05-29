@@ -3,7 +3,9 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { PlayCircle, Apple, Globe, CodeXml, ExternalLink } from '@lucide/svelte';
+	import { Globe, CodeXml, ExternalLink } from '@lucide/svelte';
+	import GooglePlay from './icons/GooglePlay.svelte';
+	import AppStore from './icons/AppStore.svelte';
 	import ProductIcon from './ProductIcon.svelte';
 
 	let { product }: { product: Product } = $props();
@@ -17,8 +19,8 @@
 	};
 
 	const linkIcon = (kind: ProductLink['kind']) => {
-		if (kind === 'play') return PlayCircle;
-		if (kind === 'appstore') return Apple;
+		if (kind === 'play') return GooglePlay;
+		if (kind === 'appstore') return AppStore;
 		if (kind === 'web') return Globe;
 		if (kind === 'github') return CodeXml;
 		return ExternalLink;

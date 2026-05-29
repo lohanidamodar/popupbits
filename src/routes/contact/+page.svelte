@@ -13,9 +13,9 @@
 			subject: 'Project enquiry'
 		},
 		{
-			title: 'Aakar Launcher beta',
-			description: 'Want early access, or have feedback on the launcher? Reach out here.',
-			subject: 'Aakar Launcher beta'
+			title: 'Tipot early access',
+			description: 'Want to try Tipot before it launches, or have feedback? Reach out here.',
+			subject: 'Tipot early access'
 		},
 		{
 			title: 'Just saying hi',

@@ -35,14 +35,13 @@ export const products: Product[] = [
 		description:
 			'Bhadama is a local rental and listing marketplace — tools, gear, and short-term items, neighbour to neighbour.',
 		themeClass: 'theme-bhadama',
-		platforms: ['android', 'web'],
+		platforms: ['android'],
 		links: [
 			{
 				label: 'Get on Play Store',
 				href: 'https://play.google.com/store/apps/details?id=app.bhadama.bhadama',
 				kind: 'play'
-			},
-			{ label: 'Visit Bhadama', href: 'https://bhadama.app', kind: 'web' }
+			}
 		],
 		iconSrc: '/products/bhadama/icon.png',
 		screenshots: [],

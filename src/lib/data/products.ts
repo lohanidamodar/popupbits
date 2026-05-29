@@ -146,6 +146,33 @@ export const products: Product[] = [
 		year: 2026
 	},
 	{
+		slug: 'audiobooks',
+		name: 'Audiobooks',
+		tagline: 'Free public-domain audiobooks, powered by LibriVox.',
+		description:
+			'A free, open-source audiobook player backed by LibriVox and archive.org — thousands of public-domain titles to stream or download for offline listening. Coming soon to the Play Store.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.flutter_audiobooks_app',
+				kind: 'play'
+			},
+			{
+				label: 'Source on GitHub',
+				href: 'https://github.com/lohanidamodar/flutter_audiobooks_app',
+				kind: 'github'
+			}
+		],
+		iconSrc: '/products/audiobooks/icon.png',
+		screenshots: [],
+		tech: ['Flutter', 'just_audio', 'Riverpod', 'Open source'],
+		status: 'coming-soon',
+		featured: true,
+		year: 2026
+	},
+	{
 		slug: 'spellcraft',
 		name: 'SpellCraft',
 		tagline: 'A word-building game with a Nepali twist.',

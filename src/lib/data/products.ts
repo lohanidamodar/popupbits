@@ -1,6 +1,6 @@
 export type ProductPlatform = 'web' | 'android' | 'ios';
 export type ProductStatus = 'live' | 'beta' | 'pipeline' | 'coming-soon';
-export type ProductLinkKind = 'play' | 'web' | 'github' | 'other';
+export type ProductLinkKind = 'play' | 'appstore' | 'web' | 'github' | 'other';
 
 export type ProductLink = {
 	label: string;
@@ -183,7 +183,12 @@ export const products: Product[] = [
 				kind: 'play'
 			},
 			{
-				label: 'iOS / Source on GitHub',
+				label: 'Get on App Store',
+				href: 'https://apps.apple.com/np/app/flutter-ui-challenges/id1473537882',
+				kind: 'appstore'
+			},
+			{
+				label: 'Source on GitHub',
 				href: 'https://github.com/lohanidamodar/flutter_ui_challenges',
 				kind: 'github'
 			}

@@ -3,13 +3,14 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { PlayCircle, Globe, CodeXml, ExternalLink } from '@lucide/svelte';
+	import { PlayCircle, Apple, Globe, CodeXml, ExternalLink } from '@lucide/svelte';
 	import ProductIcon from './ProductIcon.svelte';
 
 	let { product }: { product: Product } = $props();
 
 	const linkLabel = (link: ProductLink) => {
 		if (link.kind === 'play') return 'Play Store';
+		if (link.kind === 'appstore') return 'App Store';
 		if (link.kind === 'web') return 'Web';
 		if (link.kind === 'github') return 'GitHub';
 		return link.label;
@@ -17,6 +18,7 @@
 
 	const linkIcon = (kind: ProductLink['kind']) => {
 		if (kind === 'play') return PlayCircle;
+		if (kind === 'appstore') return Apple;
 		if (kind === 'web') return Globe;
 		if (kind === 'github') return CodeXml;
 		return ExternalLink;

@@ -2,13 +2,14 @@
 	import { type Product, platformLabels, statusLabels } from '$lib/data/products.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
-	import { ExternalLink, CodeXml, PlayCircle, Globe } from '@lucide/svelte';
+	import { ExternalLink, CodeXml, PlayCircle, Apple, Globe } from '@lucide/svelte';
 	import ProductIcon from './ProductIcon.svelte';
 
 	let { product }: { product: Product } = $props();
 
 	const iconFor = (kind: Product['links'][number]['kind']) => {
 		if (kind === 'play') return PlayCircle;
+		if (kind === 'appstore') return Apple;
 		if (kind === 'github') return CodeXml;
 		if (kind === 'web') return Globe;
 		return ExternalLink;

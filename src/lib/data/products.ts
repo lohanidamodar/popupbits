@@ -79,7 +79,7 @@ export const products: Product[] = [
 		name: 'Aakar Launcher',
 		tagline: 'A polished, fully customizable Android home launcher.',
 		description:
-			'Aakar is an Android home launcher built to fit anyone from grandparents to power users — clean defaults, deep customization where you want it. Coming soon to the Play Store.',
+			'Aakar is an Android home launcher built to fit anyone from grandparents to power users — clean defaults, deep customization where you want it.',
 		themeClass: 'theme-popupbits',
 		platforms: ['android'],
 		links: [
@@ -94,7 +94,7 @@ export const products: Product[] = [
 		privacyHref: '/contact/aakar-launcher-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter', 'Riverpod'],
-		status: 'coming-soon',
+		status: 'live',
 		featured: true,
 		year: 2026
 	},
@@ -103,19 +103,49 @@ export const products: Product[] = [
 		name: 'Achiver',
 		tagline: 'Pomodoro and project-based time tracking.',
 		description:
-			'Achiver pairs the Pomodoro technique with project time tracking — focus in timed sessions, then see exactly where your hours went. Sync across devices with your account. Coming soon to the Play Store.',
+			'Achiver pairs the Pomodoro technique with project time tracking — focus in timed sessions, then see exactly where your hours went. Sync across devices with your account.',
 		themeClass: 'theme-popupbits',
 		platforms: ['android'],
-		links: [],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.achiver',
+				kind: 'play'
+			}
+		],
 		iconSrc: '/products/achiver/icon.png',
 		privacyHref: '/contact/achiver-privacy-policy',
 		accountDeletionHref: '/contact/achiver-delete-account',
 		screenshots: [],
 		tech: ['Flutter', 'Appwrite', 'Riverpod', 'Drift'],
+		status: 'live',
+		featured: true,
+		year: 2026
+	},
+	{
+		slug: 'tipot',
+		name: 'Tipot',
+		tagline: 'Block-based notes and a calendar todo, in your pocket.',
+		description:
+			'Tipot is a compact pocket-capture app — Notion-style block notes and a calendar-driven todo list, woven together with linked contacts. Offline-first, with optional sync across your devices. Coming soon to the Play Store.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.tipot',
+				kind: 'play'
+			}
+		],
+		iconSrc: '/products/tipot/icon.png',
+		privacyHref: '/contact/tipot-privacy-policy',
+		accountDeletionHref: '/contact/tipot-delete-account',
+		screenshots: [],
+		tech: ['Flutter', 'Appwrite', 'Riverpod', 'SQLite'],
 		status: 'coming-soon',
 		featured: true,
 		year: 2026
-	},	
+	},
 	{
 		slug: 'spellcraft',
 		name: 'SpellCraft',
@@ -159,6 +189,7 @@ export const products: Product[] = [
 			}
 		],
 		iconSrc: '/products/ui-challenges-flutter/icon.png',
+		privacyHref: '/contact/flutter-ui-challenges-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter', 'Open source'],
 		status: 'live',

@@ -5,6 +5,7 @@
 	import { ExternalLink, CodeXml, Globe } from '@lucide/svelte';
 	import GooglePlay from './icons/GooglePlay.svelte';
 	import AppStore from './icons/AppStore.svelte';
+	import NepalFlag from './icons/NepalFlag.svelte';
 	import ProductIcon from './ProductIcon.svelte';
 
 	let { product }: { product: Product } = $props();
@@ -35,6 +36,12 @@
 					{product.name}
 				</h1>
 				<p class="mt-3 max-w-2xl text-lg opacity-80">{product.tagline}</p>
+				{#if product.availableIn}
+					<p class="mt-3 inline-flex items-center gap-2 text-sm font-medium opacity-90">
+						<NepalFlag class="h-5 w-auto" />
+						Available in {product.availableIn} only
+					</p>
+				{/if}
 				<div class="mt-6 flex flex-wrap gap-3">
 					{#each product.links as link (link.href)}
 						{@const Icon = iconFor(link.kind)}

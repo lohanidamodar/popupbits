@@ -20,6 +20,7 @@ export type Product = {
 	iconBgSrc?: string;
 	privacyHref?: string;
 	accountDeletionHref?: string;
+	availableIn?: string;
 	screenshots: string[];
 	tech: string[];
 	status: ProductStatus;
@@ -44,6 +45,7 @@ export const products: Product[] = [
 			}
 		],
 		iconSrc: '/products/bhadama/icon.png',
+		availableIn: 'Nepal',
 		screenshots: [],
 		tech: ['Flutter', 'Appwrite'],
 		status: 'beta',

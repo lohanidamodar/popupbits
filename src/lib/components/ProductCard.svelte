@@ -6,6 +6,7 @@
 	import { Globe, CodeXml, ExternalLink } from '@lucide/svelte';
 	import GooglePlay from './icons/GooglePlay.svelte';
 	import AppStore from './icons/AppStore.svelte';
+	import NepalFlag from './icons/NepalFlag.svelte';
 	import ProductIcon from './ProductIcon.svelte';
 
 	let { product }: { product: Product } = $props();
@@ -62,6 +63,15 @@
 				{/each}
 			{:else if product.status === 'coming-soon'}
 				<Badge variant="outline">{statusLabels[product.status]}</Badge>
+			{/if}
+			{#if product.availableIn}
+				<span
+					class="ml-auto inline-flex items-center"
+					title={`Available in ${product.availableIn} only`}
+					aria-label={`Available in ${product.availableIn} only`}
+				>
+					<NepalFlag class="h-5 w-auto" />
+				</span>
 			{/if}
 		</Card.Footer>
 	</Card.Root>

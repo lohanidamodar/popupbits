@@ -1,35 +1,64 @@
 <script lang="ts">
-	import { type Product, platformLabels, statusLabels } from '$lib/data/products.js';
+	import { type Product, type ProductLink, statusLabels } from '$lib/data/products.js';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import { PlayCircle, Globe, CodeXml, ExternalLink } from '@lucide/svelte';
 	import ProductIcon from './ProductIcon.svelte';
 
 	let { product }: { product: Product } = $props();
+
+	const linkLabel = (link: ProductLink) => {
+		if (link.kind === 'play') return 'Play Store';
+		if (link.kind === 'web') return 'Web';
+		if (link.kind === 'github') return 'GitHub';
+		return link.label;
+	};
+
+	const linkIcon = (kind: ProductLink['kind']) => {
+		if (kind === 'play') return PlayCircle;
+		if (kind === 'web') return Globe;
+		if (kind === 'github') return CodeXml;
+		return ExternalLink;
+	};
+
+	// Coming-soon products link to a store page that isn't live yet, so we show a
+	// pill instead of dead buttons. Live/beta products show the actual store links.
+	const showLinks = $derived(product.status !== 'coming-soon' && product.links.length > 0);
 </script>
 
-<a
-	href={`/products/${product.slug}`}
-	class={`group block ${product.themeClass}`}
-	aria-label={`Open ${product.name}`}
->
-	<Card.Root class="h-full transition-shadow group-hover:shadow-lg overflow-hidden">
-		<Card.Header class="flex flex-row items-center gap-4">
-			<ProductIcon {product} size="sm" />
-			<div class="flex-1">
-				<Card.Title class="text-lg">{product.name}</Card.Title>
-				<Card.Description class="text-xs">{product.tagline}</Card.Description>
-			</div>
-		</Card.Header>
-		<Card.Content>
-			<p class="text-sm text-muted-foreground line-clamp-3">{product.description}</p>
-		</Card.Content>
-		<Card.Footer class="flex items-center gap-2">
-			{#each product.platforms as p (p)}
-				<Badge variant="secondary">{platformLabels[p]}</Badge>
-			{/each}
-			{#if product.status !== 'live'}
+<div class={`${product.themeClass}`}>
+	<Card.Root class="h-full overflow-hidden transition-shadow hover:shadow-lg flex flex-col">
+		<a href={`/products/${product.slug}`} class="block" aria-label={`Open ${product.name}`}>
+			<Card.Header class="flex flex-row items-center gap-4">
+				<ProductIcon {product} size="sm" />
+				<div class="flex-1">
+					<Card.Title class="text-lg">{product.name}</Card.Title>
+					<Card.Description class="text-xs">{product.tagline}</Card.Description>
+				</div>
+			</Card.Header>
+			<Card.Content>
+				<p class="text-sm text-muted-foreground line-clamp-3">{product.description}</p>
+			</Card.Content>
+		</a>
+		<Card.Footer class="mt-auto flex flex-wrap items-center gap-2">
+			{#if showLinks}
+				{#each product.links as link (link.href)}
+					{@const Icon = linkIcon(link.kind)}
+					<Button
+						href={link.href}
+						target="_blank"
+						rel="noopener noreferrer"
+						variant="outline"
+						size="sm"
+					>
+						<Icon class="size-4" />
+						{linkLabel(link)}
+					</Button>
+				{/each}
+			{:else if product.status === 'coming-soon'}
 				<Badge variant="outline">{statusLabels[product.status]}</Badge>
 			{/if}
 		</Card.Footer>
 	</Card.Root>
-</a>
+</div>

@@ -166,6 +166,7 @@ export const products: Product[] = [
 			}
 		],
 		iconSrc: '/products/listora/icon.png',
+		privacyHref: '/contact/listora-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter', 'just_audio', 'Riverpod', 'Open source'],
 		status: 'coming-soon',

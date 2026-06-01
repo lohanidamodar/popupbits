@@ -186,7 +186,7 @@ export const products: Product[] = [
 		links: [
 			{
 				label: 'Get on Play Store',
-				href: 'https://play.google.com/store/apps/details?id=com.popupbits.sanskrit_app',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.sanskrit',
 				kind: 'play'
 			}
 		],

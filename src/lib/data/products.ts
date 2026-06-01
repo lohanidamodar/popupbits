@@ -176,6 +176,29 @@ export const products: Product[] = [
 		year: 2026
 	},
 	{
+		slug: 'sanskrit',
+		name: 'Sanskrit',
+		tagline: 'Learn Sanskrit, the easy way.',
+		description:
+			'A friendly path into Sanskrit — vocabulary, basic grammar, and key sutras with clear translations. Designed for absolute beginners and works fully offline. Coming soon to the Play Store.',
+		themeClass: 'theme-sanskrit',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.sanskrit_app',
+				kind: 'play'
+			}
+		],
+		iconSrc: '/products/sanskrit/icon.png',
+		privacyHref: '/contact/sanskrit-privacy-policy',
+		screenshots: [],
+		tech: ['Flutter', 'Riverpod', 'Hive'],
+		status: 'coming-soon',
+		featured: true,
+		year: 2026
+	},
+	{
 		slug: 'spellcraft',
 		name: 'SpellCraft',
 		tagline: 'A word-building game with a Nepali twist.',

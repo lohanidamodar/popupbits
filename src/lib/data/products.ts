@@ -180,7 +180,7 @@ export const products: Product[] = [
 		name: 'Sanskrit',
 		tagline: 'Learn Sanskrit, the easy way.',
 		description:
-			'A friendly path into Sanskrit — vocabulary, basic grammar, and key sutras with clear translations. Designed for absolute beginners and works fully offline. Coming soon to the Play Store.',
+			'A friendly path into Sanskrit — vocabulary, basic grammar, and key sutras with clear translations. Designed for absolute beginners and works fully offline.',
 		themeClass: 'theme-sanskrit',
 		platforms: ['android'],
 		links: [
@@ -194,7 +194,7 @@ export const products: Product[] = [
 		privacyHref: '/contact/sanskrit-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter', 'Riverpod', 'Hive'],
-		status: 'coming-soon',
+		status: 'live',
 		featured: true,
 		year: 2026
 	},

@@ -128,7 +128,7 @@ export const products: Product[] = [
 		name: 'Tipot',
 		tagline: 'Block-based notes and a calendar todo, in your pocket.',
 		description:
-			'Tipot is a compact pocket-capture app — Notion-style block notes and a calendar-driven todo list, woven together with linked contacts. Offline-first, with optional sync across your devices. Coming soon to the Play Store.',
+			'Tipot is a compact pocket-capture app — Notion-style block notes and a calendar-driven todo list, woven together with linked contacts. Offline-first, with optional sync across your devices.',
 		themeClass: 'theme-popupbits',
 		platforms: ['android'],
 		links: [
@@ -143,7 +143,7 @@ export const products: Product[] = [
 		accountDeletionHref: '/contact/tipot-delete-account',
 		screenshots: [],
 		tech: ['Flutter', 'Appwrite', 'Riverpod', 'SQLite'],
-		status: 'coming-soon',
+		status: 'live',
 		featured: true,
 		year: 2026
 	},
@@ -152,7 +152,7 @@ export const products: Product[] = [
 		name: 'Listora',
 		tagline: 'Free public-domain audiobooks, powered by LibriVox.',
 		description:
-			'Listora is a free, open-source audiobook player backed by LibriVox and archive.org — thousands of public-domain titles to stream or download for offline listening. Coming soon to the Play Store.',
+			'Listora is a free, open-source audiobook player backed by LibriVox and archive.org — thousands of public-domain titles to stream or download for offline listening.',
 		themeClass: 'theme-popupbits',
 		platforms: ['android'],
 		links: [
@@ -171,7 +171,7 @@ export const products: Product[] = [
 		privacyHref: '/contact/listora-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter', 'just_audio', 'Riverpod', 'Open source'],
-		status: 'coming-soon',
+		status: 'live',
 		featured: true,
 		year: 2026
 	},

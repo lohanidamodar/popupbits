@@ -2,7 +2,7 @@
 	import { type Product, platformLabels, statusLabels } from '$lib/data/products.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
-	import { ExternalLink, CodeXml, Globe } from '@lucide/svelte';
+	import { ExternalLink, CodeXml, Globe, Download } from '@lucide/svelte';
 	import GooglePlay from './icons/GooglePlay.svelte';
 	import AppStore from './icons/AppStore.svelte';
 	import NepalFlag from './icons/NepalFlag.svelte';
@@ -15,6 +15,7 @@
 		if (kind === 'appstore') return AppStore;
 		if (kind === 'github') return CodeXml;
 		if (kind === 'web') return Globe;
+		if (kind === 'release') return Download;
 		return ExternalLink;
 	};
 </script>

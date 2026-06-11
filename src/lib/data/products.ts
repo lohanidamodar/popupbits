@@ -1,6 +1,6 @@
-export type ProductPlatform = 'web' | 'android' | 'ios';
+export type ProductPlatform = 'web' | 'android' | 'ios' | 'linux' | 'macos' | 'windows';
 export type ProductStatus = 'live' | 'beta' | 'pipeline' | 'coming-soon';
-export type ProductLinkKind = 'play' | 'appstore' | 'web' | 'github' | 'other';
+export type ProductLinkKind = 'play' | 'appstore' | 'web' | 'github' | 'release' | 'other';
 
 export type ProductLink = {
 	label: string;
@@ -199,6 +199,33 @@ export const products: Product[] = [
 		year: 2026
 	},
 	{
+		slug: 'typer-kids',
+		name: 'Typer Kids',
+		tagline: 'A colorful typing tutor for kids.',
+		description:
+			'A fun, colorful typing tutor built with Flutter — structured lessons and arcade-style games to help kids learn touch typing. Free and open source (GPLv3), with builds for Linux, macOS, and Windows.',
+		themeClass: 'theme-popupbits',
+		platforms: ['linux', 'macos', 'windows'],
+		links: [
+			{
+				label: 'Download (latest)',
+				href: 'https://github.com/lohanidamodar/typer_kids/releases/latest',
+				kind: 'release'
+			},
+			{
+				label: 'Source on GitHub',
+				href: 'https://github.com/lohanidamodar/typer_kids',
+				kind: 'github'
+			}
+		],
+		iconSrc: '/products/typer-kids/icon.png',
+		screenshots: [],
+		tech: ['Flutter', 'Open source', 'GPLv3'],
+		status: 'live',
+		featured: true,
+		year: 2026
+	},
+	{
 		slug: 'spellcraft',
 		name: 'SpellCraft',
 		tagline: 'A word-building game with a Nepali twist.',
@@ -287,5 +314,8 @@ export const statusLabels: Record<ProductStatus, string> = {
 export const platformLabels: Record<ProductPlatform, string> = {
 	web: 'Web',
 	android: 'Android',
-	ios: 'iOS'
+	ios: 'iOS',
+	linux: 'Linux',
+	macos: 'macOS',
+	windows: 'Windows'
 };

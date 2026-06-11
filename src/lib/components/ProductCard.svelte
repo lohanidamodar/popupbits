@@ -3,7 +3,7 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { Globe, CodeXml, ExternalLink } from '@lucide/svelte';
+	import { Globe, CodeXml, Download, ExternalLink } from '@lucide/svelte';
 	import GooglePlay from './icons/GooglePlay.svelte';
 	import AppStore from './icons/AppStore.svelte';
 	import NepalFlag from './icons/NepalFlag.svelte';
@@ -16,6 +16,7 @@
 		if (link.kind === 'appstore') return 'App Store';
 		if (link.kind === 'web') return 'Web';
 		if (link.kind === 'github') return 'GitHub';
+		if (link.kind === 'release') return 'Download';
 		return link.label;
 	};
 
@@ -24,6 +25,7 @@
 		if (kind === 'appstore') return AppStore;
 		if (kind === 'web') return Globe;
 		if (kind === 'github') return CodeXml;
+		if (kind === 'release') return Download;
 		return ExternalLink;
 	};
 

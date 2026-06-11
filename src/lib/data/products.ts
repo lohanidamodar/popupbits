@@ -228,6 +228,33 @@ export const products: Product[] = [
 		year: 2026
 	},
 	{
+		slug: 'tilepad',
+		name: 'Tilepad',
+		tagline: 'An open-source alternative to Touch Portal.',
+		description:
+			'Build your own touch deck — a Tilepad server runs on your desktop while the client on your phone gives you a fully customizable grid of tiles for shortcuts, media controls, and macros. Cross-platform, free, and BSD-3 licensed.',
+		themeClass: 'theme-popupbits',
+		platforms: ['windows', 'linux', 'android'],
+		links: [
+			{
+				label: 'Download (latest)',
+				href: 'https://github.com/lohanidamodar/tilepad/releases/latest',
+				kind: 'release'
+			},
+			{
+				label: 'Source on GitHub',
+				href: 'https://github.com/lohanidamodar/tilepad',
+				kind: 'github'
+			}
+		],
+		iconSrc: '/products/tilepad/icon.png',
+		screenshots: [],
+		tech: ['Flutter', 'Open source', 'BSD-3'],
+		status: 'live',
+		featured: true,
+		year: 2026
+	},
+	{
 		slug: 'spellcraft',
 		name: 'SpellCraft',
 		tagline: 'A word-building game with a Nepali twist.',

@@ -26,6 +26,8 @@ export type Product = {
 	status: ProductStatus;
 	featured: boolean;
 	year: number;
+	/** When true, the product is excluded from all listings and its detail page 404s. */
+	hidden?: boolean;
 };
 
 export const products: Product[] = [
@@ -294,14 +296,17 @@ export const products: Product[] = [
 		tech: ['Svelte', 'TypeScript', 'PWA'],
 		status: 'live',
 		featured: true,
-		year: 2020
+		year: 2020,
+		hidden: true
 	}
 ];
 
-export const featuredProducts = products.filter((p) => p.featured);
+export const visibleProducts = products.filter((p) => !p.hidden);
+export const featuredProducts = visibleProducts.filter((p) => p.featured);
 
 export function getProductBySlug(slug: string): Product | undefined {
-	return products.find((p) => p.slug === slug);
+	const product = products.find((p) => p.slug === slug);
+	return product?.hidden ? undefined : product;
 }
 
 export const statusLabels: Record<ProductStatus, string> = {

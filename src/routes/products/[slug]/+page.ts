@@ -1,10 +1,10 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
-import { products, getProductBySlug } from '$lib/data/products.js';
+import { visibleProducts, getProductBySlug } from '$lib/data/products.js';
 
 export const prerender = true;
 
-export const entries = () => products.map((p) => ({ slug: p.slug }));
+export const entries = () => visibleProducts.map((p) => ({ slug: p.slug }));
 
 export const load: PageLoad = ({ params }) => {
 	const product = getProductBySlug(params.slug);

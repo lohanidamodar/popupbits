@@ -201,6 +201,81 @@ export const products: Product[] = [
 		year: 2026
 	},
 	{
+		slug: 'sabdabhandar',
+		name: 'Sabdabhandar',
+		tagline: 'The Nepali Brihat Shabdakosh — 128,000+ words, fully offline.',
+		description:
+			'A modern take on the नेपाली बृहत् शब्दकोश. Smart search (including Romanized queries like "pani" → पानी), rich entries with definitions, examples, etymology, synonyms and word families, TTS pronunciation, and a daily word puzzle — all fully offline.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.sabdabhandar',
+				kind: 'play'
+			}
+		],
+		iconSrc: '/products/sabdabhandar/icon.png',
+		privacyHref: '/contact/sabdabhandar-privacy-policy',
+		screenshots: [],
+		tech: ['Flutter', 'SQLite (FTS5)', 'TTS'],
+		status: 'coming-soon',
+		featured: true,
+		year: 2026
+	},
+	{
+		slug: 'sambandha',
+		name: 'Sambandha',
+		tagline: 'A rethinking of the contacts app.',
+		description:
+			'Sambandha is a rethinking of the phone contacts app — richer profiles, photos, birthdays in both BS and AD, QR-code exchange, and offline-first storage on your device. Bilingual and made for Nepal.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.sambandha',
+				kind: 'play'
+			}
+		],
+		iconSrc: '/products/sambandha/icon.png',
+		privacyHref: '/contact/sambandha-privacy-policy',
+		screenshots: [],
+		tech: ['Flutter', 'Riverpod', 'SQLite'],
+		status: 'coming-soon',
+		featured: true,
+		year: 2026
+	},
+	{
+		slug: 'gaadidesk',
+		name: 'Gaadidesk',
+		tagline: 'Sell more recondition vehicles with fewer missed follow-ups.',
+		description:
+			'Gaadidesk is a showroom management app for recondition vehicle dealers — inventory, buyer inquiries, follow-ups, documents, and financing in one place. Built for the way Nepali showrooms actually work.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.gaadidesk',
+				kind: 'play'
+			},
+			{
+				label: 'Visit gaadidesk.com',
+				href: 'https://atktm.com/gaadidesk',
+				kind: 'web'
+			}
+		],
+		iconSrc: '/products/gaadidesk/icon.svg',
+		privacyHref: '/contact/gaadidesk-privacy-policy',
+		availableIn: 'Nepal',
+		screenshots: [],
+		tech: ['Flutter', 'Riverpod'],
+		status: 'coming-soon',
+		featured: true,
+		year: 2026
+	},
+	{
 		slug: 'typer-kids',
 		name: 'Typer Kids',
 		tagline: 'A colorful typing tutor for kids.',

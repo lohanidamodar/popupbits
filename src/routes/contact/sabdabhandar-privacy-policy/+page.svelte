@@ -14,9 +14,8 @@
 	<p><em>Last updated: 11 June 2026</em></p>
 
 	<p>
-		<strong>Sabdabhandar</strong> ("the app") is an offline Nepali dictionary app based on the
-		नेपाली बृहत् शब्दकोश, published by {company.legalName}. This page explains what data the app
-		handles.
+		<strong>Sabdabhandar</strong> ("the app") is an offline Nepali dictionary app published by
+		{company.legalName}. This page explains what data the app handles.
 	</p>
 
 	<h2>The short version</h2>

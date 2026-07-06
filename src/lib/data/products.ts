@@ -203,9 +203,9 @@ export const products: Product[] = [
 	{
 		slug: 'sabdabhandar',
 		name: 'Sabdabhandar',
-		tagline: 'The Nepali Brihat Shabdakosh — 128,000+ words, fully offline.',
+		tagline: 'A modern Nepali dictionary, fully offline.',
 		description:
-			'A modern take on the नेपाली बृहत् शब्दकोश. Smart search (including Romanized queries like "pani" → पानी), rich entries with definitions, examples, etymology, synonyms and word families, TTS pronunciation, and a daily word puzzle — all fully offline.',
+			'A modern Nepali–Nepali dictionary with 128,000+ entries — smart search (including Romanized queries like "pani" → पानी), rich definitions with examples, etymology, synonyms and word families, TTS pronunciation, and a daily word puzzle. Fully offline, made for everyday use.',
 		themeClass: 'theme-popupbits',
 		platforms: ['android'],
 		links: [

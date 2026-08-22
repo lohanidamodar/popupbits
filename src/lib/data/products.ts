@@ -150,6 +150,34 @@ export const products: Product[] = [
 		year: 2026
 	},
 	{
+		slug: 'photoready',
+		name: 'PhotoReady',
+		tagline: 'Passport, visa and ID photos, made offline on your phone.',
+		description:
+			'PhotoReady turns an ordinary portrait into a compliant passport, visa or ID photo — background removed, face positioned to the document\u2019s own rules, and print sheets ready for the counter. Everything runs on the device, with no account and no internet.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.photoready',
+				kind: 'play'
+			},
+			{
+				label: 'Document specifications',
+				href: 'https://github.com/lohanidamodar/document-photo-specs',
+				kind: 'github'
+			}
+		],
+		iconSrc: '/products/photoready/icon.png',
+		privacyHref: '/contact/photoready-privacy-policy',
+		screenshots: [],
+		tech: ['Flutter', 'ML Kit', 'LiteRT', 'Riverpod'],
+		status: 'beta',
+		featured: true,
+		year: 2026
+	},
+	{
 		slug: 'listora',
 		name: 'Listora',
 		tagline: 'Free public-domain audiobooks, powered by LibriVox.',

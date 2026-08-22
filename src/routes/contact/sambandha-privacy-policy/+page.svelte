@@ -11,7 +11,7 @@
 <PageHeader title="Sambandha — Privacy Policy" />
 
 <article class="prose prose-neutral dark:prose-invert max-w-3xl mx-auto px-6 pb-24">
-	<p><em>Last updated: 11 June 2026</em></p>
+	<p><em>Last updated: 22 August 2026</em></p>
 
 	<p>
 		<strong>Sambandha</strong> ("the app") is a contacts app published by {company.legalName}.
@@ -55,7 +55,48 @@
 			<strong>Share</strong> — the app uses Android's standard share sheet if you share a contact
 			card or receive one shared from another app. The app doesn't see what you share or where.
 		</li>
+		<li>
+			<strong>Notifications</strong> — to remind you about follow-ups you have scheduled, and,
+			only if you turn it on, to show you context when someone calls.
+		</li>
+		<li>
+			<strong>Run at startup</strong> — so your follow-up reminders survive a restart. The app
+			does not otherwise run in the background.
+		</li>
+		<li>
+			<strong>Phone</strong> (optional, off by default) — only if you turn on "Tap to call", so a
+			call can be placed without a second tap in the dialer. Leave it off, or decline the
+			permission, and the app simply opens your dialer with the number filled in.
+		</li>
+		<li>
+			<strong>Call screening</strong> (optional, off by default) — only if you turn on "Show
+			context on incoming calls", so the app can tell you who is calling and how you know them.
+			The lookup happens entirely on your device against contacts you already have in Sambandha.
+			The app never blocks, rejects, redirects, or records calls, and it does not log them.
+		</li>
 	</ul>
+
+	<h2>Your data is yours to take</h2>
+	<p>
+		Sambandha can export everything — contacts, memories, relationships, groups, follow-ups and
+		optionally your photos — to a single backup file you choose where to keep, and import it
+		again later. The backup is written straight to the destination you pick; it never passes
+		through us, and we hold no copy of it. Deleting the app deletes its data, and because we
+		store nothing there is no request to make of us.
+	</p>
+	<p>
+		If you enabled address-book syncing, contacts Sambandha wrote to your phone's own contacts
+		remain there after uninstalling, and your phone may sync those to whichever account you have
+		configured (for example Google). That syncing is performed by your device, not by Sambandha,
+		and is governed by that provider's terms. Remove them in your phone's Contacts app.
+	</p>
+
+	<h2>Network access</h2>
+	<p>
+		The app has no backend, but two standard components do reach the internet, and neither sends
+		anything about you: fonts are downloaded from Google Fonts on first launch, and Google Play
+		is used to check for app updates.
+	</p>
 
 	<h2>Sharing with third parties</h2>
 	<p>

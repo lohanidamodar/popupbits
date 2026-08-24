@@ -152,9 +152,9 @@ export const products: Product[] = [
 	{
 		slug: 'photoready',
 		name: 'PhotoReady',
-		tagline: 'Passport, visa and ID photos, made offline on your phone.',
+		tagline: 'Passport size photos for visa and ID, made offline on your phone.',
 		description:
-			'PhotoReady turns an ordinary portrait into a compliant passport, visa or ID photo — background removed, face positioned to the document\u2019s own rules, and print sheets ready for the counter. Everything runs on the device, with no account and no internet.',
+			'PhotoReady crops a portrait to the exact size a passport, visa or ID photo needs — background removed, face positioned to the document\u2019s own published rules, and print sheets ready for the counter. Everything runs on the device, with no account and no internet.',
 		themeClass: 'theme-popupbits',
 		platforms: ['android'],
 		links: [

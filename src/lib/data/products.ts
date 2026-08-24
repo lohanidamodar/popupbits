@@ -173,7 +173,7 @@ export const products: Product[] = [
 		privacyHref: '/contact/photoready-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter', 'ML Kit', 'LiteRT', 'Riverpod'],
-		status: 'beta',
+		status: 'live',
 		featured: true,
 		year: 2026
 	},

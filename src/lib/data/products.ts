@@ -61,12 +61,17 @@ export const products: Product[] = [
 		description:
 			'Mero Nepali teaches the Devanagari alphabet, numbers, and core vocabulary through bright, friendly lessons — for children and anyone starting fresh.',
 		themeClass: 'theme-meronepali',
-		platforms: ['android', 'web'],
+		platforms: ['android', 'ios', 'web'],
 		links: [
 			{
 				label: 'Get on Play Store',
 				href: 'https://play.google.com/store/apps/details?id=dev.appwriters.mero_nepali',
 				kind: 'play'
+			},
+			{
+				label: 'Get on App Store',
+				href: 'https://apps.apple.com/us/app/mero-nepali-%E0%A4%AE-%E0%A4%B0-%E0%A4%A8-%E0%A4%AA-%E0%A4%B2/id6761828591',
+				kind: 'appstore'
 			},
 			{ label: 'Visit Mero Nepali', href: 'https://www.meronepali.org/', kind: 'web' }
 		],

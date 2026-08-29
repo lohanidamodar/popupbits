@@ -275,7 +275,7 @@ export const products: Product[] = [
 		privacyHref: '/contact/sambandha-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter', 'Riverpod', 'SQLite'],
-		status: 'coming-soon',
+		status: 'live',
 		featured: true,
 		year: 2026
 	},

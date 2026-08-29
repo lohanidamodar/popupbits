@@ -4,7 +4,12 @@
 	import ConsultingSection from '$lib/components/ConsultingSection.svelte';
 	import ProductCard from '$lib/components/ProductCard.svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { company, featuredProducts } from '$lib';
+	import { company, featuredProducts, visibleProducts } from '$lib';
+
+	// Most products are flagged featured, so cap the home page and send the rest to /products.
+	const HOME_PRODUCT_COUNT = 6;
+	const homeProducts = featuredProducts.slice(0, HOME_PRODUCT_COUNT);
+	const hasMore = visibleProducts.length > homeProducts.length;
 </script>
 
 <svelte:head>
@@ -35,10 +40,17 @@
 		</a>
 	</div>
 	<div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-		{#each featuredProducts as product (product.slug)}
+		{#each homeProducts as product (product.slug)}
 			<ProductCard {product} />
 		{/each}
 	</div>
+	{#if hasMore}
+		<div class="mt-10 flex justify-center">
+			<Button href="/products" variant="outline" size="lg">
+				See all {visibleProducts.length} products
+			</Button>
+		</div>
+	{/if}
 </section>
 
 <StatsBand stats={company.stats} />

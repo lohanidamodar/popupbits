@@ -378,6 +378,7 @@ export const products: Product[] = [
 			}
 		],
 		iconSrc: '/products/spellcraft/icon.png',
+		privacyHref: '/contact/spellcraft-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter'],
 		status: 'live',

@@ -77,7 +77,7 @@ export const products: Product[] = [
 		],
 		iconSrc: '/products/mero-nepali/icon.png',
 		screenshots: [],
-		tech: ['Flutter', 'Firebase'],
+		tech: ['Flutter', 'Flame', 'Riverpod'],
 		status: 'live',
 		featured: true,
 		year: 2022

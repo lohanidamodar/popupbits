@@ -32,6 +32,7 @@
 			<div class="font-semibold text-sm mb-3">Studio</div>
 			<ul class="space-y-2 text-sm">
 				<li><a class="text-muted-foreground hover:text-foreground" href="/about">About</a></li>
+				<li><a class="text-muted-foreground hover:text-foreground" href="/blog">Blog</a></li>
 				<li><a class="text-muted-foreground hover:text-foreground" href="/contact">Contact</a></li>
 				<li>
 					<a

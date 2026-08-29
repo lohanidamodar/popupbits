@@ -12,3 +12,12 @@ export type {
 
 export { default as SEO } from './components/SEO.svelte';
 export { default as PageHeader } from './components/PageHeader.svelte';
+
+export {
+	posts,
+	getPostBySlug,
+	getPostComponent,
+	getPostsByProduct,
+	formatPostDate
+} from './data/posts.js';
+export type { Post, PostMeta } from './data/posts.js';

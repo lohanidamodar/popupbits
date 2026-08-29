@@ -7,8 +7,11 @@
 	import AppStore from './icons/AppStore.svelte';
 	import NepalFlag from './icons/NepalFlag.svelte';
 	import ProductIcon from './ProductIcon.svelte';
+	import { getPostsByProduct, formatPostDate } from '$lib/data/posts.js';
 
 	let { product }: { product: Product } = $props();
+
+	const relatedPosts = $derived(getPostsByProduct(product.slug));
 
 	const iconFor = (kind: Product['links'][number]['kind']) => {
 		if (kind === 'play') return GooglePlay;
@@ -96,6 +99,28 @@
 					/>
 				{/each}
 			</div>
+		</section>
+	{/if}
+
+	{#if relatedPosts.length > 0}
+		<section class="max-w-6xl mx-auto px-6 pb-24">
+			<h2 class="font-display text-2xl font-bold mb-6">From the blog</h2>
+			<ul class="space-y-4">
+				{#each relatedPosts as post (post.slug)}
+					<li>
+						<a
+							href={`/blog/${post.slug}`}
+							class="block rounded-xl border border-border p-6 transition-colors hover:bg-accent"
+						>
+							<time class="text-xs text-muted-foreground" datetime={post.date}>
+								{formatPostDate(post.date)}
+							</time>
+							<h3 class="font-display text-lg font-semibold mt-1">{post.title}</h3>
+							<p class="text-sm text-muted-foreground mt-2">{post.description}</p>
+						</a>
+					</li>
+				{/each}
+			</ul>
 		</section>
 	{/if}
 </div>

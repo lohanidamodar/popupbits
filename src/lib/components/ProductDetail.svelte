@@ -13,6 +13,9 @@
 
 	const relatedPosts = $derived(getPostsByProduct(product.slug));
 
+	// A policy can live on the product's own domain (e.g. Mero Nepali), not just /contact.
+	const isExternal = (href: string) => href.startsWith('http');
+
 	const iconFor = (kind: Product['links'][number]['kind']) => {
 		if (kind === 'play') return GooglePlay;
 		if (kind === 'appstore') return AppStore;
@@ -73,7 +76,12 @@
 		{#if product.privacyHref || product.accountDeletionHref}
 			<p class="mt-12 text-sm text-muted-foreground flex flex-wrap gap-x-4 gap-y-2">
 				{#if product.privacyHref}
-					<a class="underline-offset-4 hover:underline" href={product.privacyHref}>
+					<a
+						class="underline-offset-4 hover:underline"
+						href={product.privacyHref}
+						target={isExternal(product.privacyHref) ? '_blank' : undefined}
+						rel={isExternal(product.privacyHref) ? 'noopener noreferrer' : undefined}
+					>
 						Privacy policy
 					</a>
 				{/if}

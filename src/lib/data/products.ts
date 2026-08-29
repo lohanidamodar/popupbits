@@ -18,6 +18,7 @@ export type Product = {
 	links: ProductLink[];
 	iconSrc?: string;
 	iconBgSrc?: string;
+	/** Site-relative path, or an absolute URL when the policy lives on the product's own domain. */
 	privacyHref?: string;
 	accountDeletionHref?: string;
 	availableIn?: string;
@@ -76,6 +77,7 @@ export const products: Product[] = [
 			{ label: 'Visit Mero Nepali', href: 'https://www.meronepali.org/', kind: 'web' }
 		],
 		iconSrc: '/products/mero-nepali/icon.png',
+		privacyHref: 'https://www.meronepali.org/privacy',
 		screenshots: [],
 		tech: ['Flutter', 'Flame', 'Riverpod'],
 		status: 'live',

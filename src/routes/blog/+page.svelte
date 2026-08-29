@@ -25,9 +25,17 @@
 		<ul class="space-y-6">
 			{#each posts as post (post.slug)}
 				<li>
-					<Card.Root class="transition-shadow hover:shadow-lg">
+					<Card.Root class="overflow-hidden pt-0 transition-shadow hover:shadow-lg">
 						<a href={`/blog/${post.slug}`} class="block">
-							<Card.Header>
+							{#if post.cover}
+								<img
+									src={post.cover}
+									alt=""
+									class="w-full aspect-[3/1] object-cover"
+									loading="lazy"
+								/>
+							{/if}
+							<Card.Header class="pt-6">
 								<div class="flex flex-wrap items-center gap-2 mb-2">
 									<time class="text-xs text-muted-foreground" datetime={post.date}>
 										{formatPostDate(post.date)}

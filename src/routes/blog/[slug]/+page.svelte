@@ -21,6 +21,13 @@
 />
 
 <article class="max-w-3xl mx-auto px-6 pt-24 pb-24">
+	{#if post.cover}
+		<img
+			src={post.cover}
+			alt=""
+			class="w-full aspect-[5/2] object-cover rounded-2xl border border-border mb-10"
+		/>
+	{/if}
 	<header class="mb-10">
 		<div class="flex flex-wrap items-center gap-2 mb-4">
 			<time class="text-sm text-muted-foreground" datetime={post.date}>

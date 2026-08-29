@@ -13,6 +13,8 @@ export type PostMeta = {
 	product?: string;
 	/** Relative to /static, e.g. '/images/blog/foo.jpg'. Falls back to the site OG image. */
 	image?: string;
+	/** Textless cover art shown on the blog index and atop the post. */
+	cover?: string;
 	draft?: boolean;
 };
 

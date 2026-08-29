@@ -5,6 +5,7 @@ description: 'Our Flutter kids app cleared App Store review on the first submiss
 date: '2026-08-28'
 author: 'Damodar Lohani'
 product: 'mero-nepali'
+image: '/images/blog/mero-nepali-app-store-first-try.png'
 tags: ['App Store Review', 'iOS', 'Flutter', 'Privacy', 'Kids Apps', 'Mero Nepali']
 ---
 

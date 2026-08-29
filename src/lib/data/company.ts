@@ -61,7 +61,7 @@ export const company = {
 		defaultTitle: 'Popup Bits — a Kathmandu studio',
 		defaultDescription:
 			'Popup Bits is a Kathmandu studio shipping its own apps and building full-stack platforms, SaaS, AI-integrated products, and business automation for clients across web, mobile, and desktop.',
-		ogImage: '/images/og-image.jpg',
+		ogImage: '/images/og-image.png',
 		twitterHandle: '@lohanidamodar'
 	}
 } as const;

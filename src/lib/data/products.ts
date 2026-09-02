@@ -163,12 +163,17 @@ export const products: Product[] = [
 		description:
 			'PhotoReady crops a portrait to the exact size a passport, visa or ID photo needs — background removed, face positioned to the document\u2019s own published rules, and print sheets ready for the counter. Everything runs on the device, with no account and no internet.',
 		themeClass: 'theme-popupbits',
-		platforms: ['android'],
+		platforms: ['android', 'ios'],
 		links: [
 			{
 				label: 'Get on Play Store',
 				href: 'https://play.google.com/store/apps/details?id=com.popupbits.photoready',
 				kind: 'play'
+			},
+			{
+				label: 'Get on App Store',
+				href: 'https://apps.apple.com/us/app/photoready-passport-size-photo/id6806537666',
+				kind: 'appstore'
 			},
 			{
 				label: 'Document specifications',

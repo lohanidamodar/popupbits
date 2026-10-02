@@ -370,6 +370,92 @@ export const products: Product[] = [
 		year: 2026
 	},
 	{
+		slug: 'sshetu',
+		name: 'SSHetu',
+		tagline: 'SSH client, terminal, SFTP and tunnels for every device.',
+		description:
+			'SSHetu keeps your servers in one place and connects to them from a phone, a tablet or a desktop — a real terminal, an SFTP file browser, port forwarding, and SSH keys generated on the device. No backend and no account: hosts and keys stay in the OS keychain, move to a second device over your own network, and back up to an encrypted file you keep. Named from सेतु (setu), a bridge. Free and open source (MIT).',
+		themeClass: 'theme-popupbits',
+		platforms: ['android', 'windows', 'macos', 'linux'],
+		links: [
+			{
+				label: 'Android',
+				href: 'https://github.com/popupbits/sshetu/releases/latest',
+				kind: 'release'
+			},
+			{
+				label: 'Windows',
+				href: 'https://github.com/popupbits/sshetu/releases/latest',
+				kind: 'release'
+			},
+			{
+				label: 'macOS',
+				href: 'https://github.com/popupbits/sshetu/releases/latest',
+				kind: 'release'
+			},
+			{
+				label: 'Linux',
+				href: 'https://github.com/popupbits/sshetu/releases/latest',
+				kind: 'release'
+			},
+			{
+				label: 'Source on GitHub',
+				href: 'https://github.com/popupbits/sshetu',
+				kind: 'github'
+			}
+		],
+		iconSrc: '/products/sshetu/icon.png',
+		screenshots: [],
+		tech: ['Flutter', 'Open source', 'MIT'],
+		status: 'live',
+		featured: true,
+		year: 2026
+	},
+	{
+		slug: 'karmashala',
+		name: 'Karmashala',
+		tagline: 'An agent development environment for Claude Code, Codex and Antigravity.',
+		description:
+			'Karmashala (कर्मशाला, the hall where the work is done) runs coding-agent CLIs — Claude Code, Codex and Antigravity — on your desktop, on a server, or both, and lets you follow them from your phone. Embedded terminals and chat, an editor and file explorer, per-turn checkpoints, device and browser tooling, and an MCP server of its own. Free and open source (Apache-2.0).',
+		themeClass: 'theme-popupbits',
+		platforms: ['windows', 'macos', 'linux', 'android'],
+		// Server-only point releases ship without app builds, so link the full
+		// releases list rather than /releases/latest.
+		links: [
+			{
+				label: 'Windows',
+				href: 'https://github.com/lohanidamodar/karmashala/releases',
+				kind: 'release'
+			},
+			{
+				label: 'macOS',
+				href: 'https://github.com/lohanidamodar/karmashala/releases',
+				kind: 'release'
+			},
+			{
+				label: 'Linux',
+				href: 'https://github.com/lohanidamodar/karmashala/releases',
+				kind: 'release'
+			},
+			{
+				label: 'Android',
+				href: 'https://github.com/lohanidamodar/karmashala/releases',
+				kind: 'release'
+			},
+			{
+				label: 'Source on GitHub',
+				href: 'https://github.com/lohanidamodar/karmashala',
+				kind: 'github'
+			}
+		],
+		iconSrc: '/products/karmashala/icon.png',
+		screenshots: [],
+		tech: ['Flutter', 'Open source', 'Apache-2.0'],
+		status: 'live',
+		featured: true,
+		year: 2026
+	},
+	{
 		slug: 'spellcraft',
 		name: 'SpellCraft',
 		tagline: 'A word-building game with a Nepali twist.',

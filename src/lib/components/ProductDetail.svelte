@@ -50,7 +50,7 @@
 					</p>
 				{/if}
 				<div class="mt-6 flex flex-wrap gap-3">
-					{#each product.links as link (link.href)}
+					{#each product.links as link (link.label + link.href)}
 						{@const Icon = iconFor(link.kind)}
 						<Button href={link.href} target="_blank" rel="noopener noreferrer">
 							<Icon class="size-4" />

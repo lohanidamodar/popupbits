@@ -16,7 +16,6 @@
 		if (link.kind === 'appstore') return 'App Store';
 		if (link.kind === 'web') return 'Web';
 		if (link.kind === 'github') return 'GitHub';
-		if (link.kind === 'release') return 'Download';
 		return link.label;
 	};
 
@@ -50,7 +49,7 @@
 		</a>
 		<Card.Footer class="mt-auto flex flex-wrap items-center gap-2">
 			{#if showLinks}
-				{#each product.links as link (link.href)}
+				{#each product.links as link (link.label + link.href)}
 					{@const Icon = linkIcon(link.kind)}
 					<Button
 						href={link.href}

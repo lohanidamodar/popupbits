@@ -1,5 +1,10 @@
 <script lang="ts">
-	import { type Product, type ProductLink, statusLabels } from '$lib/data/products.js';
+	import {
+		type Product,
+		type ProductLink,
+		isOpenSource,
+		statusLabels
+	} from '$lib/data/products.js';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
@@ -39,7 +44,15 @@
 			<Card.Header class="flex flex-row items-center gap-4">
 				<ProductIcon {product} size="sm" />
 				<div class="flex-1">
-					<Card.Title class="text-lg">{product.name}</Card.Title>
+					<div class="flex flex-wrap items-center gap-2">
+						<Card.Title class="text-lg">{product.name}</Card.Title>
+						{#if isOpenSource(product)}
+							<Badge variant="secondary" title={`${product.license} licence`}>
+								<CodeXml />
+								Open source
+							</Badge>
+						{/if}
+					</div>
 					<Card.Description class="text-xs">{product.tagline}</Card.Description>
 				</div>
 			</Card.Header>

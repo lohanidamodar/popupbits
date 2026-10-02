@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type Product, platformLabels, statusLabels } from '$lib/data/products.js';
+	import { type Product, isOpenSource, platformLabels, statusLabels } from '$lib/data/products.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { ExternalLink, CodeXml, Globe, Download } from '@lucide/svelte';
@@ -37,6 +37,12 @@
 					{/each}
 					{#if product.status !== 'live'}
 						<Badge variant="outline">{statusLabels[product.status]}</Badge>
+					{/if}
+					{#if isOpenSource(product)}
+						<Badge variant="outline">
+							<CodeXml />
+							Open source · {product.license}
+						</Badge>
 					{/if}
 				</div>
 				<h1 class="font-display text-4xl md:text-5xl font-extrabold tracking-tight">

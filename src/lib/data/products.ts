@@ -24,6 +24,8 @@ export type Product = {
 	availableIn?: string;
 	screenshots: string[];
 	tech: string[];
+	/** SPDX licence id of the public source. Its presence marks the product open source. */
+	license?: string;
 	status: ProductStatus;
 	featured: boolean;
 	year: number;
@@ -212,7 +214,8 @@ export const products: Product[] = [
 		iconSrc: '/products/listora/icon.png',
 		privacyHref: '/contact/listora-privacy-policy',
 		screenshots: [],
-		tech: ['Flutter', 'just_audio', 'Riverpod', 'Open source'],
+		tech: ['Flutter', 'just_audio', 'Riverpod'],
+		license: 'GPL-3.0',
 		status: 'live',
 		featured: true,
 		year: 2026
@@ -337,7 +340,8 @@ export const products: Product[] = [
 		],
 		iconSrc: '/products/typer-kids/icon.png',
 		screenshots: [],
-		tech: ['Flutter', 'Open source', 'GPLv3'],
+		tech: ['Flutter'],
+		license: 'GPL-3.0',
 		status: 'live',
 		featured: true,
 		year: 2026
@@ -364,7 +368,8 @@ export const products: Product[] = [
 		],
 		iconSrc: '/products/tilepad/icon.png',
 		screenshots: [],
-		tech: ['Flutter', 'Open source', 'BSD-3'],
+		tech: ['Flutter'],
+		license: 'BSD-3-Clause',
 		status: 'live',
 		featured: true,
 		year: 2026
@@ -406,7 +411,8 @@ export const products: Product[] = [
 		],
 		iconSrc: '/products/sshetu/icon.png',
 		screenshots: [],
-		tech: ['Flutter', 'Open source', 'MIT'],
+		tech: ['Flutter'],
+		license: 'MIT',
 		status: 'live',
 		featured: true,
 		year: 2026
@@ -450,7 +456,8 @@ export const products: Product[] = [
 		],
 		iconSrc: '/products/karmashala/icon.png',
 		screenshots: [],
-		tech: ['Flutter', 'Open source', 'Apache-2.0'],
+		tech: ['Flutter'],
+		license: 'Apache-2.0',
 		status: 'live',
 		featured: true,
 		year: 2026
@@ -506,7 +513,8 @@ export const products: Product[] = [
 		iconSrc: '/products/ui-challenges-flutter/icon.png',
 		privacyHref: '/contact/flutter-ui-challenges-privacy-policy',
 		screenshots: [],
-		tech: ['Flutter', 'Open source'],
+		tech: ['Flutter'],
+		license: 'MIT',
 		status: 'live',
 		featured: true,
 		year: 2018
@@ -532,6 +540,8 @@ export const products: Product[] = [
 
 export const visibleProducts = products.filter((p) => !p.hidden);
 export const featuredProducts = visibleProducts.filter((p) => p.featured);
+
+export const isOpenSource = (p: Product): boolean => p.license !== undefined;
 
 export function getProductBySlug(slug: string): Product | undefined {
 	const product = products.find((p) => p.slug === slug);

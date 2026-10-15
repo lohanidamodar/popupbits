@@ -227,12 +227,17 @@ export const products: Product[] = [
 		description:
 			'A friendly path into Sanskrit — vocabulary, basic grammar, and key sutras with clear translations. Designed for absolute beginners and works fully offline.',
 		themeClass: 'theme-sanskrit',
-		platforms: ['android'],
+		platforms: ['android', 'ios'],
 		links: [
 			{
 				label: 'Get on Play Store',
 				href: 'https://play.google.com/store/apps/details?id=com.popupbits.sanskrit',
 				kind: 'play'
+			},
+			{
+				label: 'Get on App Store',
+				href: 'https://apps.apple.com/us/app/sanskrit-grammar-sutras/id6806470563',
+				kind: 'appstore'
 			}
 		],
 		iconSrc: '/products/sanskrit/icon.png',

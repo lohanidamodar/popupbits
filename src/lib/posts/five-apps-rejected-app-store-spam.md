@@ -293,3 +293,9 @@ away.
    wrote ours after three rejections.
 
 One app out of five is through. The other four are still waiting.
+
+All three of our apps on the App Store:
+[Mero Nepali](https://apps.apple.com/us/app/mero-nepali-%E0%A4%AE-%E0%A4%B0-%E0%A4%A8-%E0%A4%AA-%E0%A4%B2/id6761828591)
+and [PhotoReady](https://apps.apple.com/us/app/photoready-passport-size-photo/id6806537666),
+which passed first time, and now
+[Sanskrit: Grammar & Sutras](https://apps.apple.com/us/app/sanskrit-grammar-sutras/id6806470563).

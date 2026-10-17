@@ -295,6 +295,29 @@ export const products: Product[] = [
 		year: 2026
 	},
 	{
+		slug: 'karmakanda',
+		name: 'Karmakanda',
+		tagline: 'Step-by-step puja vidhi, with mantras and their meaning.',
+		description:
+			'Karmakanda (कर्मकाण्ड) walks you through puja vidhi step by step — each mantra with its Nepali meaning, item checklists, favourites and reading progress. Fully offline, with no account, ads or tracking.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.karmakanda',
+				kind: 'play'
+			}
+		],
+		iconSrc: '/products/karmakanda/icon.png',
+		privacyHref: '/contact/karmakanda-privacy-policy',
+		screenshots: [],
+		tech: ['Flutter', 'Riverpod', 'SQLite (FTS5)'],
+		status: 'coming-soon',
+		featured: true,
+		year: 2026
+	},
+	{
 		slug: 'gaadidesk',
 		name: 'Gaadidesk',
 		tagline: 'Sell more recondition vehicles with fewer missed follow-ups.',

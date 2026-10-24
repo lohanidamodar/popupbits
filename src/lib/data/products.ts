@@ -318,6 +318,29 @@ export const products: Product[] = [
 		year: 2026
 	},
 	{
+		slug: 'jyotisha',
+		name: 'Jyotisha',
+		tagline: 'Kundali, dasha and panchanga, calculated on your phone.',
+		description:
+			'Jyotisha (ज्योतिष) calculates the kundali and its divisional charts, dashas, transits, varshaphal, kundali milan and muhurta, alongside the daily panchanga, the Bikram Sambat calendar and festivals — with saved records for a jyotishi’s clients. Fully offline, with no account, ads or tracking.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.jyotisha',
+				kind: 'play'
+			}
+		],
+		iconSrc: '/products/jyotisha/icon.png',
+		privacyHref: '/contact/jyotisha-privacy-policy',
+		screenshots: [],
+		tech: ['Flutter', 'Riverpod', 'Swiss Ephemeris'],
+		status: 'coming-soon',
+		featured: true,
+		year: 2026
+	},
+	{
 		slug: 'gaadidesk',
 		name: 'Gaadidesk',
 		tagline: 'Sell more recondition vehicles with fewer missed follow-ups.',

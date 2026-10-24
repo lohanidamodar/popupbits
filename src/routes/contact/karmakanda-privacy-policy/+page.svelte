@@ -14,7 +14,7 @@
 <PageHeader title="Karmakanda — Privacy Policy" />
 
 <article class="prose prose-neutral dark:prose-invert max-w-3xl mx-auto px-6 pb-24">
-	<p><em>Last updated: 17 October 2026</em></p>
+	<p><em>Last updated: 24 October 2026</em></p>
 
 	<p>
 		<strong>Karmakanda</strong> (कर्मकाण्ड, "the app") gives step-by-step puja vidhi with mantras
@@ -37,6 +37,15 @@
 		private storage on your device:
 	</p>
 	<ul>
+		<li>
+			<strong>Your sankalpa details</strong>, if you choose to fill them in — your name, thar, gotra,
+			upadhi, father's name, maternal gotra, and the country, region and place you perform the puja
+			in, along with the samvat, month, paksha and tithi you set. The app uses them only to write
+			your sankalpa out in full inside the vidhi you are reading. Every field is optional, and you
+			can clear them at any time.
+		</li>
+		<li><strong>Japa counts</strong> — the count you are on and a short history of recent ones, with their dates.</li>
+		<li><strong>Ahuti counts</strong> during a havan.</li>
 		<li><strong>Favourites</strong> you mark.</li>
 		<li><strong>Reading progress</strong> through each vidhi.</li>
 		<li><strong>Checklists</strong> of puja items you tick off.</li>
@@ -83,8 +92,10 @@
 	<h2>Sharing with third parties</h2>
 	<p>
 		We do not sell, rent, or share any data — because we do not collect any. If you tap Share —
-		including on the error log in Settings → Diagnostics — you hand that text to another app you
-		choose, and what that app does with it is governed by its own privacy policy.
+		including on the error log in Settings → Diagnostics, or <strong>Share as PDF</strong> on a
+		vidhi — you hand that content to another app you choose, and what that app does with it is
+		governed by its own privacy policy. A shared PDF is made on your device; nothing is uploaded to
+		make it.
 	</p>
 
 	<h2>Children's privacy</h2>

@@ -313,7 +313,7 @@ export const products: Product[] = [
 		privacyHref: '/contact/karmakanda-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter', 'Riverpod', 'SQLite (FTS5)'],
-		status: 'coming-soon',
+		status: 'live',
 		featured: true,
 		year: 2026
 	},
@@ -336,7 +336,7 @@ export const products: Product[] = [
 		privacyHref: '/contact/jyotisha-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter', 'Riverpod', 'Swiss Ephemeris'],
-		status: 'coming-soon',
+		status: 'live',
 		featured: true,
 		year: 2026
 	},

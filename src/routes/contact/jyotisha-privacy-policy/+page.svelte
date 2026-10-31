@@ -125,6 +125,13 @@
 		itself never reads or changes your calendar. A saved event can include a name you entered, and
 		your calendar app may sync it to your account.
 	</p>
+	<p>
+		<strong>Sharing the panchanga</strong>, from the home screen or a day's page, opens your device's share
+		sheet with an image and a short caption made on your device. They hold the date, that day's
+		panchanga and auspicious times, the place chosen in the app, and the Play Store link, and never
+		your birth details or saved records. Nothing leaves the app until you pick where to share it,
+		and then it goes only there. The temporary image is deleted afterwards.
+	</p>
 	<p>Once one of those apps is open, its own privacy policy applies.</p>
 
 	<h2>Google Play</h2>

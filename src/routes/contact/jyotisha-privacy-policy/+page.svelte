@@ -119,6 +119,12 @@
 			receive your address and whatever you write, and use them only to reply to you.
 		</li>
 	</ul>
+	<p>
+		<strong>Add to calendar</strong>, on festivals, personal tithis and choghadiya times, opens your
+		calendar app with the event filled in. Nothing is added until you save it there, and the app
+		itself never reads or changes your calendar. A saved event can include a name you entered, and
+		your calendar app may sync it to your account.
+	</p>
 	<p>Once one of those apps is open, its own privacy policy applies.</p>
 
 	<h2>Google Play</h2>

@@ -14,7 +14,7 @@
 <PageHeader title="Jyotisha — Privacy Policy" />
 
 <article class="prose prose-neutral dark:prose-invert max-w-3xl mx-auto px-6 pb-24">
-	<p><em>Last updated: 24 October 2026</em></p>
+	<p><em>Last updated: 31 October 2026</em></p>
 
 	<p>
 		<strong>Jyotisha</strong> (ज्योतिष, "the app") calculates kundali (birth charts), divisional
@@ -32,6 +32,7 @@
 		<li>The app does not request internet access.</li>
 		<li>The app has no advertising, analytics, tracking, or crash-reporting SDKs.</li>
 		<li>The birth details you enter stay on your device.</li>
+		<li>Reminders are off until you turn them on, and they are scheduled on your device.</li>
 	</ul>
 
 	<h2>Information we collect</h2>
@@ -56,11 +57,16 @@
 			picked from the list built into the app; the app never reads your device's location.
 		</li>
 		<li>
-			<strong>Settings</strong> — script, calculation options, theme, the tab to open on, and so on.
+			<strong>Personal tithis</strong> (मेरा तिथि) you add for reminders, such as a tithi birthday or a
+			shraddha — a name you choose, its kind, its lunar date, and when to remind you.
 		</li>
 		<li>
-			<strong>Calculated panchanga months</strong>, kept so the calendar opens quickly. They contain no
-			personal information.
+			<strong>Settings</strong> — script, calculation options, theme, the tab to open on, which
+			reminders are on, and so on.
+		</li>
+		<li>
+			<strong>Calculated panchanga</strong>, kept so the calendar and the home screen widgets open
+			quickly. It contains no personal information.
 		</li>
 	</ul>
 	<p>
@@ -73,6 +79,19 @@
 		{company.legalName} has no access to it.
 	</p>
 
+	<h2>Reminders and notifications</h2>
+	<p>
+		The app can remind you of festivals, your personal tithis, eclipses and other events you choose,
+		and can show today's tithi and nakshatra in the notification bar. All of this is off until you
+		turn it on. Reminders are worked out and scheduled on your device; nothing is sent to us or
+		through any push service.
+	</p>
+	<p>
+		A reminder can include a name you entered, such as the name on a personal tithi, and Android may
+		show it on your lock screen. You can turn reminders off in the app, or change how they appear
+		in Android settings.
+	</p>
+
 	<h2>Files you export or import</h2>
 	<p>
 		You can save a kundali report as a PDF, or export your saved records as a file. The app hands the
@@ -81,10 +100,30 @@
 		is up to you.
 	</p>
 
+	<h2>Links that open other apps</h2>
+	<p>
+		The app itself has no internet access. Some rows in Settings hand you to another app on your
+		device, only when you tap them:
+	</p>
+	<ul>
+		<li>
+			<strong>Share the app</strong> opens Android's share sheet with a short message and the Play
+			Store link. You choose where it goes, and none of your data is added to it.
+		</li>
+		<li><strong>Rate the app</strong> opens the app's Play Store listing.</li>
+		<li>
+			<strong>More apps</strong> and <strong>this policy</strong> open popupbits.com in your browser.
+		</li>
+		<li>
+			<strong>Contact</strong> opens your email app, addressed to us. If you send that email, we
+			receive your address and whatever you write, and use them only to reply to you.
+		</li>
+	</ul>
+	<p>Once one of those apps is open, its own privacy policy applies.</p>
+
 	<h2>Google Play</h2>
 	<p>
-		The app's only contact outside your device is with Google Play, which is part of your device. When
-		you open the app, it asks Google Play whether a newer version is available, so it can offer you
+		The app also talks to Google Play, which is part of your device. When you open the app, it asks Google Play whether a newer version is available, so it can offer you
 		the update. Google Play handles that check itself; the app sends nothing about you through it. If
 		an update cannot finish, the app can open its Play Store listing for you.
 	</p>
@@ -97,14 +136,28 @@
 
 	<h2>Permissions the app requests</h2>
 	<p>
-		Jyotisha requests no dangerous permissions, and no internet permission. It does not ask for your
-		camera, microphone, location, contacts, files, or device identifiers.
+		Jyotisha requests no internet permission. It does not ask for your camera, microphone, location,
+		contacts, files, or device identifiers. It uses these Android permissions, all for reminders:
+	</p>
+	<ul>
+		<li>
+			<strong>Notifications</strong> — on Android 13 and later, the app asks for this only when you
+			turn reminders on. You can say no and use everything else.
+		</li>
+		<li>
+			<strong>Run at startup</strong> — so that scheduled reminders are restored after your phone
+			restarts.
+		</li>
+		<li><strong>Vibrate</strong> — so that a reminder can vibrate.</li>
+	</ul>
+	<p>
+		Removing the notifications permission stops reminders and changes nothing else in the app.
 	</p>
 
 	<h2>Sharing with third parties</h2>
 	<p>
 		We do not sell, rent, or share any data — because we do not collect any. A file you export goes
-		only where you save it.
+		only where you save it, and an email you send us is used only to reply to you.
 	</p>
 
 	<h2>Children's privacy</h2>

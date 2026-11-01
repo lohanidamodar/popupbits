@@ -40,7 +40,7 @@
 		"vitest-browser-svelte": "^2.1.1"
 	},
 	"engines": {
-		"node": ">=20"
+		"node": "22.x"
 	},
 	"dependencies": {
 		"@lucide/svelte": "^1.16.0",

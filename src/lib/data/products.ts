@@ -341,6 +341,29 @@ export const products: Product[] = [
 		year: 2026
 	},
 	{
+		slug: 'kheti',
+		name: 'Kheti',
+		tagline: 'A gentle 3D Nepali hillside terrace farming game.',
+		description:
+			'Kheti (खेती) lets you tend a 3D Nepali hillside homestead — plant radish, maize and marigold across 1 to 12 stone-terraced beds, cook daily dal-bhat rations for your family, pay off the village sahukar’s loan at the haat bazaar, and automate your farm with water pump motors and compost drip systems. Bilingual in Nepali and English, and 100% offline with no ads or tracking.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.kheti',
+				kind: 'play'
+			}
+		],
+		iconSrc: '/products/kheti/icon.png',
+		privacyHref: '/contact/kheti-privacy-policy',
+		screenshots: [],
+		tech: ['Flutter', 'Flutter Scene', 'Riverpod'],
+		status: 'coming-soon',
+		featured: true,
+		year: 2026
+	},
+	{
 		slug: 'gaadidesk',
 		name: 'Gaadidesk',
 		tagline: 'Sell more recondition vehicles with fewer missed follow-ups.',

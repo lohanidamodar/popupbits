@@ -364,6 +364,29 @@ export const products: Product[] = [
 		year: 2026
 	},
 	{
+		slug: 'momo-pasal',
+		name: 'Momo Pasal',
+		tagline: 'Steam, fry and serve veg momos in your own Kathmandu shop.',
+		description:
+			'Momo Pasal (मोमो पसल) puts you behind the counter of a little veg momo shop in Kathmandu — fill the steamer, plate the momos with achar and serve before customers lose patience. Level up from a street cart to momo emperor, unlock jhol, fried and C-momo, pay the weekly khata, decorate the shop and take delivery orders, in timed or cozy mode. Fully in Nepali and English, and offline with no ads, in-app purchases or account.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android'],
+		links: [
+			{
+				label: 'Get on Play Store',
+				href: 'https://play.google.com/store/apps/details?id=com.popupbits.momo_pasal',
+				kind: 'play'
+			}
+		],
+		iconSrc: '/products/momo-pasal/icon.png',
+		privacyHref: '/contact/momo-pasal-privacy-policy',
+		screenshots: [],
+		tech: ['Flutter', 'Flame', 'Riverpod'],
+		status: 'coming-soon',
+		featured: true,
+		year: 2026
+	},
+	{
 		slug: 'gaadidesk',
 		name: 'Gaadidesk',
 		tagline: 'Sell more recondition vehicles with fewer missed follow-ups.',

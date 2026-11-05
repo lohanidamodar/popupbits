@@ -382,7 +382,7 @@ export const products: Product[] = [
 		privacyHref: '/contact/momo-pasal-privacy-policy',
 		screenshots: [],
 		tech: ['Flutter', 'Flame', 'Riverpod'],
-		status: 'coming-soon',
+		status: 'live',
 		featured: true,
 		year: 2026
 	},

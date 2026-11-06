@@ -18,7 +18,7 @@
 	const description =
 		'A production-ready Flutter starter on Appwrite: auth, guest mode, paywall, settings, i18n, accessibility, tests and CI. Runs offline in demo mode.';
 	const url = `${company.url}/kickstand`;
-	const image = `${company.url}/products/kickstand/10-notes-desktop.png`;
+	const image = `${company.url}/products/kickstand/og.png`;
 
 	const fromPrice = Math.min(...tiers.map((t) => t.launchPrice ?? t.price));
 	const offerEnds = launchOffer
@@ -35,16 +35,34 @@
 		name: 'Kickstand',
 		description,
 		image,
+		url,
+		category: 'Software > Developer tools > Flutter templates',
 		brand: { '@type': 'Brand', name: 'Kickstand' },
 		offers: tiers.map((t) => ({
 			'@type': 'Offer',
-			name: `${t.name} licence`,
+			name: `${t.name} licence (${t.seats})`,
 			price: String(t.launchPrice ?? t.price),
 			priceCurrency: 'USD',
 			url: t.href,
 			availability: 'https://schema.org/InStock'
 		}))
 	};
+
+	const faqSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: faq.map((item) => ({
+			'@type': 'Question',
+			name: item.q,
+			acceptedAnswer: { '@type': 'Answer', text: item.a }
+		}))
+	};
+
+	// Escape "<" so no string in the data can close the script tag. The tags
+	// are split so they don't end this component's own script block.
+	const ld = 'application/ld+json';
+	const jsonLd = (data: object) =>
+		`<${'script'} type="${ld}">${JSON.stringify(data).replace(/</g, '\\u003c')}</${'script'}>`;
 </script>
 
 <svelte:head>
@@ -55,9 +73,21 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={url} />
 	<meta property="og:image" content={image} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="Kickstand running on a tablet: notes home screen" />
 	<meta property="og:type" content="product" />
+	<meta property="og:site_name" content={company.name} />
 	<meta name="twitter:card" content="summary_large_image" />
-	{@html `<script type="application/ld+json">${JSON.stringify(productSchema)}</script>`}
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={image} />
+	<!-- A plain-markdown version of this page, for AI agents and LLM tools. -->
+	<link rel="alternate" type="text/markdown" href="/kickstand.md" title="Kickstand (Markdown)" />
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -- static JSON-LD built from our own data -->
+	{@html jsonLd(productSchema)}
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -- static JSON-LD built from our own data -->
+	{@html jsonLd(faqSchema)}
 </svelte:head>
 
 <div class="theme-popupbits">
@@ -89,9 +119,12 @@
 				{/if}
 			</div>
 			<img
-				src="/products/kickstand/05-paywall-phone-dark.png"
-				alt="Kickstand's paywall screen on a phone"
-				class="mx-auto w-64 md:w-72 rounded-3xl border border-border shadow-xl"
+				src="/products/kickstand/hero-home.webp"
+				alt="Kickstand's home screen on a phone: greeting, stats and coloured notes"
+				width="640"
+				height="1387"
+				fetchpriority="high"
+				class="mx-auto h-auto w-64 md:w-72 rounded-[2.5rem] border-8 border-neutral-900 shadow-2xl"
 			/>
 		</div>
 	</header>
@@ -135,17 +168,21 @@
 						src={shot.src}
 						alt={shot.alt}
 						loading="lazy"
-						class="w-full rounded-2xl border border-border"
+						width="860"
+						height="1864"
+						class="h-auto w-full rounded-2xl"
 					/>
 				{/each}
 			</div>
-			<div class="mt-4 grid gap-4 md:grid-cols-2">
+			<div class="mx-auto mt-6 max-w-4xl">
 				{#each screenshots.filter((s) => s.wide) as shot (shot.src)}
 					<img
 						src={shot.src}
 						alt={shot.alt}
 						loading="lazy"
-						class="w-full rounded-2xl border border-border"
+						width="1600"
+						height="1200"
+						class="h-auto w-full rounded-2xl"
 					/>
 				{/each}
 			</div>

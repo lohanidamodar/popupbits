@@ -60,12 +60,12 @@ export const products: Product[] = [
 		],
 		iconSrc: '/products/kickstand/icon.png',
 		screenshots: [
-			'/products/kickstand/03-notes-phone-dark.png',
-			'/products/kickstand/05-paywall-phone-dark.png',
-			'/products/kickstand/06-settings-phone-dark.png',
-			'/products/kickstand/07-settings-android-light.png',
-			'/products/kickstand/09-notes-tablet.png',
-			'/products/kickstand/10-notes-desktop.png'
+			'/products/kickstand/01-home.webp',
+			'/products/kickstand/02-editor.webp',
+			'/products/kickstand/03-paywall.webp',
+			'/products/kickstand/04-sign-in.webp',
+			'/products/kickstand/05-settings.webp',
+			'/products/kickstand/08-tablet.webp'
 		],
 		tech: ['Flutter', 'Appwrite', 'Riverpod', 'go_router'],
 		pageHref: '/kickstand',

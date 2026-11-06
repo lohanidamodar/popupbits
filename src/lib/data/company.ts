@@ -20,7 +20,8 @@ export const company = {
 		'We design and ship our own products, and partner with businesses to build full-stack apps, custom SaaS platforms, AI-integrated systems, and the automation that runs them — on web, mobile, and desktop.',
 	founder: 'Damodar Lohani',
 	established: 2016,
-	url: 'https://popupbits.com',
+	// The canonical host: popupbits.com redirects here.
+	url: 'https://www.popupbits.com',
 	contact: {
 		email: 'info@popupbits.com.np',
 		phone: '+977-9823341413',

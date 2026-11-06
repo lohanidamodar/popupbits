@@ -1,0 +1,176 @@
+// Kickstand sales page data. Prices must match the Stripe payment links (USD).
+
+export type LaunchOffer = {
+	/** Stripe promotion code; the buy buttons pre-fill it at checkout. */
+	code: string;
+	/** Last day of the offer, YYYY-MM-DD. */
+	until: string;
+	solo: number;
+	team: number;
+};
+
+/** Set to null when there is no launch offer. */
+export const launchOffer = null as LaunchOffer | null;
+// Example: { code: 'LAUNCH', until: '2026-12-31', solo: 49, team: 149 }
+
+/**
+ * The legal seller, as on the Stripe account and in the licence. Shown in the
+ * footer of the sales page once filled in.
+ */
+export const seller: { legalName: string | null; supportEmail: string | null } = {
+	legalName: null,
+	supportEmail: null
+};
+
+export type Tier = {
+	id: 'solo' | 'team';
+	name: string;
+	seats: string;
+	price: number;
+	launchPrice: number | null;
+	href: string;
+	blurb: string;
+	highlighted: boolean;
+};
+
+const withOffer = (href: string) =>
+	launchOffer ? `${href}?prefilled_promo_code=${encodeURIComponent(launchOffer.code)}` : href;
+
+export const tiers: Tier[] = [
+	{
+		id: 'solo',
+		name: 'Solo',
+		seats: '1 developer',
+		price: 69,
+		launchPrice: launchOffer?.solo ?? null,
+		href: withOffer('https://buy.stripe.com/9B66oH8CZ27L44dehMeEo00'),
+		blurb: 'For an indie developer or freelancer.',
+		highlighted: true
+	},
+	{
+		id: 'team',
+		name: 'Team',
+		seats: 'Up to 10 developers',
+		price: 199,
+		launchPrice: launchOffer?.team ?? null,
+		href: withOffer('https://buy.stripe.com/cNi7sL5qNcMp7gp5LgeEo01'),
+		blurb: 'For a studio or company, in one organisation.',
+		highlighted: false
+	}
+];
+
+export const tierIncludes = [
+	'Unlimited apps, including client work and SaaS',
+	'Full source: Android, iOS and web',
+	'Every 1.x update',
+	'Email support for setup and bugs',
+	'One-time payment, no subscription'
+];
+
+export const features = [
+	{
+		title: 'Auth, done',
+		text: 'Onboarding, email sign-in and sign-up, guest mode, password reset, edit name, sign out and the in-app account deletion the stores require.'
+	},
+	{
+		title: 'Runs before you configure anything',
+		text: 'A built-in demo backend with a seeded account, so flutter run works straight away. Switch to Appwrite with one config file and one appwrite push.'
+	},
+	{
+		title: 'Rebrand in one file',
+		text: 'Name, colours, font, icons and bundle IDs live in brand.yaml. One command applies them across Android, iOS and the web.'
+	},
+	{
+		title: 'A store-ready paywall',
+		text: 'Monthly and yearly plans, trial badge, restore and legal links, plus a free-tier limit, behind an interface with a RevenueCat recipe.'
+	},
+	{
+		title: 'Per-user data on Appwrite',
+		text: 'A sample feature on Appwrite TablesDB with row security, behind repository interfaces, so Firebase or Supabase is two classes away.'
+	},
+	{
+		title: 'Analytics and crash hooks',
+		text: 'Interfaces with global error handling and screen views by route, with recipes for Firebase, Crashlytics, Sentry and PostHog.'
+	},
+	{
+		title: 'Accessible and responsive',
+		text: 'Labelled controls, 48 dp tap targets, AA contrast and 200% text, checked by tests. Phone, tablet and desktop layouts.'
+	},
+	{
+		title: 'Tested and current',
+		text: 'Flutter 3.47, Riverpod 3, go_router 18, appwrite 28. 45 unit and widget tests, an integration test, CI and an optional release workflow.'
+	},
+	{
+		title: 'Docs for you and your AI agent',
+		text: 'Guides for Appwrite, customising, payments, analytics and releasing, plus an AGENTS.md that briefs coding assistants on the architecture.'
+	}
+];
+
+export const screenshots = [
+	{
+		src: '/products/kickstand/03-notes-phone-dark.png',
+		alt: 'Notes list on a phone, dark theme',
+		wide: false
+	},
+	{
+		src: '/products/kickstand/05-paywall-phone-dark.png',
+		alt: 'Paywall with monthly and yearly plans',
+		wide: false
+	},
+	{
+		src: '/products/kickstand/06-settings-phone-dark.png',
+		alt: 'Settings: theme, language and text size',
+		wide: false
+	},
+	{
+		src: '/products/kickstand/07-settings-android-light.png',
+		alt: 'Settings on Android, light theme',
+		wide: false
+	},
+	{
+		src: '/products/kickstand/09-notes-tablet.png',
+		alt: 'Tablet layout with a navigation rail',
+		wide: true
+	},
+	{ src: '/products/kickstand/10-notes-desktop.png', alt: 'Desktop web layout', wide: true }
+];
+
+export const faq = [
+	{
+		q: 'Do I need Appwrite to try it?',
+		a: 'No. It runs fully offline in demo mode with a seeded demo account.'
+	},
+	{
+		q: 'How do I get it?',
+		a: 'Checkout is by Stripe. We email your download link within 24 hours of payment, to the address you paid with.'
+	},
+	{
+		q: 'Is there a licence key?',
+		a: 'Your Stripe receipt number is your licence reference, for support, updates, upgrades and transfers. The code has no licence check and your apps never need it.'
+	},
+	{
+		q: 'Solo or Team?',
+		a: 'Solo if you are the only developer who touches the code; Team for up to 10 developers in one organisation. Upgrade any time by paying the difference.'
+	},
+	{
+		q: 'Can I use it for client projects?',
+		a: 'Yes, on both licences, for any number of clients. You can hand each client the source of the app you built for them.'
+	},
+	{
+		q: 'How do updates work?',
+		a: 'Every 1.x release is included. We email you a download link for each one.'
+	},
+	{
+		q: 'Can I use Firebase or Supabase instead?',
+		a: 'Yes: implement two repository interfaces. The customisation guide shows where.'
+	},
+	{
+		q: 'Does it take real payments?',
+		a: 'The paywall is wired to an interface with a demo store. Connect RevenueCat or the store SDKs following the payments guide.'
+	},
+	{ q: 'iOS?', a: 'Yes. Building for iOS needs a Mac with Xcode, as with any Flutter app.' },
+	{
+		q: 'What can’t I do?',
+		a: 'Resell or publish the source itself as a template or starter kit, or put it in a public repository. The full licence is in the download.'
+	}
+];

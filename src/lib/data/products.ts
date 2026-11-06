@@ -31,9 +31,48 @@ export type Product = {
 	year: number;
 	/** When true, the product is excluded from all listings and its detail page 404s. */
 	hidden?: boolean;
+	/** A dedicated landing page; cards link there and /products/<slug> redirects to it. */
+	pageHref?: string;
 };
 
 export const products: Product[] = [
+	{
+		slug: 'kickstand',
+		name: 'Kickstand',
+		tagline: 'A Flutter starter kit for Appwrite: auth, data, paywall and i18n, ready to go.',
+		description:
+			'Kickstand is a production-ready Flutter starter for developers: onboarding, email and guest sign-in, account deletion, a store-ready paywall, settings, English and Spanish, analytics hooks, accessibility checks, 45 tests and CI. It runs offline in demo mode before you configure anything, and you rebrand it from one file. Solo licence for one developer, Team for up to 10; both cover unlimited apps and every 1.x update. Checkout is by Stripe, and the download link is emailed within 24 hours.',
+		themeClass: 'theme-popupbits',
+		platforms: ['android', 'ios', 'web'],
+		// Prices must match the Stripe payment links. During a launch offer, append
+		// ?prefilled_promo_code=<CODE> to both links so the discount applies at checkout.
+		links: [
+			{
+				label: 'Buy Solo · $69',
+				href: 'https://buy.stripe.com/9B66oH8CZ27L44dehMeEo00',
+				kind: 'other'
+			},
+			{
+				label: 'Buy Team · $199',
+				href: 'https://buy.stripe.com/cNi7sL5qNcMp7gp5LgeEo01',
+				kind: 'other'
+			}
+		],
+		iconSrc: '/products/kickstand/icon.png',
+		screenshots: [
+			'/products/kickstand/03-notes-phone-dark.png',
+			'/products/kickstand/05-paywall-phone-dark.png',
+			'/products/kickstand/06-settings-phone-dark.png',
+			'/products/kickstand/07-settings-android-light.png',
+			'/products/kickstand/09-notes-tablet.png',
+			'/products/kickstand/10-notes-desktop.png'
+		],
+		tech: ['Flutter', 'Appwrite', 'Riverpod', 'go_router'],
+		pageHref: '/kickstand',
+		status: 'live',
+		featured: true,
+		year: 2026
+	},
 	{
 		slug: 'bhadama',
 		name: 'Bhadama',

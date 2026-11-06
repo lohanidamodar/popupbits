@@ -1,0 +1,290 @@
+<script lang="ts">
+	import { Button } from '$lib/components/ui/button/index.js';
+	import { Badge } from '$lib/components/ui/badge/index.js';
+	import * as Card from '$lib/components/ui/card/index.js';
+	import { Check } from '@lucide/svelte';
+	import { company } from '$lib';
+	import {
+		faq,
+		features,
+		launchOffer,
+		screenshots,
+		seller,
+		tierIncludes,
+		tiers
+	} from '$lib/data/kickstand.js';
+
+	const title = 'Kickstand: Flutter Starter Kit for Appwrite';
+	const description =
+		'A production-ready Flutter starter on Appwrite: auth, guest mode, paywall, settings, i18n, accessibility, tests and CI. Runs offline in demo mode.';
+	const url = `${company.url}/kickstand`;
+	const image = `${company.url}/products/kickstand/10-notes-desktop.png`;
+
+	const fromPrice = Math.min(...tiers.map((t) => t.launchPrice ?? t.price));
+	const offerEnds = launchOffer
+		? new Date(`${launchOffer.until}T00:00:00`).toLocaleDateString('en', {
+				day: 'numeric',
+				month: 'long',
+				year: 'numeric'
+			})
+		: null;
+
+	const productSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'Product',
+		name: 'Kickstand',
+		description,
+		image,
+		brand: { '@type': 'Brand', name: 'Kickstand' },
+		offers: tiers.map((t) => ({
+			'@type': 'Offer',
+			name: `${t.name} licence`,
+			price: String(t.launchPrice ?? t.price),
+			priceCurrency: 'USD',
+			url: t.href,
+			availability: 'https://schema.org/InStock'
+		}))
+	};
+</script>
+
+<svelte:head>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<link rel="canonical" href={url} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content={url} />
+	<meta property="og:image" content={image} />
+	<meta property="og:type" content="product" />
+	<meta name="twitter:card" content="summary_large_image" />
+	{@html `<script type="application/ld+json">${JSON.stringify(productSchema)}</script>`}
+</svelte:head>
+
+<div class="theme-popupbits">
+	<!-- Hero -->
+	<header class="bg-accent text-accent-foreground">
+		<div class="max-w-6xl mx-auto px-6 py-20 md:py-28 grid gap-12 md:grid-cols-2 items-center">
+			<div>
+				<div class="flex flex-wrap gap-2 mb-5">
+					<Badge variant="secondary">Flutter</Badge>
+					<Badge variant="secondary">Appwrite</Badge>
+					<Badge variant="secondary">Android · iOS · Web</Badge>
+				</div>
+				<h1 class="font-display text-4xl md:text-6xl font-extrabold tracking-tight">Kickstand</h1>
+				<p class="mt-4 text-xl md:text-2xl font-semibold">
+					Ship your Flutter app this week: auth, data, paywall and i18n, ready to go.
+				</p>
+				<p class="mt-4 text-lg opacity-80">
+					A production-ready Flutter starter kit for Appwrite. It runs before you configure
+					anything, and you rebrand it from one file.
+				</p>
+				<div class="mt-8 flex flex-wrap gap-3">
+					<Button href="#pricing" size="lg">Buy from ${fromPrice}</Button>
+					<Button href="#features" size="lg" variant="outline">What's included</Button>
+				</div>
+				{#if launchOffer}
+					<p class="mt-4 text-sm font-medium">
+						Launch price until {offerEnds}, applied automatically at checkout.
+					</p>
+				{/if}
+			</div>
+			<img
+				src="/products/kickstand/05-paywall-phone-dark.png"
+				alt="Kickstand's paywall screen on a phone"
+				class="mx-auto w-64 md:w-72 rounded-3xl border border-border shadow-xl"
+			/>
+		</div>
+	</header>
+
+	<!-- Features -->
+	<section id="features" class="max-w-6xl mx-auto px-6 py-20 scroll-mt-20">
+		<p class="t-eyebrow uppercase tracking-widest text-sm font-semibold text-primary mb-2">
+			What's included
+		</p>
+		<h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight max-w-3xl">
+			The first two weeks of every app, done properly.
+		</h2>
+		<p class="mt-4 max-w-2xl text-lg text-muted-foreground">
+			Sign-in, a router that knows who is signed in, settings, dark mode, translations, a paywall,
+			account deletion, analytics, tests, CI. Start on the part of your app that is actually yours.
+		</p>
+		<div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{#each features as f (f.title)}
+				<Card.Root>
+					<Card.Header>
+						<Card.Title class="text-lg">{f.title}</Card.Title>
+					</Card.Header>
+					<Card.Content>
+						<p class="text-sm text-muted-foreground leading-relaxed">{f.text}</p>
+					</Card.Content>
+				</Card.Root>
+			{/each}
+		</div>
+	</section>
+
+	<!-- Screenshots -->
+	<section class="bg-muted/40 py-20">
+		<div class="max-w-6xl mx-auto px-6">
+			<h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">
+				Phone, tablet and desktop.
+			</h2>
+			<p class="mt-3 text-muted-foreground">Captured from the running app, light and dark.</p>
+			<div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 items-start">
+				{#each screenshots.filter((s) => !s.wide) as shot (shot.src)}
+					<img
+						src={shot.src}
+						alt={shot.alt}
+						loading="lazy"
+						class="w-full rounded-2xl border border-border"
+					/>
+				{/each}
+			</div>
+			<div class="mt-4 grid gap-4 md:grid-cols-2">
+				{#each screenshots.filter((s) => s.wide) as shot (shot.src)}
+					<img
+						src={shot.src}
+						alt={shot.alt}
+						loading="lazy"
+						class="w-full rounded-2xl border border-border"
+					/>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- Pricing -->
+	<section id="pricing" class="max-w-5xl mx-auto px-6 py-20 scroll-mt-20">
+		<div class="text-center">
+			<p class="t-eyebrow uppercase tracking-widest text-sm font-semibold text-primary mb-2">
+				Licences
+			</p>
+			<h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">
+				One-time payment. Unlimited apps.
+			</h2>
+			<p class="mt-3 text-muted-foreground">Prices in USD. Checkout by Stripe.</p>
+			{#if launchOffer}
+				<p class="mt-4 inline-block rounded-full bg-accent px-4 py-1 text-sm font-semibold">
+					Launch price until {offerEnds}
+				</p>
+			{/if}
+		</div>
+		<div class="mt-12 grid gap-6 md:grid-cols-2">
+			{#each tiers as tier (tier.id)}
+				<Card.Root class={tier.highlighted ? 'border-2 border-primary' : ''}>
+					<Card.Header>
+						<div class="flex items-center justify-between gap-2">
+							<Card.Title class="text-2xl">{tier.name}</Card.Title>
+							<Badge variant={tier.highlighted ? 'default' : 'secondary'}>{tier.seats}</Badge>
+						</div>
+						<Card.Description>{tier.blurb}</Card.Description>
+					</Card.Header>
+					<Card.Content class="flex flex-col gap-6">
+						<div class="flex items-baseline gap-3">
+							<span class="font-display text-5xl font-extrabold">
+								${tier.launchPrice ?? tier.price}
+							</span>
+							{#if tier.launchPrice !== null}
+								<span class="text-xl text-muted-foreground line-through">${tier.price}</span>
+							{/if}
+							<span class="text-sm text-muted-foreground">USD, once</span>
+						</div>
+						<ul class="space-y-2 text-sm">
+							<li class="flex gap-2">
+								<Check class="size-4 mt-0.5 text-primary" aria-hidden="true" />
+								<span class="font-medium">{tier.seats}</span>
+							</li>
+							{#each tierIncludes as item (item)}
+								<li class="flex gap-2">
+									<Check class="size-4 mt-0.5 text-primary" aria-hidden="true" />
+									<span>{item}</span>
+								</li>
+							{/each}
+						</ul>
+						<Button
+							href={tier.href}
+							size="lg"
+							variant={tier.highlighted ? 'default' : 'outline'}
+							class="w-full"
+						>
+							Buy {tier.name}
+						</Button>
+					</Card.Content>
+				</Card.Root>
+			{/each}
+		</div>
+		<p class="mt-8 text-center text-sm text-muted-foreground">
+			Your download link arrives by email within 24 hours. Solo can be upgraded to Team by paying
+			the difference.
+		</p>
+	</section>
+
+	<!-- How it works -->
+	<section class="bg-muted/40 py-20">
+		<div class="max-w-5xl mx-auto px-6 grid gap-8 md:grid-cols-3">
+			<div>
+				<p class="font-display text-4xl font-extrabold text-primary">1</p>
+				<h3 class="mt-2 text-lg font-semibold">Buy</h3>
+				<p class="mt-1 text-sm text-muted-foreground">
+					Pay securely through Stripe. Keep your receipt: its number is your licence reference.
+				</p>
+			</div>
+			<div>
+				<p class="font-display text-4xl font-extrabold text-primary">2</p>
+				<h3 class="mt-2 text-lg font-semibold">Download</h3>
+				<p class="mt-1 text-sm text-muted-foreground">
+					Your download link arrives by email within 24 hours, to the address you paid with.
+				</p>
+			</div>
+			<div>
+				<p class="font-display text-4xl font-extrabold text-primary">3</p>
+				<h3 class="mt-2 text-lg font-semibold">Run</h3>
+				<p class="mt-1 text-sm text-muted-foreground">
+					<code class="text-xs">flutter pub get && flutter run</code> starts it in demo mode. Then
+					edit <code class="text-xs">brand.yaml</code> and make it yours.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ -->
+	<section class="max-w-3xl mx-auto px-6 py-20">
+		<h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">Questions</h2>
+		<div class="mt-8 divide-y divide-border">
+			{#each faq as item (item.q)}
+				<details class="group py-4">
+					<summary class="cursor-pointer list-none flex justify-between gap-4 font-semibold">
+						{item.q}
+						<span
+							class="text-muted-foreground transition-transform group-open:rotate-45"
+							aria-hidden="true">+</span
+						>
+					</summary>
+					<p class="mt-3 text-muted-foreground leading-relaxed">{item.a}</p>
+				</details>
+			{/each}
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="max-w-3xl mx-auto px-6 pb-24 text-center">
+		<h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">
+			Start on the part that's yours.
+		</h2>
+		<div class="mt-8 flex flex-wrap justify-center gap-3">
+			{#each tiers as tier (tier.id)}
+				<Button href={tier.href} size="lg" variant={tier.highlighted ? 'default' : 'outline'}>
+					Buy {tier.name} · ${tier.launchPrice ?? tier.price}
+				</Button>
+			{/each}
+		</div>
+		<p class="mt-10 text-xs text-muted-foreground">
+			{#if seller.legalName}Sold by {seller.legalName}.{/if}
+			{#if seller.supportEmail}
+				Support: <a class="underline" href={`mailto:${seller.supportEmail}`}
+					>{seller.supportEmail}</a
+				>.
+			{/if}
+			Payments processed by Stripe.
+		</p>
+	</section>
+</div>

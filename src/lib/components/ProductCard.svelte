@@ -40,7 +40,11 @@
 
 <div class={`${product.themeClass}`}>
 	<Card.Root class="h-full overflow-hidden transition-shadow hover:shadow-lg flex flex-col">
-		<a href={`/products/${product.slug}`} class="block" aria-label={`Open ${product.name}`}>
+		<a
+			href={product.pageHref ?? `/products/${product.slug}`}
+			class="block"
+			aria-label={`Open ${product.name}`}
+		>
 			<Card.Header class="flex flex-row items-center gap-4">
 				<ProductIcon {product} size="sm" />
 				<div class="flex-1">

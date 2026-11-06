@@ -2,7 +2,16 @@
 // for AI agents and LLM tools (served at /kickstand.md and linked from
 // /llms.txt).
 import { company } from './company.js';
-import { faq, features, launchOffer, seller, tierIncludes, tiers } from './kickstand.js';
+import {
+	faq,
+	features,
+	fileTree,
+	launchOffer,
+	packages,
+	seller,
+	tierIncludes,
+	tiers
+} from './kickstand.js';
 
 export function kickstandMarkdown(): string {
 	const price = (t: (typeof tiers)[number]) =>
@@ -35,7 +44,17 @@ export function kickstandMarkdown(): string {
 		'',
 		'## Tech',
 		'',
-		'Flutter 3.47 (works with 3.38+), Dart 3, Riverpod 3, go_router 18, appwrite 28 (TablesDB). Android, iOS and web. Appwrite Cloud or Appwrite 1.8+ for the backend mode.',
+		'Flutter 3.47+ (Dart 3.13), Riverpod 3, go_router 18, appwrite 28 (TablesDB). Android, iOS and web. Appwrite Cloud or Appwrite 1.8+ for the backend mode.',
+		'',
+		'## Packages',
+		'',
+		...packages.map((p) => `- ${p.name} ${p.version}: ${p.role}`),
+		'',
+		'## Project layout',
+		'',
+		'```',
+		fileTree,
+		'```',
 		'',
 		'## FAQ',
 		'',

@@ -7,7 +7,9 @@
 	import {
 		faq,
 		features,
+		fileTree,
 		launchOffer,
+		packages,
 		screenshots,
 		seller,
 		tierIncludes,
@@ -185,6 +187,51 @@
 						class="h-auto w-full rounded-2xl"
 					/>
 				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- What's in the box -->
+	<section id="inside" class="max-w-6xl mx-auto px-6 py-20 scroll-mt-20">
+		<p class="t-eyebrow uppercase tracking-widest text-sm font-semibold text-primary mb-2">
+			What's in the box
+		</p>
+		<h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight max-w-3xl">
+			Clean architecture you can read in an afternoon.
+		</h2>
+		<p class="mt-4 max-w-2xl text-lg text-muted-foreground">
+			Feature-first folders, each in four layers. Copy the notes feature to build your own. The full
+			source, on current stable packages.
+		</p>
+		<div class="mt-10 grid gap-8 lg:grid-cols-[3fr,2fr] items-start">
+			<figure class="rounded-2xl bg-neutral-950 text-neutral-100 p-6 overflow-x-auto shadow-xl">
+				<figcaption class="mb-4 flex items-center gap-2 text-xs text-neutral-400">
+					<span class="size-3 rounded-full bg-red-400" aria-hidden="true"></span>
+					<span class="size-3 rounded-full bg-amber-400" aria-hidden="true"></span>
+					<span class="size-3 rounded-full bg-green-400" aria-hidden="true"></span>
+					<span class="ml-2">Project layout</span>
+				</figcaption>
+				<pre class="text-[13px] leading-6 font-mono"><code>{fileTree}</code></pre>
+			</figure>
+			<div>
+				<h3 class="font-display text-xl font-bold">Packages</h3>
+				<p class="mt-1 text-sm text-muted-foreground">
+					Latest stable versions, no code generation, nothing exotic.
+				</p>
+				<table class="mt-4 w-full text-sm">
+					<thead class="sr-only">
+						<tr><th>Package</th><th>Version</th><th>Used for</th></tr>
+					</thead>
+					<tbody class="divide-y divide-border">
+						{#each packages as pkg (pkg.name)}
+							<tr>
+								<td class="py-3 pr-3 font-mono font-semibold">{pkg.name}</td>
+								<td class="py-3 pr-3"><Badge variant="secondary">{pkg.version}</Badge></td>
+								<td class="py-3 text-muted-foreground">{pkg.role}</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</section>

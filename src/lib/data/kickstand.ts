@@ -105,8 +105,8 @@ export const features = [
 		text: 'Flutter 3.47, Riverpod 3, go_router 18, appwrite 28. 45 unit and widget tests, an integration test, CI and an optional release workflow.'
 	},
 	{
-		title: 'Docs for you and your AI agent',
-		text: 'Guides for Appwrite, customising, payments, analytics and releasing, plus an AGENTS.md that briefs coding assistants on the architecture.'
+		title: 'Built for AI coding agents',
+		text: 'AGENTS.md for Claude Code, Codex, Cursor, Copilot and Gemini, step-by-step task skills, the Dart MCP server, and one verify command as the definition of done.'
 	}
 ];
 
@@ -188,4 +188,46 @@ export const faq = [
 		q: 'What can’t I do?',
 		a: 'Resell or publish the source itself as a template or starter kit, or put it in a public repository. The full licence is in the download.'
 	}
+];
+
+/** The project layout, as shipped. Keep it in step with the template. */
+export const fileTree = `kickstand/
+├── brand.yaml               # name, colours, font, icons, bundle IDs
+├── AGENTS.md                # architecture and rules for you and your AI agent
+├── CLAUDE.md · GEMINI.md    # import AGENTS.md
+├── .claude/skills/          # add-feature, rebrand, add-language, store-screenshots
+├── .mcp.json                # Dart and Flutter MCP server
+├── appwrite.config.json     # database, table, auth: one appwrite push
+├── lib/
+│   ├── main.dart            # error handlers, startup
+│   ├── bootstrap.dart       # picks the backend: mock or Appwrite
+│   ├── router.dart          # routes, auth redirects, deep links
+│   ├── config/              # brand.dart (generated), env.dart
+│   ├── core/                # theme, widgets, telemetry, validators
+│   ├── features/
+│   │   ├── auth/            # domain · data · application · presentation
+│   │   ├── notes/           # the sample feature to copy
+│   │   ├── paywall/         # PurchasesService + paywall
+│   │   ├── settings/        # theme, language, text size
+│   │   ├── onboarding/
+│   │   └── home/
+│   └── l10n/                # English and Spanish
+├── test/                    # unit, widget, accessibility tests
+├── integration_test/        # end to end on a device
+├── tool/
+│   ├── verify.dart          # every check in one command
+│   ├── rebrand.dart         # applies brand.yaml
+│   └── screenshots/         # framed store screenshots
+├── docs/                    # Appwrite, customising, payments, analytics, release
+└── .github/workflows/       # CI, optional signed release`;
+
+/** Direct dependencies and versions, as in the template's pubspec.yaml. */
+export const packages = [
+	{ name: 'Flutter', version: '3.47', role: 'Android, iOS and web from one codebase' },
+	{ name: 'flutter_riverpod', version: '3.4', role: 'State management, no code generation' },
+	{ name: 'go_router', version: '18.1', role: 'Routing, auth redirects, deep links' },
+	{ name: 'appwrite', version: '28.2', role: 'Auth and TablesDB' },
+	{ name: 'shared_preferences', version: '2.5', role: 'Settings and the offline demo backend' },
+	{ name: 'intl + flutter_localizations', version: '0.20', role: 'Translations and formatting' },
+	{ name: 'url_launcher', version: '6.3', role: 'Legal, support and store links' }
 ];

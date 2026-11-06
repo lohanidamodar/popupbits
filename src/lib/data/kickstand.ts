@@ -105,8 +105,8 @@ export const features = [
 		text: 'Flutter 3.47, Riverpod 3, go_router 18, appwrite 28. 45 unit and widget tests, an integration test, CI and an optional release workflow.'
 	},
 	{
-		title: 'Built for AI coding agents',
-		text: 'AGENTS.md for Claude Code, Codex, Cursor, Copilot and Gemini, step-by-step task skills, the Dart MCP server, and one verify command as the definition of done.'
+		title: 'Built for agents and humans',
+		text: 'Clear guides for you: Appwrite, customising, payments, analytics and releasing. For your AI agent: AGENTS.md, task skills and the Dart MCP server, for Claude Code, Codex, Cursor, Copilot and Gemini. One verify command checks both.'
 	}
 ];
 

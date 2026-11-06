@@ -183,6 +183,10 @@ export const faq = [
 		q: 'Does it take real payments?',
 		a: 'The paywall is wired to an interface with a demo store. Connect RevenueCat or the store SDKs following the payments guide.'
 	},
+	{
+		q: 'Tabs or a drawer?',
+		a: 'It ships with bottom tabs on phones and a side rail on tablets and desktop. To add a tab or switch to a drawer, a drawer plus tabs, or a sidebar, ask your agent: the change-navigation skill walks it through the routes, tests and screenshots.'
+	},
 	{ q: 'iOS?', a: 'Yes. Building for iOS needs a Mac with Xcode, as with any Flutter app.' },
 	{
 		q: 'What can’t I do?',
@@ -195,7 +199,8 @@ export const fileTree = `kickstand/
 ├── brand.yaml               # name, colours, font, icons, bundle IDs
 ├── AGENTS.md                # architecture and rules for you and your AI agent
 ├── CLAUDE.md · GEMINI.md    # import AGENTS.md
-├── .claude/skills/          # add-feature, rebrand, add-language, store-screenshots
+├── .claude/skills/          # add-feature, rebrand, add-language, store-screenshots,
+│                            # change-navigation
 ├── .mcp.json                # Dart and Flutter MCP server
 ├── appwrite.config.json     # database, table, auth: one appwrite push
 ├── lib/

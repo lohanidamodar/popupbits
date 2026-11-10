@@ -3,6 +3,7 @@
 // /llms.txt).
 import { company } from './company.js';
 import {
+	buildLog,
 	faq,
 	features,
 	fileTree,
@@ -28,6 +29,16 @@ export function kickstandMarkdown(): string {
 		'## What it includes',
 		'',
 		...features.map((f) => `- **${f.title}**: ${f.text}`),
+		'',
+		'## What it took to build',
+		'',
+		`Built with ${buildLog.model}, with a developer making the product calls and checking each step against the tests. Measured from the session; the numbers cover the whole project, including research, the licence and the sales page.`,
+		'',
+		...buildLog.stats.map((s) => `- **${s.value}** ${s.label}`),
+		'',
+		...buildLog.tokens.map((t) => `- ${t.kind}: ${t.count} tokens, ${t.cost}`),
+		'',
+		`Building it yourself: about $46 of tokens plus ${buildLog.workDays} working days of your time. Kickstand: from $${Math.min(...tiers.map((t) => t.launchPrice ?? t.price))}, once.`,
 		'',
 		'## Licences and prices',
 		'',

@@ -48,12 +48,12 @@ export const products: Product[] = [
 		// ?prefilled_promo_code=<CODE> to both links so the discount applies at checkout.
 		links: [
 			{
-				label: 'Buy Solo · $69',
+				label: 'Buy Solo · $68',
 				href: 'https://buy.stripe.com/9B66oH8CZ27L44dehMeEo00',
 				kind: 'other'
 			},
 			{
-				label: 'Buy Team · $199',
+				label: 'Buy Team · $198',
 				href: 'https://buy.stripe.com/cNi7sL5qNcMp7gp5LgeEo01',
 				kind: 'other'
 			}

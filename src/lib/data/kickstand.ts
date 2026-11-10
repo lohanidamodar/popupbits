@@ -41,7 +41,7 @@ export const tiers: Tier[] = [
 		id: 'solo',
 		name: 'Solo',
 		seats: '1 developer',
-		price: 69,
+		price: 68,
 		launchPrice: launchOffer?.solo ?? null,
 		href: withOffer('https://buy.stripe.com/9B66oH8CZ27L44dehMeEo00'),
 		blurb: 'For an indie developer or freelancer.',
@@ -51,7 +51,7 @@ export const tiers: Tier[] = [
 		id: 'team',
 		name: 'Team',
 		seats: 'Up to 10 developers',
-		price: 199,
+		price: 198,
 		launchPrice: launchOffer?.team ?? null,
 		href: withOffer('https://buy.stripe.com/cNi7sL5qNcMp7gp5LgeEo01'),
 		blurb: 'For a studio or company, in one organisation.',
@@ -66,6 +66,30 @@ export const tierIncludes = [
 	'Email support for setup and bugs',
 	'One-time payment, no subscription'
 ];
+
+/**
+ * Measured from the Claude Code session that built Kickstand (5 to 9 November
+ * 2026). The session also covered the research, the licence and this page, so
+ * these are the whole project, not the code alone. Cost is at Anthropic API
+ * list prices for Claude Opus 5.5 (1-hour cache rate).
+ */
+export const buildLog = {
+	model: 'Claude Opus 5.5 in Claude Code',
+	stats: [
+		{ value: '3 days', label: 'from first commit to the 1.0.0 release' },
+		{ value: '~5 hours', label: 'of agent working time' },
+		{ value: '131M', label: 'tokens processed in 494 model calls' },
+		{ value: '~$46', label: 'of usage at API list prices' }
+	],
+	tokens: [
+		{ kind: 'Output (code and text written)', count: '449K', cost: '$8.98' },
+		{ kind: 'Cache writes', count: '1.4M', cost: '$11.37' },
+		{ kind: 'Cache reads (re-reading the project)', count: '129M', cost: '$25.79' }
+	],
+	/** Illustrative only: the hourly rate is an example, not a measurement. */
+	exampleRate: 50,
+	workDays: 3
+};
 
 export const features = [
 	{

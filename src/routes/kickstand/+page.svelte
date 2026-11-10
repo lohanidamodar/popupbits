@@ -5,6 +5,7 @@
 	import { Check } from '@lucide/svelte';
 	import { company } from '$lib';
 	import {
+		buildLog,
 		faq,
 		features,
 		fileTree,
@@ -30,6 +31,7 @@
 				year: 'numeric'
 			})
 		: null;
+	const timeValue = buildLog.workDays * 8 * buildLog.exampleRate;
 
 	const productSchema = {
 		'@context': 'https://schema.org',
@@ -233,6 +235,93 @@
 					</tbody>
 				</table>
 			</div>
+		</div>
+	</section>
+
+	<!-- What it took to build -->
+	<section id="build-log" class="bg-muted/40 py-20 scroll-mt-20">
+		<div class="max-w-6xl mx-auto px-6">
+			<p class="t-eyebrow uppercase tracking-widest text-sm font-semibold text-primary mb-2">
+				What it took to build
+			</p>
+			<h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight max-w-3xl">
+				We spent the tokens and the days, so you don't have to.
+			</h2>
+			<p class="mt-4 max-w-2xl text-lg text-muted-foreground">
+				Kickstand was built with {buildLog.model}, with a developer making every product call and
+				checking every step against the tests. We measured the session. The numbers cover the whole
+				project, including the research, the licence and this page.
+			</p>
+			<dl class="mt-10 grid gap-6 grid-cols-2 lg:grid-cols-4">
+				{#each buildLog.stats as s (s.label)}
+					<div class="rounded-2xl bg-background p-6 shadow-sm">
+						<dt class="sr-only">{s.label}</dt>
+						<dd class="font-display text-4xl font-extrabold text-primary">{s.value}</dd>
+						<dd class="mt-1 text-sm text-muted-foreground">{s.label}</dd>
+					</div>
+				{/each}
+			</dl>
+			<div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
+				<table class="w-full text-sm">
+					<caption class="mb-3 text-left font-display text-xl font-bold text-foreground">
+						Where the tokens went
+					</caption>
+					<thead>
+						<tr class="text-left text-muted-foreground">
+							<th class="py-2 pr-3 font-medium">Tokens</th>
+							<th class="py-2 pr-3 font-medium text-right">Count</th>
+							<th class="py-2 font-medium text-right">Cost</th>
+						</tr>
+					</thead>
+					<tbody class="divide-y divide-border">
+						{#each buildLog.tokens as t (t.kind)}
+							<tr>
+								<td class="py-3 pr-3">{t.kind}</td>
+								<td class="py-3 pr-3 text-right font-mono">{t.count}</td>
+								<td class="py-3 text-right font-mono">{t.cost}</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
+				<div class="grid gap-4 sm:grid-cols-2">
+					<Card.Root>
+						<Card.Header>
+							<Card.Title class="text-lg">Build it yourself</Card.Title>
+						</Card.Header>
+						<Card.Content class="space-y-2 text-sm text-muted-foreground">
+							<p>
+								<span class="font-semibold text-foreground">~$46</span> of tokens, if your prompts are
+								as precise as ours.
+							</p>
+							<p>
+								<span class="font-semibold text-foreground">{buildLog.workDays} working days</span>
+								of your time: deciding, reviewing and fixing. That's ${timeValue.toLocaleString(
+									'en'
+								)}
+								at an example rate of ${buildLog.exampleRate} an hour.
+							</p>
+						</Card.Content>
+					</Card.Root>
+					<Card.Root class="border-2 border-primary">
+						<Card.Header>
+							<Card.Title class="text-lg">Start from Kickstand</Card.Title>
+						</Card.Header>
+						<Card.Content class="space-y-2 text-sm text-muted-foreground">
+							<p>
+								<span class="font-semibold text-foreground">${fromPrice}</span>, once.
+							</p>
+							<p>
+								Running today, already tested, with every 1.x update. Your agent spends its tokens
+								on your features instead.
+							</p>
+						</Card.Content>
+					</Card.Root>
+				</div>
+			</div>
+			<p class="mt-6 text-xs text-muted-foreground">
+				Cost at Anthropic API list prices for Claude Opus 5.5. Most of it is cache reads: the agent
+				re-reads the project on every step.
+			</p>
 		</div>
 	</section>
 

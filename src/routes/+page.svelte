@@ -4,17 +4,40 @@
 	import ConsultingSection from '$lib/components/ConsultingSection.svelte';
 	import ProductCard from '$lib/components/ProductCard.svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company, featuredProducts, visibleProducts } from '$lib';
+	import { jsonLd } from '$lib/jsonld.js';
+	import { dayNumber, rotateByDay } from '$lib/rotation.js';
 
-	// Most products are flagged featured, so cap the home page and send the rest to /products.
+	// Most products are flagged featured, so cap the home page and send the rest
+	// to /products. The shown set rotates one place a day through every released
+	// product, so each gets its turn at the top; coming-soon products wait their
+	// release. The server renders the catalogue order (day 0) and the browser
+	// applies the day's rotation once it loads.
 	const HOME_PRODUCT_COUNT = 6;
-	const homeProducts = featuredProducts.slice(0, HOME_PRODUCT_COUNT);
-	const hasMore = visibleProducts.length > homeProducts.length;
+	const rotating = featuredProducts.filter((p) => p.status !== 'coming-soon');
+	let day = $state(0);
+	$effect(() => {
+		day = dayNumber();
+	});
+	const homeProducts = $derived(rotateByDay(rotating, day, HOME_PRODUCT_COUNT));
+	const hasMore = visibleProducts.length > HOME_PRODUCT_COUNT;
+
+	const siteSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		name: company.name,
+		url: company.url,
+		description: company.seo.defaultDescription,
+		publisher: { '@type': 'Organization', name: company.name, url: company.url }
+	};
 </script>
 
+<SEO />
+
 <svelte:head>
-	<title>{company.seo.defaultTitle}</title>
-	<meta name="description" content={company.seo.defaultDescription} />
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -- static JSON-LD built from our own data -->
+	{@html jsonLd(siteSchema)}
 </svelte:head>
 
 <Hero

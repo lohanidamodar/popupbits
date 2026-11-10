@@ -4,6 +4,7 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Check } from '@lucide/svelte';
 	import { company } from '$lib';
+	import ProductPager from '$lib/components/ProductPager.svelte';
 	import {
 		buildLog,
 		byHandHours,
@@ -508,4 +509,6 @@
 			Payments processed by Stripe.
 		</p>
 	</section>
+
+	<ProductPager slug="kickstand" />
 </div>

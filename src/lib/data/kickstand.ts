@@ -75,21 +75,40 @@ export const tierIncludes = [
  */
 export const buildLog = {
 	model: 'Claude Opus 5.5 in Claude Code',
-	stats: [
-		{ value: '3 days', label: 'from first commit to the 1.0.0 release' },
-		{ value: '~5 hours', label: 'of agent working time' },
-		{ value: '131M', label: 'tokens processed in 494 model calls' },
-		{ value: '~$46', label: 'of usage at API list prices' }
+	/** Illustrative only: the hourly rate is an example, not a measurement. */
+	exampleRate: 50,
+	/** Developer time with the agent: 3 working days, measured. */
+	aiHours: 24,
+	aiTokenCost: 46,
+	/**
+	 * Estimate for an experienced Flutter developer writing it by hand. Not
+	 * measured: a reasoned estimate per part, shown on the page as one.
+	 */
+	byHand: [
+		{ part: 'Sign-in, sign-up, guest mode, reset, account deletion, route guards', hours: 20 },
+		{ part: 'Appwrite data layer and the offline demo backend', hours: 16 },
+		{ part: 'Settings, dark mode, theming, phone/tablet/desktop layouts', hours: 16 },
+		{ part: 'Paywall and the payments interface', hours: 12 },
+		{ part: '45 tests, including accessibility checks', hours: 20 },
+		{ part: 'English and Spanish translations', hours: 6 },
+		{ part: 'Rebrand script, icons, store screenshot generator', hours: 20 },
+		{ part: 'CI, analytics and crash-reporting hooks', hours: 8 },
+		{ part: 'Docs, AGENTS.md and task skills for AI agents', hours: 12 }
+	],
+	measured: [
+		{ value: '6,800', label: 'lines of Dart' },
+		{ value: '45', label: 'tests passing' },
+		{ value: '27', label: 'commits to 1.0.0' },
+		{ value: '131M', label: 'AI tokens processed' }
 	],
 	tokens: [
 		{ kind: 'Output (code and text written)', count: '449K', cost: '$8.98' },
 		{ kind: 'Cache writes', count: '1.4M', cost: '$11.37' },
 		{ kind: 'Cache reads (re-reading the project)', count: '129M', cost: '$25.79' }
-	],
-	/** Illustrative only: the hourly rate is an example, not a measurement. */
-	exampleRate: 50,
-	workDays: 3
+	]
 };
+
+export const byHandHours = buildLog.byHand.reduce((sum, p) => sum + p.hours, 0);
 
 export const features = [
 	{

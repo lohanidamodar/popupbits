@@ -6,6 +6,7 @@
 	import { company } from '$lib';
 	import {
 		buildLog,
+		byHandHours,
 		faq,
 		features,
 		fileTree,
@@ -31,7 +32,35 @@
 				year: 'numeric'
 			})
 		: null;
-	const timeValue = buildLog.workDays * 8 * buildLog.exampleRate;
+	const rate = buildLog.exampleRate;
+	const usd = (n: number) => `$${n.toLocaleString('en')}`;
+	const ways = [
+		{
+			name: 'By hand',
+			hours: `~${byHandHours} hours`,
+			detail: `Over ${Math.floor(byHandHours / 40)} full-time weeks for an experienced Flutter developer, before your first feature.`,
+			cost: usd(byHandHours * rate),
+			note: 'of developer time',
+			highlighted: false
+		},
+		{
+			name: 'With an AI agent',
+			hours: `~${buildLog.aiHours} hours`,
+			detail: `What it took us: 3 working days directing, reviewing and fixing, plus ~$${buildLog.aiTokenCost} of tokens. Assumes you know exactly what to build.`,
+			cost: usd(buildLog.aiHours * rate + buildLog.aiTokenCost),
+			note: 'of time and tokens',
+			highlighted: false
+		},
+		{
+			name: 'Start from Kickstand',
+			hours: 'Today',
+			detail:
+				'Rebrand from one file and connect Appwrite, then build your own features from day one. Every 1.x update included.',
+			cost: usd(fromPrice),
+			note: 'once',
+			highlighted: true
+		}
+	];
 
 	const productSchema = {
 		'@context': 'https://schema.org',
@@ -245,82 +274,101 @@
 				What it took to build
 			</p>
 			<h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight max-w-3xl">
-				We spent the tokens and the days, so you don't have to.
+				~{byHandHours} hours of work, for {usd(fromPrice)}.
 			</h2>
 			<p class="mt-4 max-w-2xl text-lg text-muted-foreground">
-				Kickstand was built with {buildLog.model}, with a developer making every product call and
-				checking every step against the tests. We measured the session. The numbers cover the whole
-				project, including the research, the licence and this page.
+				Even with an AI agent, a foundation like this takes days of a developer's attention:
+				deciding, reviewing, fixing. We did that once, so you don't have to.
 			</p>
-			<dl class="mt-10 grid gap-6 grid-cols-2 lg:grid-cols-4">
-				{#each buildLog.stats as s (s.label)}
-					<div class="rounded-2xl bg-background p-6 shadow-sm">
-						<dt class="sr-only">{s.label}</dt>
-						<dd class="font-display text-4xl font-extrabold text-primary">{s.value}</dd>
-						<dd class="mt-1 text-sm text-muted-foreground">{s.label}</dd>
-					</div>
+
+			<div class="mt-10 grid gap-6 md:grid-cols-3">
+				{#each ways as w (w.name)}
+					<Card.Root class={w.highlighted ? 'border-2 border-primary' : ''}>
+						<Card.Header>
+							<Card.Title class="text-lg">{w.name}</Card.Title>
+						</Card.Header>
+						<Card.Content class="flex flex-col gap-3">
+							<p class="font-display text-4xl font-extrabold {w.highlighted ? 'text-primary' : ''}">
+								{w.cost}
+								<span class="text-sm font-normal text-muted-foreground">{w.note}</span>
+							</p>
+							<p class="font-semibold">{w.hours}</p>
+							<p class="text-sm text-muted-foreground leading-relaxed">{w.detail}</p>
+						</Card.Content>
+					</Card.Root>
 				{/each}
-			</dl>
-			<div class="mt-10 grid gap-8 lg:grid-cols-2 items-start">
+			</div>
+			<p class="mt-4 text-xs text-muted-foreground">
+				Time valued at an example rate of {usd(rate)} an hour. Use your own rate: the hours are what matter.
+			</p>
+
+			<div class="mt-12 grid gap-10 lg:grid-cols-2 items-start">
 				<table class="w-full text-sm">
 					<caption class="mb-3 text-left font-display text-xl font-bold text-foreground">
-						Where the tokens went
+						Where ~{byHandHours} hours go by hand
 					</caption>
 					<thead>
 						<tr class="text-left text-muted-foreground">
-							<th class="py-2 pr-3 font-medium">Tokens</th>
-							<th class="py-2 pr-3 font-medium text-right">Count</th>
-							<th class="py-2 font-medium text-right">Cost</th>
+							<th class="py-2 pr-3 font-medium">Part</th>
+							<th class="py-2 font-medium text-right">Hours</th>
 						</tr>
 					</thead>
 					<tbody class="divide-y divide-border">
-						{#each buildLog.tokens as t (t.kind)}
+						{#each buildLog.byHand as p (p.part)}
 							<tr>
-								<td class="py-3 pr-3">{t.kind}</td>
-								<td class="py-3 pr-3 text-right font-mono">{t.count}</td>
-								<td class="py-3 text-right font-mono">{t.cost}</td>
+								<td class="py-3 pr-3">{p.part}</td>
+								<td class="py-3 text-right font-mono">{p.hours}</td>
 							</tr>
 						{/each}
 					</tbody>
 				</table>
-				<div class="grid gap-4 sm:grid-cols-2">
-					<Card.Root>
-						<Card.Header>
-							<Card.Title class="text-lg">Build it yourself</Card.Title>
-						</Card.Header>
-						<Card.Content class="space-y-2 text-sm text-muted-foreground">
-							<p>
-								<span class="font-semibold text-foreground">~$46</span> of tokens, if your prompts are
-								as precise as ours.
-							</p>
-							<p>
-								<span class="font-semibold text-foreground">{buildLog.workDays} working days</span>
-								of your time: deciding, reviewing and fixing. That's ${timeValue.toLocaleString(
-									'en'
-								)}
-								at an example rate of ${buildLog.exampleRate} an hour.
-							</p>
-						</Card.Content>
-					</Card.Root>
-					<Card.Root class="border-2 border-primary">
-						<Card.Header>
-							<Card.Title class="text-lg">Start from Kickstand</Card.Title>
-						</Card.Header>
-						<Card.Content class="space-y-2 text-sm text-muted-foreground">
-							<p>
-								<span class="font-semibold text-foreground">${fromPrice}</span>, once.
-							</p>
-							<p>
-								Running today, already tested, with every 1.x update. Your agent spends its tokens
-								on your features instead.
-							</p>
-						</Card.Content>
-					</Card.Root>
+				<div>
+					<h3 class="font-display text-xl font-bold">How we built it</h3>
+					<p class="mt-2 text-sm text-muted-foreground leading-relaxed">
+						With {buildLog.model}, a developer making every product call, and nothing counted as
+						done until the formatter, analyzer and tests passed. Measured from the session:
+					</p>
+					<dl class="mt-6 grid grid-cols-2 gap-4">
+						{#each buildLog.measured as m (m.label)}
+							<div class="rounded-2xl bg-background p-5 shadow-sm">
+								<dt class="sr-only">{m.label}</dt>
+								<dd class="font-display text-3xl font-extrabold text-primary">{m.value}</dd>
+								<dd class="mt-1 text-sm text-muted-foreground">{m.label}</dd>
+							</div>
+						{/each}
+					</dl>
+					<details class="mt-6 group">
+						<summary class="cursor-pointer text-sm font-semibold">
+							Where the tokens went (~${buildLog.aiTokenCost} at API prices)
+						</summary>
+						<table class="mt-3 w-full text-sm">
+							<caption class="sr-only">AI token usage by kind</caption>
+							<thead>
+								<tr class="text-left text-muted-foreground">
+									<th class="py-2 pr-3 font-medium">Tokens</th>
+									<th class="py-2 pr-3 font-medium text-right">Count</th>
+									<th class="py-2 font-medium text-right">Cost</th>
+								</tr>
+							</thead>
+							<tbody class="divide-y divide-border">
+								{#each buildLog.tokens as t (t.kind)}
+									<tr>
+										<td class="py-3 pr-3">{t.kind}</td>
+										<td class="py-3 pr-3 text-right font-mono">{t.count}</td>
+										<td class="py-3 text-right font-mono">{t.cost}</td>
+									</tr>
+								{/each}
+							</tbody>
+						</table>
+						<p class="mt-3 text-xs text-muted-foreground">
+							Anthropic API list prices for Claude Opus 5.5. The session also covered research, the
+							licence and this page. The tokens were the cheap part; the developer's time was not.
+						</p>
+					</details>
 				</div>
 			</div>
 			<p class="mt-6 text-xs text-muted-foreground">
-				Cost at Anthropic API list prices for Claude Opus 5.5. Most of it is cache reads: the agent
-				re-reads the project on every step.
+				The by-hand hours are our estimate, not a measurement. The AI numbers are measured.
 			</p>
 		</div>
 	</section>

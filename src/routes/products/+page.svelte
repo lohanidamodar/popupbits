@@ -1,6 +1,9 @@
 <script lang="ts">
 	import ProductCard from '$lib/components/ProductCard.svelte';
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
+	import { company } from '$lib';
+	import { jsonLd } from '$lib/jsonld.js';
 	import { isOpenSource, platformLabels, type ProductPlatform } from '$lib/data/products.js';
 	import { CodeXml } from '@lucide/svelte';
 
@@ -28,11 +31,29 @@
 	];
 
 	const openSourceCount = $derived(data.products.filter(isOpenSource).length);
+
+	const listSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'ItemList',
+		name: `${company.name} products`,
+		itemListElement: data.products.map((p, i) => ({
+			'@type': 'ListItem',
+			position: i + 1,
+			name: p.name,
+			url: `${company.url}${p.pageHref ?? `/products/${p.slug}`}`
+		}))
+	};
 </script>
 
+<SEO
+	title="Products"
+	description="Apps and games built by Popup Bits in Kathmandu: Flutter apps for Android and iOS, desktop tools and open-source projects, many made for Nepal."
+	url="/products"
+/>
+
 <svelte:head>
-	<title>Products — Popup Bits</title>
-	<meta name="description" content="Apps and products built by Popup Bits." />
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -- static JSON-LD built from our own data -->
+	{@html jsonLd(listSchema)}
 </svelte:head>
 
 <PageHeader title="Products" subtitle="Apps and games we design, build, and ship from Kathmandu." />

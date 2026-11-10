@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 	import { Mail, MapPin, Phone, ArrowRight } from '@lucide/svelte';
 
@@ -28,10 +29,11 @@
 		`mailto:${company.contact.email}?subject=${encodeURIComponent(subject)}`;
 </script>
 
-<svelte:head>
-	<title>Contact — Popup Bits</title>
-	<meta name="description" content="Get in touch with Popup Bits." />
-</svelte:head>
+<SEO
+	title="Contact"
+	description="Get in touch with Popup Bits: product support, client work, or a question about one of our apps. We reply to every email."
+	url="/contact"
+/>
 
 <PageHeader
 	eyebrow="Contact"

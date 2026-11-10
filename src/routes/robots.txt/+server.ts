@@ -7,6 +7,10 @@ export function GET() {
 Allow: /
 
 Sitemap: ${company.url}/sitemap.xml
+
+# Markdown versions of every page, for AI agents and LLM tools:
+# ${company.url}/llms.txt
+# ${company.url}/llms-full.txt
 `;
 	return new Response(body, { headers: { 'Content-Type': 'text/plain' } });
 }

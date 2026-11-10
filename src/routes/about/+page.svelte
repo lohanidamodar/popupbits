@@ -2,15 +2,14 @@
 	import PageHeader from '$lib/components/PageHeader.svelte';
 	import { company } from '$lib';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import SEO from '$lib/components/SEO.svelte';
 </script>
 
-<svelte:head>
-	<title>About — Popup Bits</title>
-	<meta
-		name="description"
-		content="Popup Bits is a Kathmandu-based studio building apps and taking on selected client work."
-	/>
-</svelte:head>
+<SEO
+	title="About"
+	description="Popup Bits is a Kathmandu-based studio building apps and taking on selected client work."
+	url="/about"
+/>
 
 <PageHeader
 	eyebrow="About"
@@ -25,8 +24,8 @@
 	</p>
 	<p>
 		Today we still ship our own apps, and we partner with businesses to build full-stack
-		applications, custom SaaS platforms, AI-integrated products, and the automation that runs
-		them — on web, mobile, and desktop. We work primarily with the Node.js and PHP stacks.
+		applications, custom SaaS platforms, AI-integrated products, and the automation that runs them —
+		on web, mobile, and desktop. We work primarily with the Node.js and PHP stacks.
 	</p>
 	<p>
 		The studio is led by <strong>{company.founder}</strong> and based in {company.contact.address

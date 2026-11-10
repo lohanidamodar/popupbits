@@ -27,6 +27,20 @@ bun run check
 bun run test
 ```
 
+## Product pages
+
+Each `/products/<slug>` page is built from two files: the catalogue entry in
+`src/lib/data/products.ts` (name, links, platforms, status) and the page content in
+`src/lib/data/product-pages.ts` (pitch, highlights, facts, FAQ and captioned
+screenshots). The screenshots are the store listings' own images, kept under
+`static/products/<slug>/` as `play-NN.webp` and `appstore-NN.webp`. After changing an
+app's store screenshots, refresh the copies and then update that set's alt-text list:
+
+```bash
+dart run tool/fetch_store_screenshots.dart            # every product
+dart run tool/fetch_store_screenshots.dart photoready # one or more slugs
+```
+
 ## Design system
 
 The design tokens live in `src/lib/design-system/colors_and_type.css`, vendored from

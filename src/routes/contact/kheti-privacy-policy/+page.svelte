@@ -1,15 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>Kheti — Privacy Policy</title>
-	<meta
-		name="description"
-		content="Privacy policy for the Kheti (खेती) 3D Nepali hillside farming game."
-	/>
-</svelte:head>
+<SEO
+	title="Kheti — Privacy Policy"
+	description="Privacy policy for the Kheti (खेती) 3D Nepali hillside farming game: what data it handles, what stays on your device, and how to contact Popup Bits."
+	url="/contact/kheti-privacy-policy"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'Kheti — Privacy Policy', path: '/contact/kheti-privacy-policy' }
+	]}
+/>
 
 <PageHeader title="Kheti — Privacy Policy" />
 
@@ -17,7 +20,7 @@
 	<p><em>Last updated: 1 November 2026</em></p>
 
 	<p>
-		<strong>Kheti</strong> (खेती, "the app") is a 3D Nepali hillside terrace farming game. It is
+		<strong>Kheti</strong> (<span lang="ne">खेती</span>, "the app") is a 3D Nepali hillside terrace farming game. It is
 		published by {company.legalName}, Kathmandu, Nepal, for Android as
 		<code>com.popupbits.kheti</code>. This page explains what data the app handles.
 	</p>

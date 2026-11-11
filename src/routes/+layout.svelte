@@ -5,7 +5,18 @@
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
 
+	import { onMount } from 'svelte';
+
 	let { children } = $props();
+
+	// WebMCP tools for in-browser AI agents. The module, and the catalogue it
+	// reads, load only in a browser that supports the API.
+	onMount(() => {
+		if (!('modelContext' in document) && !('modelContext' in navigator)) return;
+		let cleanup: (() => void) | undefined;
+		import('$lib/webmcp.js').then((m) => (cleanup = m.registerWebMcpTools()));
+		return () => cleanup?.();
+	});
 </script>
 
 <ModeWatcher />

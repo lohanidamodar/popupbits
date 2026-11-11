@@ -1,15 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>Karmakanda — Privacy Policy</title>
-	<meta
-		name="description"
-		content="Privacy policy for the Karmakanda (कर्मकाण्ड) puja vidhi app."
-	/>
-</svelte:head>
+<SEO
+	title="Karmakanda — Privacy Policy"
+	description="Privacy policy for the Karmakanda (कर्मकाण्ड) puja vidhi app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	url="/contact/karmakanda-privacy-policy"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'Karmakanda — Privacy Policy', path: '/contact/karmakanda-privacy-policy' }
+	]}
+/>
 
 <PageHeader title="Karmakanda — Privacy Policy" />
 
@@ -17,7 +20,7 @@
 	<p><em>Last updated: 24 October 2026</em></p>
 
 	<p>
-		<strong>Karmakanda</strong> (कर्मकाण्ड, "the app") gives step-by-step puja vidhi with mantras
+		<strong>Karmakanda</strong> (<span lang="ne">कर्मकाण्ड</span>, "the app") gives step-by-step puja vidhi with mantras
 		and their Nepali meaning. It is published by {company.legalName}, Kathmandu, Nepal, for Android
 		as <code>com.popupbits.karmakanda</code>. This page explains what data the app handles.
 	</p>

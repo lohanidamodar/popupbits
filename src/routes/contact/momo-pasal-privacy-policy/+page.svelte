@@ -1,15 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>Momo Pasal — Privacy Policy</title>
-	<meta
-		name="description"
-		content="Privacy policy for Momo Pasal (मोमो पसल), the Nepali veg momo shop cooking game."
-	/>
-</svelte:head>
+<SEO
+	title="Momo Pasal — Privacy Policy"
+	description="Privacy policy for Momo Pasal (मोमो पसल), the Nepali veg momo shop cooking game: what data it handles, what stays on your device, and how to contact Popup Bits."
+	url="/contact/momo-pasal-privacy-policy"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'Momo Pasal — Privacy Policy', path: '/contact/momo-pasal-privacy-policy' }
+	]}
+/>
 
 <PageHeader title="Momo Pasal — Privacy Policy" />
 
@@ -17,7 +20,7 @@
 	<p><em>Last updated: 4 November 2026</em></p>
 
 	<p>
-		<strong>Momo Pasal</strong> (मोमो पसल, "the app") is a cooking game about running a vegetarian
+		<strong>Momo Pasal</strong> (<span lang="ne">मोमो पसल</span>, "the app") is a cooking game about running a vegetarian
 		momo shop in Kathmandu. It is published by {company.legalName}, Kathmandu, Nepal, for Android as
 		<code>com.popupbits.momo_pasal</code>. This page explains what data the app handles.
 	</p>

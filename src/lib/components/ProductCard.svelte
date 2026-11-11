@@ -13,6 +13,8 @@
 	import AppStore from './icons/AppStore.svelte';
 	import NepalFlag from './icons/NepalFlag.svelte';
 	import ProductIcon from './ProductIcon.svelte';
+	import LangText from './LangText.svelte';
+	import { devanagariLang } from '$lib/data/app-meta.js';
 
 	let { product }: { product: Product } = $props();
 
@@ -40,11 +42,7 @@
 
 <div class={`${product.themeClass}`}>
 	<Card.Root class="h-full overflow-hidden transition-shadow hover:shadow-lg flex flex-col">
-		<a
-			href={product.pageHref ?? `/products/${product.slug}`}
-			class="block"
-			aria-label={`Open ${product.name}`}
-		>
+		<a href={product.pageHref ?? `/products/${product.slug}`} class="block">
 			<Card.Header class="flex flex-row items-center gap-4">
 				<ProductIcon {product} size="sm" />
 				<div class="flex-1">
@@ -61,7 +59,9 @@
 				</div>
 			</Card.Header>
 			<Card.Content>
-				<p class="text-sm text-muted-foreground line-clamp-3">{product.description}</p>
+				<p class="text-sm text-muted-foreground line-clamp-3">
+					<LangText text={product.description} lang={devanagariLang(product.slug)} />
+				</p>
 			</Card.Content>
 		</a>
 		<Card.Footer class="mt-auto flex flex-wrap items-center gap-2">
@@ -85,6 +85,7 @@
 			{#if product.availableIn}
 				<span
 					class="ml-auto inline-flex items-center"
+					role="img"
 					title={`Available in ${product.availableIn} only`}
 					aria-label={`Available in ${product.availableIn} only`}
 				>

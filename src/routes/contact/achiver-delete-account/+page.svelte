@@ -1,12 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>Delete your Achiver account</title>
-	<meta name="description" content="How to delete your Achiver account and all associated data." />
-</svelte:head>
+<SEO
+	title="Delete your Achiver account"
+	description="How to delete your Achiver account and all associated data."
+	url="/contact/achiver-delete-account"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'Delete your Achiver account', path: '/contact/achiver-delete-account' }
+	]}
+/>
 
 <PageHeader title="Delete your Achiver account" />
 

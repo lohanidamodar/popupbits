@@ -1,15 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>SpellCraft — Privacy Policy</title>
-	<meta
-		name="description"
-		content="Privacy policy for the SpellCraft dictation and spelling app."
-	/>
-</svelte:head>
+<SEO
+	title="SpellCraft — Privacy Policy"
+	description="Privacy policy for the SpellCraft dictation and spelling app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	url="/contact/spellcraft-privacy-policy"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'SpellCraft — Privacy Policy', path: '/contact/spellcraft-privacy-policy' }
+	]}
+/>
 
 <PageHeader title="SpellCraft — Privacy Policy" />
 

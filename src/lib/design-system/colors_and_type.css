@@ -43,7 +43,9 @@
      Challenges app).
    If you have official Popup Bits fonts, replace these.
 */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Mukta:wght@300;400;500;600;700;800&family=Baloo+2:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+/* The Google Fonts stylesheet (Nunito, Mukta, Baloo 2, JetBrains Mono, with
+   display=swap) is linked from src/app.html, not @imported here: an @import
+   is only found after this file downloads, and blocks rendering until it loads. */
 
 :root {
 	/* ---------- Brand palette ----------
@@ -469,6 +471,11 @@
 .t-deva {
 	font-family: var(--font-deva);
 	line-height: var(--lh-loose);
+}
+/* Devanagari runs tagged lang="ne" or lang="sa" inside English text. */
+:lang(ne),
+:lang(sa) {
+	font-family: var(--font-deva);
 }
 .t-deva-display {
 	font-family: var(--font-deva);

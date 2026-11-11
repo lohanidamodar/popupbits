@@ -10,9 +10,14 @@
 	import NepalFlag from './icons/NepalFlag.svelte';
 	import ProductIcon from './ProductIcon.svelte';
 	import ProductPager from './ProductPager.svelte';
+	import LangText from './LangText.svelte';
+	import { devanagariLang } from '$lib/data/app-meta.js';
 	import { getPostsByProduct, formatPostDate } from '$lib/data/posts.js';
 
 	let { product, page }: { product: Product; page?: ProductPage } = $props();
+
+	// The language of the Devanagari words in this product's copy.
+	const deva = $derived(devanagariLang(product.slug));
 
 	const relatedPosts = $derived(getPostsByProduct(product.slug));
 
@@ -103,9 +108,13 @@
 				<h1 class="font-display text-4xl md:text-6xl font-extrabold tracking-tight">
 					{product.name}
 				</h1>
-				<p class="mt-4 text-xl md:text-2xl font-semibold">{product.tagline}</p>
+				<p class="mt-4 text-xl md:text-2xl font-semibold">
+					<LangText text={product.tagline} lang={deva} />
+				</p>
 				{#if page}
-					<p class="mt-4 max-w-2xl text-lg opacity-80">{page.pitch.text}</p>
+					<p class="mt-4 max-w-2xl text-lg opacity-80">
+						<LangText text={page.pitch.text} lang={deva} />
+					</p>
 				{/if}
 				{#if product.availableIn}
 					<p class="mt-4 inline-flex items-center gap-2 text-sm font-medium opacity-90">
@@ -159,10 +168,10 @@
 						{page.pitch.eyebrow}
 					</p>
 					<h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight max-w-3xl">
-						{page.pitch.headline}
+						<LangText text={page.pitch.headline} lang={deva} />
 					</h2>
 					<p class="mt-4 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-						{product.description}
+						<LangText text={product.description} lang={deva} />
 					</p>
 					{#if page.audience && page.audience.length > 0}
 						<h3 class="mt-10 font-display text-xl font-bold">Made for</h3>
@@ -170,7 +179,7 @@
 							{#each page.audience as who (who)}
 								<li class="flex gap-2">
 									<Check class="size-5 mt-0.5 shrink-0 text-primary" aria-hidden="true" />
-									<span>{who}</span>
+									<span><LangText text={who} lang={deva} /></span>
 								</li>
 							{/each}
 						</ul>
@@ -204,10 +213,12 @@
 						{#each page.highlights as h (h.title)}
 							<Card.Root>
 								<Card.Header>
-									<Card.Title class="text-lg">{h.title}</Card.Title>
+									<Card.Title class="text-lg"><LangText text={h.title} lang={deva} /></Card.Title>
 								</Card.Header>
 								<Card.Content>
-									<p class="text-sm text-muted-foreground leading-relaxed">{h.text}</p>
+									<p class="text-sm text-muted-foreground leading-relaxed">
+										<LangText text={h.text} lang={deva} />
+									</p>
 								</Card.Content>
 							</Card.Root>
 						{/each}
@@ -258,7 +269,9 @@
 	{:else}
 		<section class="max-w-3xl mx-auto px-6 py-16">
 			<h2 class="font-display text-2xl font-bold mb-4">About</h2>
-			<p class="text-lg leading-relaxed text-foreground/90">{product.description}</p>
+			<p class="text-lg leading-relaxed text-foreground/90">
+				<LangText text={product.description} lang={deva} />
+			</p>
 		</section>
 	{/if}
 
@@ -303,13 +316,15 @@
 				{#each page.faq as item (item.q)}
 					<details class="group py-4">
 						<summary class="cursor-pointer list-none flex justify-between gap-4 font-semibold">
-							{item.q}
+							<LangText text={item.q} lang={deva} />
 							<span
 								class="text-muted-foreground transition-transform group-open:rotate-45"
 								aria-hidden="true">+</span
 							>
 						</summary>
-						<p class="mt-3 text-muted-foreground leading-relaxed">{item.a}</p>
+						<p class="mt-3 text-muted-foreground leading-relaxed">
+							<LangText text={item.a} lang={deva} />
+						</p>
 					</details>
 				{/each}
 			</div>

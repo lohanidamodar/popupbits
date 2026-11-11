@@ -1,16 +1,22 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 </script>
 
-<svelte:head>
-	<title>Flutter UI Challenges — Privacy Policy</title>
-	<meta name="description" content="Privacy policy for Flutter UI Challenges." />
-</svelte:head>
+<SEO
+	title="Flutter UI Challenges — Privacy Policy"
+	description="Privacy policy for Flutter UI Challenges: what data it handles, what stays on your device, and how to contact Popup Bits."
+	url="/contact/flutter-ui-challenges-privacy-policy"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'Flutter UI Challenges — Privacy Policy', path: '/contact/flutter-ui-challenges-privacy-policy' }
+	]}
+/>
 
 <PageHeader title="Flutter UI Challenges — Privacy Policy" />
 
 <article class="prose prose-neutral dark:prose-invert max-w-3xl mx-auto px-6 pb-24">
-	<h1>Privacy Policy for Flutter UI Challenges</h1>
+	<h2>Privacy Policy for Flutter UI Challenges</h2>
 	<p>Last updated: April 14, 2023</p>
 	<p>
 		This Privacy Policy describes Our policies and procedures on the collection, use and disclosure
@@ -25,14 +31,14 @@
 			target="_blank">Free Privacy Policy Generator</a
 		>.
 	</p>
-	<h1>Interpretation and Definitions</h1>
-	<h2>Interpretation</h2>
+	<h2>Interpretation and Definitions</h2>
+	<h3>Interpretation</h3>
 	<p>
 		The words of which the initial letter is capitalized have meanings defined under the following
 		conditions. The following definitions shall have the same meaning regardless of whether they
 		appear in singular or in plural.
 	</p>
-	<h2>Definitions</h2>
+	<h3>Definitions</h3>
 	<p>For the purposes of this Privacy Policy:</p>
 	<ul>
 		<li>

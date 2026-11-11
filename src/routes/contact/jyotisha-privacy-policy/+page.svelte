@@ -1,15 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>Jyotisha — Privacy Policy</title>
-	<meta
-		name="description"
-		content="Privacy policy for the Jyotisha (ज्योतिष) kundali, dasha and panchanga app."
-	/>
-</svelte:head>
+<SEO
+	title="Jyotisha — Privacy Policy"
+	description="Privacy policy for the Jyotisha (ज्योतिष) kundali, dasha and panchanga app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	url="/contact/jyotisha-privacy-policy"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'Jyotisha — Privacy Policy', path: '/contact/jyotisha-privacy-policy' }
+	]}
+/>
 
 <PageHeader title="Jyotisha — Privacy Policy" />
 
@@ -17,7 +20,7 @@
 	<p><em>Last updated: 31 October 2026</em></p>
 
 	<p>
-		<strong>Jyotisha</strong> (ज्योतिष, "the app") calculates kundali (birth charts), divisional
+		<strong>Jyotisha</strong> (<span lang="ne">ज्योतिष</span>, "the app") calculates kundali (birth charts), divisional
 		charts, dashas, transits, varshaphal, kundali milan, muhurta, and the daily panchanga, Bikram
 		Sambat calendar and festivals. It is published by {company.legalName}, Kathmandu, Nepal, for
 		Android as <code>com.popupbits.jyotisha</code>. This page explains what data the app handles.
@@ -47,7 +50,7 @@
 			birth, place of birth (its name, coordinates and time zone), and gender.
 		</li>
 		<li>
-			<strong>Saved records</strong> (अभिलेख), whether your own or, if you use the app as a jyotishi,
+			<strong>Saved records</strong> (<span lang="ne">अभिलेख</span>), whether your own or, if you use the app as a jyotishi,
 			your clients'. Besides the birth details, a record holds whatever you choose to add: notes,
 			tags, consultation notes, reminders, and family details such as gotra and parents' names. The
 			app also remembers which records you pinned and opened recently.
@@ -57,7 +60,7 @@
 			picked from the list built into the app; the app never reads your device's location.
 		</li>
 		<li>
-			<strong>Personal tithis</strong> (मेरा तिथि) you add for reminders, such as a tithi birthday or a
+			<strong>Personal tithis</strong> (<span lang="ne">मेरा तिथि</span>) you add for reminders, such as a tithi birthday or a
 			shraddha — a name you choose, its kind, its lunar date, and when to remind you.
 		</li>
 		<li>
@@ -70,7 +73,7 @@
 		</li>
 	</ul>
 	<p>
-		You can delete any saved record from the अभिलेख screen. Uninstalling the app, or clearing its data
+		You can delete any saved record from the <span lang="ne">अभिलेख</span> screen. Uninstalling the app, or clearing its data
 		in Android settings, removes everything.
 	</p>
 	<p>

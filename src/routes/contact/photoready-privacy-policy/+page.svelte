@@ -1,15 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>PhotoReady — Privacy Policy</title>
-	<meta
-		name="description"
-		content="Privacy policy for the PhotoReady passport, visa and ID photo app."
-	/>
-</svelte:head>
+<SEO
+	title="PhotoReady — Privacy Policy"
+	description="Privacy policy for the PhotoReady passport, visa and ID photo app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	url="/contact/photoready-privacy-policy"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'PhotoReady — Privacy Policy', path: '/contact/photoready-privacy-policy' }
+	]}
+/>
 
 <PageHeader title="PhotoReady — Privacy Policy" />
 

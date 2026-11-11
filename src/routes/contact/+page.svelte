@@ -33,6 +33,7 @@
 	title="Contact"
 	description="Get in touch with Popup Bits: product support, client work, or a question about one of our apps. We reply to every email."
 	url="/contact"
+	breadcrumbs={[{ name: 'Contact', path: '/contact' }]}
 />
 
 <PageHeader

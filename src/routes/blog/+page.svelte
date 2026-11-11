@@ -10,6 +10,7 @@
 	title="Blog"
 	description="Notes from the Popup Bits studio — shipping apps, store submissions, and what we learn building for Nepal."
 	url="/blog"
+	breadcrumbs={[{ name: 'Blog', path: '/blog' }]}
 />
 
 <PageHeader
@@ -31,6 +32,8 @@
 								<img
 									src={post.cover}
 									alt=""
+									width="1200"
+									height="600"
 									class="w-full aspect-[3/1] object-cover"
 									loading="lazy"
 								/>

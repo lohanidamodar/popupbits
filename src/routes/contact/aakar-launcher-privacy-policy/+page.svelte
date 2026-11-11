@@ -1,12 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>Aakar Launcher — Privacy Policy</title>
-	<meta name="description" content="Privacy policy for the Aakar Launcher Android app." />
-</svelte:head>
+<SEO
+	title="Aakar Launcher — Privacy Policy"
+	description="Privacy policy for the Aakar Launcher Android app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	url="/contact/aakar-launcher-privacy-policy"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'Aakar Launcher — Privacy Policy', path: '/contact/aakar-launcher-privacy-policy' }
+	]}
+/>
 
 <PageHeader title="Aakar Launcher — Privacy Policy" />
 

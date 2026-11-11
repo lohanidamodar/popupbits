@@ -1,12 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>Tipot — Privacy Policy</title>
-	<meta name="description" content="Privacy policy for the Tipot notes and todo app." />
-</svelte:head>
+<SEO
+	title="Tipot — Privacy Policy"
+	description="Privacy policy for the Tipot notes and todo app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	url="/contact/tipot-privacy-policy"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'Tipot — Privacy Policy', path: '/contact/tipot-privacy-policy' }
+	]}
+/>
 
 <PageHeader title="Tipot — Privacy Policy" />
 

@@ -6,7 +6,7 @@ date: '2026-10-14'
 author: 'Damodar Lohani'
 product: 'sanskrit'
 image: '/images/blog/five-apps-rejected-app-store-spam.png'
-cover: '/images/blog/five-apps-rejected-app-store-spam-cover.png'
+cover: '/images/blog/five-apps-rejected-app-store-spam-cover.webp'
 tags: ['App Store Review', 'iOS', 'Flutter', 'Guideline 4.3', 'App Store Connect']
 ---
 

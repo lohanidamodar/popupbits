@@ -7,6 +7,7 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import { company, featuredProducts, visibleProducts } from '$lib';
 	import { jsonLd } from '$lib/jsonld.js';
+	import { websiteSchema } from '$lib/seo.js';
 	import { dayNumber, rotateByDay } from '$lib/rotation.js';
 
 	// Most products are flagged featured, so cap the home page and send the rest
@@ -22,22 +23,13 @@
 	});
 	const homeProducts = $derived(rotateByDay(rotating, day, HOME_PRODUCT_COUNT));
 	const hasMore = visibleProducts.length > HOME_PRODUCT_COUNT;
-
-	const siteSchema = {
-		'@context': 'https://schema.org',
-		'@type': 'WebSite',
-		name: company.name,
-		url: company.url,
-		description: company.seo.defaultDescription,
-		publisher: { '@type': 'Organization', name: company.name, url: company.url }
-	};
 </script>
 
-<SEO />
+<SEO url="/" />
 
 <svelte:head>
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -- static JSON-LD built from our own data -->
-	{@html jsonLd(siteSchema)}
+	{@html jsonLd(websiteSchema)}
 </svelte:head>
 
 <Hero

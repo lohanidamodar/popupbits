@@ -9,6 +9,7 @@
 	title="About"
 	description="Popup Bits is a Kathmandu-based studio building apps and taking on selected client work."
 	url="/about"
+	breadcrumbs={[{ name: 'About', path: '/about' }]}
 />
 
 <PageHeader

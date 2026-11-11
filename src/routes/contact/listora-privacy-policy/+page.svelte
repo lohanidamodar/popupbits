@@ -1,12 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>Listora — Privacy Policy</title>
-	<meta name="description" content="Privacy policy for the Listora audiobook app." />
-</svelte:head>
+<SEO
+	title="Listora — Privacy Policy"
+	description="Privacy policy for the Listora audiobook app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	url="/contact/listora-privacy-policy"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'Listora — Privacy Policy', path: '/contact/listora-privacy-policy' }
+	]}
+/>
 
 <PageHeader title="Listora — Privacy Policy" />
 

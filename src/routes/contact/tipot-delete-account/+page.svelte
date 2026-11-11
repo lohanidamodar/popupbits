@@ -1,12 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>Delete your Tipot account</title>
-	<meta name="description" content="How to delete your Tipot account and all associated data." />
-</svelte:head>
+<SEO
+	title="Delete your Tipot account"
+	description="How to delete your Tipot account and all associated data."
+	url="/contact/tipot-delete-account"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'Delete your Tipot account', path: '/contact/tipot-delete-account' }
+	]}
+/>
 
 <PageHeader title="Delete your Tipot account" />
 

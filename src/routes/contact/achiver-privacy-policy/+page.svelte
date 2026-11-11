@@ -1,12 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>Achiver — Privacy Policy</title>
-	<meta name="description" content="Privacy policy for the Achiver pomodoro and time-tracking app." />
-</svelte:head>
+<SEO
+	title="Achiver — Privacy Policy"
+	description="Privacy policy for the Achiver pomodoro and time-tracking app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	url="/contact/achiver-privacy-policy"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'Achiver — Privacy Policy', path: '/contact/achiver-privacy-policy' }
+	]}
+/>
 
 <PageHeader title="Achiver — Privacy Policy" />
 

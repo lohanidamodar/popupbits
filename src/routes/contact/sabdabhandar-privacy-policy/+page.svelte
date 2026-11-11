@@ -1,12 +1,18 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { company } from '$lib';
 </script>
 
-<svelte:head>
-	<title>Sabdabhandar — Privacy Policy</title>
-	<meta name="description" content="Privacy policy for the Sabdabhandar Nepali dictionary app." />
-</svelte:head>
+<SEO
+	title="Sabdabhandar — Privacy Policy"
+	description="Privacy policy for the Sabdabhandar Nepali dictionary app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	url="/contact/sabdabhandar-privacy-policy"
+	breadcrumbs={[
+		{ name: 'Contact', path: '/contact' },
+		{ name: 'Sabdabhandar — Privacy Policy', path: '/contact/sabdabhandar-privacy-policy' }
+	]}
+/>
 
 <PageHeader title="Sabdabhandar — Privacy Policy" />
 

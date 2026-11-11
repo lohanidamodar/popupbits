@@ -17,6 +17,10 @@
 	description={post.description}
 	image={post.image}
 	url={`/blog/${post.slug}`}
+	breadcrumbs={[
+		{ name: 'Blog', path: '/blog' },
+		{ name: post.title, path: `/blog/${post.slug}` }
+	]}
 	article={{ publishedTime: post.date, author: post.author, tags: post.tags }}
 />
 
@@ -25,6 +29,9 @@
 		<img
 			src={post.cover}
 			alt=""
+			width="1200"
+			height="600"
+			fetchpriority="high"
 			class="w-full aspect-[5/2] object-cover rounded-2xl border border-border mb-10"
 		/>
 	{/if}

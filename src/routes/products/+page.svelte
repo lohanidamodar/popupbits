@@ -49,6 +49,7 @@
 	title="Products"
 	description="Apps and games built by Popup Bits in Kathmandu: Flutter apps for Android and iOS, desktop tools and open-source projects, many made for Nepal."
 	url="/products"
+	breadcrumbs={[{ name: 'Products', path: '/products' }]}
 />
 
 <svelte:head>

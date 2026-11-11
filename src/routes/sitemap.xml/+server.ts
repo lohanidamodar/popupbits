@@ -18,16 +18,34 @@ const PRODUCT_DATA = ['src/lib/data/products.ts', 'src/lib/data/product-pages.ts
  * time. A shallow or missing history gives no date, and the URL is listed
  * without lastmod rather than with a guessed one.
  */
-function lastCommitDate(files: string[]): string | undefined {
+const git = (args: string[]) =>
+	execFileSync('git', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+
+// In a shallow clone (CI and Vercel builds) the oldest fetched commit appears
+// to add every file, so `git log` would date untouched pages to that commit.
+const fullHistory = (() => {
 	try {
-		const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', ...files], {
-			encoding: 'utf8',
-			stdio: ['ignore', 'pipe', 'ignore']
-		}).trim();
-		return /^\d{4}-\d{2}-\d{2}$/.test(out) ? out : undefined;
+		return git(['rev-parse', '--is-shallow-repository']) === 'false';
 	} catch {
-		return undefined;
+		return false;
 	}
+})();
+
+const dates = new Map<string, string | undefined>();
+
+function lastCommitDate(files: string[]): string | undefined {
+	if (!fullHistory) return undefined;
+	const key = files.join('\0');
+	if (dates.has(key)) return dates.get(key);
+	let date: string | undefined;
+	try {
+		const out = git(['log', '-1', '--format=%cs', '--', ...files]);
+		date = /^\d{4}-\d{2}-\d{2}$/.test(out) ? out : undefined;
+	} catch {
+		date = undefined;
+	}
+	dates.set(key, date);
+	return date;
 }
 
 const routeFile = (path: string) => `src/routes${path === '/' ? '' : path}/+page.svelte`;

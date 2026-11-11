@@ -6,7 +6,7 @@
 
 <SEO
 	title="Momo Pasal — Privacy Policy"
-	description="Privacy policy for Momo Pasal (मोमो पसल), the Nepali veg momo shop cooking game: what data it handles, what stays on your device, and how to contact Popup Bits."
+	description="Privacy policy for Momo Pasal (मोमो पसल), the Nepali veg momo shop cooking game: what data it handles, where it is kept, and how to contact Popup Bits."
 	url="/contact/momo-pasal-privacy-policy"
 	breadcrumbs={[
 		{ name: 'Contact', path: '/contact' },

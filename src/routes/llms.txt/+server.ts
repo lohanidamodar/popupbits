@@ -3,6 +3,7 @@
 import { company } from '$lib/data/company.js';
 import { visibleProducts, platformLabels, statusLabels } from '$lib/data/products.js';
 import { posts } from '$lib/data/posts.js';
+import { absoluteUrl } from '$lib/seo.js';
 
 export const prerender = true;
 
@@ -14,10 +15,9 @@ export function GET() {
 			return `- [${p.name}](${page}.md): ${p.tagline} ${p.platforms.map((x) => platformLabels[x]).join(', ')}${status}. HTML: ${page}`;
 		})
 		.join('\n');
-	const absolute = (href: string) => (href.startsWith('http') ? href : `${company.url}${href}`);
 	const policies = visibleProducts
 		.filter((p) => p.privacyHref)
-		.map((p) => `- [${p.name} privacy policy](${absolute(p.privacyHref!)})`)
+		.map((p) => `- [${p.name} privacy policy](${absoluteUrl(p.privacyHref!)})`)
 		.join('\n');
 	const blog = posts
 		.map((p) => `- [${p.title}](${company.url}/blog/${p.slug}): ${p.description}`)

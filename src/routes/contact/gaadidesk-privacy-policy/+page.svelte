@@ -6,7 +6,7 @@
 
 <SEO
 	title="Gaadidesk — Privacy Policy"
-	description="Privacy policy for the Gaadidesk showroom management app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	description="Privacy policy for the Gaadidesk showroom management app: what data it handles, where it is kept, and how to contact Popup Bits."
 	url="/contact/gaadidesk-privacy-policy"
 	breadcrumbs={[
 		{ name: 'Contact', path: '/contact' },

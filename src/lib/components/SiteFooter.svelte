@@ -2,7 +2,12 @@
 	import { company, featuredProducts } from '$lib';
 	import { CodeXml, Link, AtSign, Play, Mail } from '@lucide/svelte';
 
-	const year = new Date().getFullYear();
+	// Pages are prerendered, so the HTML carries the build year; the browser
+	// sets the current one after hydration.
+	let year = $state(new Date().getFullYear());
+	$effect(() => {
+		year = new Date().getFullYear();
+	});
 </script>
 
 <footer class="border-t border-border mt-24">

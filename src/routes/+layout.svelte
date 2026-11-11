@@ -14,8 +14,16 @@
 	onMount(() => {
 		if (!('modelContext' in document) && !('modelContext' in navigator)) return;
 		let cleanup: (() => void) | undefined;
-		import('$lib/webmcp.js').then((m) => (cleanup = m.registerWebMcpTools()));
-		return () => cleanup?.();
+		let unmounted = false;
+		import('$lib/webmcp.js')
+			.then((m) => {
+				if (!unmounted) cleanup = m.registerWebMcpTools();
+			})
+			.catch((e) => console.warn('WebMCP: could not load the tools', e));
+		return () => {
+			unmounted = true;
+			cleanup?.();
+		};
 	});
 </script>
 

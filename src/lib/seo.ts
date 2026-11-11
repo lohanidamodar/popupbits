@@ -97,19 +97,8 @@ export const breadcrumbSchema = (crumbs: Crumb[]) => ({
 
 const isMobile = (p: Product) => p.platforms.includes('android') || p.platforms.includes('ios');
 
-const storeKinds = new Set(['play', 'appstore', 'release', 'web']);
-
-/** The store, release and web links for a product, split by kind. */
-export function productLinks(product: Product) {
-	const of = (kind: string) => product.links.filter((l) => l.kind === kind).map((l) => l.href);
-	return {
-		play: of('play')[0],
-		appStore: of('appstore')[0],
-		web: of('web')[0],
-		source: of('github')[0],
-		releases: [...new Set(of('release'))]
-	};
-}
+/** Link kinds that install or open the app, in the order to prefer for installUrl. */
+const storeKinds = ['play', 'appstore', 'web', 'release'];
 
 /**
  * MobileApplication for apps on Android or iOS, SoftwareApplication otherwise.
@@ -119,8 +108,10 @@ export function productLinks(product: Product) {
 export function appSchema(product: Product, page: ProductPage | undefined) {
 	const url = absoluteUrl(`/products/${product.slug}`);
 	const meta = getAppMeta(product.slug);
-	const links = product.links.filter((l) => storeKinds.has(l.kind)).map((l) => l.href);
-	const install = links[0];
+	const links = product.links.filter((l) => storeKinds.includes(l.kind)).map((l) => l.href);
+	const install = storeKinds
+		.map((kind) => product.links.find((l) => l.kind === kind)?.href)
+		.find(Boolean);
 	const screenshots = page?.screenshots.map((s) => absoluteUrl(s.src)) ?? [];
 	return {
 		'@context': 'https://schema.org',

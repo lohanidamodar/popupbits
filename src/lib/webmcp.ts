@@ -34,10 +34,12 @@ function findApp(query: unknown): CatalogueApp | undefined {
 		.toLowerCase();
 	if (!q) return undefined;
 	const apps = catalogue().apps;
-	return (
-		apps.find((a) => a.slug === q || a.name.toLowerCase() === q) ??
-		apps.find((a) => a.name.toLowerCase().includes(q) || a.slug.includes(q))
-	);
+	const exact = apps.find((a) => a.slug === q || a.name.toLowerCase() === q);
+	if (exact) return exact;
+	// A partial name counts only when it picks out one app, so "a" finds nothing
+	// rather than whichever app happens to be listed first.
+	const partial = apps.filter((a) => a.name.toLowerCase().includes(q) || a.slug.includes(q));
+	return partial.length === 1 ? partial[0] : undefined;
 }
 
 const appInput = {

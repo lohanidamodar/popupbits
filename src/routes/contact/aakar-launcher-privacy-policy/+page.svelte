@@ -6,7 +6,7 @@
 
 <SEO
 	title="Aakar Launcher — Privacy Policy"
-	description="Privacy policy for the Aakar Launcher Android app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	description="Privacy policy for the Aakar Launcher Android app: what data it handles, where it is kept, and how to contact Popup Bits."
 	url="/contact/aakar-launcher-privacy-policy"
 	breadcrumbs={[
 		{ name: 'Contact', path: '/contact' },

@@ -6,7 +6,7 @@
 
 <SEO
 	title="Karmakanda — Privacy Policy"
-	description="Privacy policy for the Karmakanda (कर्मकाण्ड) puja vidhi app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	description="Privacy policy for the Karmakanda (कर्मकाण्ड) puja vidhi app: what data it handles, where it is kept, and how to contact Popup Bits."
 	url="/contact/karmakanda-privacy-policy"
 	breadcrumbs={[
 		{ name: 'Contact', path: '/contact' },

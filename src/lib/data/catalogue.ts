@@ -3,8 +3,7 @@
 import { company } from './company.js';
 import { visibleProducts, platformLabels, type Product } from './products.js';
 import { getAppMeta } from './app-meta.js';
-
-const absolute = (href: string) => (href.startsWith('http') ? href : `${company.url}${href}`);
+import { absoluteUrl as absolute } from '../seo.js';
 
 export type CatalogueApp = {
 	name: string;

@@ -6,7 +6,7 @@
 
 <SEO
 	title="Achiver — Privacy Policy"
-	description="Privacy policy for the Achiver pomodoro and time-tracking app: what data it handles, what stays on your device, and how to contact Popup Bits."
+	description="Privacy policy for the Achiver pomodoro and time-tracking app: what data it handles, where it is kept, and how to contact Popup Bits."
 	url="/contact/achiver-privacy-policy"
 	breadcrumbs={[
 		{ name: 'Contact', path: '/contact' },

@@ -143,9 +143,12 @@ it checks only basics. The local structured-data check below covers the rest.
   out of `products.ts` so the listing redesign is not disturbed.
 - **Sitemap** has `lastmod` for every URL, from the last git commit touching
   the page's source files (the post file for posts, the product data for
-  product pages). Where git history is unavailable, posts fall back to their
-  date and other URLs are listed without `lastmod` rather than with a guessed
-  date. Vercel clones shallowly, so older pages may go without it there.
+  product pages). Git dates are used only with full history: in a shallow
+  clone the oldest fetched commit appears to add every file, which would date
+  untouched pages wrongly. Without full history, posts fall back to their
+  publication date and other URLs are listed without `lastmod`. Vercel clones
+  shallowly, so to get dates there, build with full history (for example
+  `VERCEL_DEEP_CLONE=true`, or `git fetch --unshallow` in the build command).
 - **Semantic HTML:** Devanagari runs carry `lang="ne"`, or `lang="sa"` on the
   Sanskrit app's pages, through `LangText.svelte` on product pages and listing
   cards and inline spans on the policy pages; they render in Mukta, the design

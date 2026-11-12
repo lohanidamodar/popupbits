@@ -18,8 +18,8 @@ export const launchOffer = null as LaunchOffer | null;
  * footer of the sales page once filled in.
  */
 export const seller: { legalName: string | null; supportEmail: string | null } = {
-	legalName: null,
-	supportEmail: null
+	legalName: 'Popup Bits Pvt. Ltd.',
+	supportEmail: 'popupbits@gmail.com'
 };
 
 export type Tier = {
@@ -145,7 +145,7 @@ export const features = [
 	},
 	{
 		title: 'Tested and current',
-		text: 'Flutter 3.47, Riverpod 3, go_router 18, appwrite 28. 45 unit and widget tests, an integration test, CI and an optional release workflow.'
+		text: 'Flutter 3.50 (material_ui), Riverpod 3, go_router 18, appwrite 28. 45 unit and widget tests, an integration test, CI and an optional release workflow.'
 	},
 	{
 		title: 'Built for agents and humans',
@@ -200,7 +200,7 @@ export const faq = [
 	},
 	{
 		q: 'How do I get it?',
-		a: 'Checkout is by Stripe. We email your download link within 24 hours of payment, to the address you paid with.'
+		a: 'Checkout is by Stripe and asks for your GitHub username (Team asks for each teammate’s). Within 24 hours of payment you get an invitation to the private Kickstand repository on GitHub.'
 	},
 	{
 		q: 'Is there a licence key?',
@@ -216,7 +216,7 @@ export const faq = [
 	},
 	{
 		q: 'How do updates work?',
-		a: 'Every 1.x release is included. We email you a download link for each one.'
+		a: 'Every 1.x release is included and published in the repository. Watch its releases on GitHub to be notified.'
 	},
 	{
 		q: 'Can I use Firebase or Supabase instead?',
@@ -271,7 +271,7 @@ export const fileTree = `kickstand/
 
 /** Direct dependencies and versions, as in the template's pubspec.yaml. */
 export const packages = [
-	{ name: 'Flutter', version: '3.47', role: 'Android, iOS and web from one codebase' },
+	{ name: 'Flutter', version: '3.50', role: 'Android, iOS and web from one codebase' },
 	{ name: 'flutter_riverpod', version: '3.4', role: 'State management, no code generation' },
 	{ name: 'go_router', version: '18.1', role: 'Routing, auth redirects, deep links' },
 	{ name: 'appwrite', version: '28.2', role: 'Auth and TablesDB' },

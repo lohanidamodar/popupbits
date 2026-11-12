@@ -435,8 +435,8 @@
 			{/each}
 		</div>
 		<p class="mt-8 text-center text-sm text-muted-foreground">
-			Your download link arrives by email within 24 hours. Solo can be upgraded to Team by paying
-			the difference.
+			You get a GitHub invitation to the private repository within 24 hours. Solo can be upgraded to
+			Team by paying the difference.
 		</p>
 	</section>
 
@@ -452,9 +452,10 @@
 			</div>
 			<div>
 				<p class="font-display text-4xl font-extrabold text-primary">2</p>
-				<h3 class="mt-2 text-lg font-semibold">Download</h3>
+				<h3 class="mt-2 text-lg font-semibold">Get access</h3>
 				<p class="mt-1 text-sm text-muted-foreground">
-					Your download link arrives by email within 24 hours, to the address you paid with.
+					Within 24 hours, the GitHub username you gave at checkout is invited to the private
+					Kickstand repository.
 				</p>
 			</div>
 			<div>

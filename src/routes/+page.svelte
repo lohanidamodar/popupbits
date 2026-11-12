@@ -37,7 +37,7 @@
 	title={company.tagline}
 	subtitle={company.description}
 	primary={{ label: 'See our products', href: '/products' }}
-	secondary={{ label: 'Work with us', href: '/contact' }}
+	secondary={{ label: 'Software for your business', href: '/for-business' }}
 />
 
 <section class="max-w-6xl mx-auto px-6 pb-24">

@@ -6,6 +6,7 @@
 	import { Menu } from '@lucide/svelte';
 
 	const links = [
+		{ label: 'For business', href: '/for-business' },
 		{ label: 'Products', href: '/products' },
 		{ label: 'Blog', href: '/blog' },
 		{ label: 'About', href: '/about' },
@@ -36,7 +37,7 @@
 				</a>
 			{/each}
 			<ThemeToggle />
-			<Button href="/contact" size="sm">Hire us</Button>
+			<Button href="/for-business" size="sm">Free check-up</Button>
 		</div>
 
 		<div class="md:hidden flex items-center gap-1">
@@ -68,11 +69,11 @@
 							</a>
 						{/each}
 						<a
-							href="/contact"
+							href="/for-business"
 							onclick={() => (mobileOpen = false)}
 							class="mt-2 inline-flex justify-center rounded-md bg-primary text-primary-foreground px-3 py-3 font-medium"
 						>
-							Hire us
+							Free check-up
 						</a>
 					</nav>
 				</Sheet.Content>

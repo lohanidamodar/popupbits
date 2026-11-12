@@ -8,15 +8,10 @@
 
 	const prompts: Prompt[] = [
 		{
-			title: 'Start a project',
+			title: 'Free business check-up',
 			description:
-				"Full-stack app, custom SaaS, AI integration, or business automation — tell us what you're building.",
-			subject: 'Project enquiry'
-		},
-		{
-			title: 'Tipot early access',
-			description: 'Want to try Tipot before it launches, or have feedback? Reach out here.',
-			subject: 'Tipot early access'
+				'Tell us what slows your business down. We will set up a free 30-minute call, then a fixed quote if software can help.',
+			subject: 'Free check-up'
 		},
 		{
 			title: 'Just saying hi',
@@ -42,7 +37,7 @@
 	subtitle="We reply to every email — usually within a couple of days. Pick what fits and write to us directly."
 />
 
-<section class="max-w-5xl mx-auto px-6 pb-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<section class="max-w-5xl mx-auto px-6 pb-16 grid gap-4 sm:grid-cols-2">
 	{#each prompts as p (p.title)}
 		<a
 			href={mailto(p.subject)}

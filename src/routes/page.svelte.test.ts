@@ -12,6 +12,6 @@ describe.skip('home page', () => {
 
 		await expect.element(page.getByText(/Apps we build and ship/i)).toBeInTheDocument();
 		await expect.element(page.getByText(/See our products/i)).toBeInTheDocument();
-		await expect.element(page.getByText(/Work with us/i)).toBeInTheDocument();
+		await expect.element(page.getByText(/Software for your business/i)).toBeInTheDocument();
 	});
 });

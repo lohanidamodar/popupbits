@@ -46,6 +46,7 @@ ${blog}
 
 ## Company
 
+- [For business](${company.url}/for-business): websites, order and lead tracking, daily accounts, and custom apps for Nepali businesses, each with a free check-up and a fixed quote
 - [About](${company.url}/about)
 - [Contact](${company.url}/contact): ${company.contact.email}
 - [Everything in one file](${company.url}/llms-full.txt): every product page as Markdown

@@ -8,14 +8,15 @@
 <section class="max-w-6xl mx-auto px-6 py-24 grid gap-12 md:grid-cols-[1fr_1fr] md:items-center">
 	<div>
 		<p class="t-eyebrow uppercase tracking-widest text-sm font-semibold text-primary mb-4">
-			Consulting
+			For business
 		</p>
 		<h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">
-			We also take on selected client work.
+			We help Nepali businesses work with less admin.
 		</h2>
 		<p class="mt-4 text-lg text-muted-foreground max-w-prose">{blurb}</p>
-		<div class="mt-8">
-			<Button href="/contact" size="lg">Work with us</Button>
+		<div class="mt-8 flex flex-wrap gap-3">
+			<Button href="/for-business" size="lg">How we can help</Button>
+			<Button href="/contact" size="lg" variant="outline">Get in touch</Button>
 		</div>
 	</div>
 	<ul class="grid gap-3">

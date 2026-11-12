@@ -24,9 +24,12 @@
 		reference for Flutter developers. Some of those grew into products people now use every day.
 	</p>
 	<p>
-		Today we still ship our own apps, and we partner with businesses to build full-stack
-		applications, custom SaaS platforms, AI-integrated products, and the automation that runs them —
-		on web, mobile, and desktop. We work primarily with the Node.js and PHP stacks.
+		Today we still ship our own apps, and we help Nepali businesses with the software they need:
+		websites customers can find, one place for orders and follow-ups, daily accounts that add up,
+		and custom apps and automation when nothing ready-made fits. <a
+			href="/for-business"
+			class="text-primary font-semibold hover:underline">See how we can help</a
+		>.
 	</p>
 	<p>
 		The studio is led by <strong>{company.founder}</strong> and based in {company.contact.address

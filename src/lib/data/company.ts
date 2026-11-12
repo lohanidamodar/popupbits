@@ -17,7 +17,7 @@ export const company = {
 	legalName: 'Popup Bits Pvt. Ltd.',
 	tagline: 'A Kathmandu studio building apps for the way Nepal uses tech',
 	description:
-		'We design and ship our own products, and partner with businesses to build full-stack apps, custom SaaS platforms, AI-integrated systems, and the automation that runs them — on web, mobile, and desktop.',
+		'We design and ship our own apps, and build the software Nepali businesses need to work with less admin: websites, order and lead tracking, daily accounts, custom apps and automation.',
 	founder: 'Damodar Lohani',
 	established: 2016,
 	// The canonical host: popupbits.com redirects here.
@@ -48,20 +48,20 @@ export const company = {
 	] satisfies CompanyStat[],
 	consulting: {
 		blurb:
-			'We build end-to-end business solutions — full-stack apps on Node.js and PHP, custom SaaS platforms, AI-integrated products, and the automation that ties them together. One team, shipping on web, mobile, and desktop.',
+			'Shops, showrooms, clinics and offices lose customers to orders buried in chat, follow-ups nobody remembered and days that end without a clear count. We build the simple software that fixes that, starting with a free check-up and a fixed price.',
 		capabilities: [
-			'Full-stack apps — Node.js & PHP stacks',
-			'Custom SaaS platforms, end to end',
-			'Mobile, web, and desktop applications',
-			'AI-integrated products and workflows',
-			'Business systems and process automation',
-			'Integrations, APIs, and platform engineering'
+			'A website and Google listing customers can find',
+			'Orders, inquiries and follow-ups in one place',
+			'Sales matched against QR, wallet and cash payments',
+			'Custom mobile, web and desktop apps',
+			'Automation and AI that take repetitive work off your staff',
+			'Training in Nepali, and code you own'
 		]
 	},
 	seo: {
 		defaultTitle: 'Popup Bits — a Kathmandu studio',
 		defaultDescription:
-			'Popup Bits is a Kathmandu studio shipping its own apps and building full-stack platforms, SaaS, AI-integrated products, and business automation for clients across web, mobile, and desktop.',
+			'Popup Bits is a Kathmandu studio shipping its own apps and building websites, order tracking, daily accounts and custom software for Nepali businesses.',
 		ogImage: '/images/og-image.png',
 		twitterHandle: '@lohanidamodar'
 	}

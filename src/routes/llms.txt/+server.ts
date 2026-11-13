@@ -4,6 +4,7 @@ import { company } from '$lib/data/company.js';
 import { visibleProducts, platformLabels, statusLabels } from '$lib/data/products.js';
 import { posts } from '$lib/data/posts.js';
 import { absoluteUrl } from '$lib/seo.js';
+import { developerTools } from '$lib/data/developer-tools.js';
 
 export const prerender = true;
 
@@ -19,6 +20,13 @@ export function GET() {
 		.filter((p) => p.privacyHref)
 		.map((p) => `- [${p.name} privacy policy](${absoluteUrl(p.privacyHref!)})`)
 		.join('\n');
+	const devTools = developerTools
+		.filter((t) => !t.paid)
+		.map(
+			(t) =>
+				`- ${t.name} (${t.license}, ${t.repo}): ${t.tagline}${t.releases ? ` Releases: ${t.releases}` : ''}`
+		)
+		.join('\n');
 	const blog = posts
 		.map((p) => `- [${p.title}](${company.url}/blog/${p.slug}): ${p.description}`)
 		.join('\n');
@@ -30,6 +38,8 @@ ${company.name} (${company.legalName}) is a software studio in ${company.contact
 
 ## For developers
 
+- [Popup Bits for developers](${company.url}/developers): every developer tool we publish, with its licence, repository and releases. Karmashala is the flagship.
+${devTools}
 - [Kickstand: Flutter Starter Kit for Appwrite](${company.url}/kickstand.md): what's included, licences, prices and FAQ. Sales page: ${company.url}/kickstand
 
 ## Products

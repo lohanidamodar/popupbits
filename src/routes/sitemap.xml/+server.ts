@@ -56,6 +56,8 @@ function sourcesOf(path: string): string[] {
 	if (post) return [`src/lib/posts/${post.slug}.md`];
 	if (path.startsWith('/products/')) return PRODUCT_DATA;
 	if (path === '/kickstand') return [routeFile(path), 'src/lib/data/kickstand.ts'];
+	if (path === '/developers')
+		return [routeFile(path), 'src/lib/data/developer-tools.ts', ...PRODUCT_DATA];
 	if (path === '/products' || path === '/') return [routeFile(path), ...PRODUCT_DATA];
 	if (path === '/blog') return [routeFile(path), 'src/lib/posts'];
 	return [routeFile(path)];

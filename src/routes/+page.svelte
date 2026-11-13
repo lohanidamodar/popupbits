@@ -9,6 +9,7 @@
 	import { jsonLd } from '$lib/jsonld.js';
 	import { websiteSchema } from '$lib/seo.js';
 	import { dayNumber, rotateByDay } from '$lib/rotation.js';
+	import { flagship } from '$lib/data/developer-tools.js';
 
 	// Most products are flagged featured, so cap the home page and send the rest
 	// to /products. The shown set rotates one place a day through every released
@@ -74,6 +75,34 @@
 	blurb={company.consulting.blurb}
 	capabilities={company.consulting.capabilities}
 />
+
+<section class="max-w-6xl mx-auto px-6 pb-24">
+	<div
+		class="rounded-3xl border border-border bg-card p-8 md:p-12 grid gap-8 md:grid-cols-[auto_1fr] md:items-center"
+	>
+		{#if flagship.iconSrc}
+			<img src={flagship.iconSrc} alt="" width="96" height="96" class="size-24 rounded-3xl" />
+		{/if}
+		<div>
+			<p class="t-eyebrow uppercase tracking-widest text-sm font-semibold text-primary mb-2">
+				For developers
+			</p>
+			<h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">
+				{flagship.name}: {flagship.tagline.replace(/\.$/, '')}
+			</h2>
+			<p class="mt-3 text-muted-foreground max-w-prose">
+				Open source under {flagship.license}, alongside the Dart and Flutter tools we build for our
+				own work: beej, agent_cli, Dictation, speech-pipeline and more.
+			</p>
+			<div class="mt-6 flex flex-wrap gap-3">
+				<Button href="/developers" size="lg">Developer tools</Button>
+				{#if flagship.repo}
+					<Button href={flagship.repo} size="lg" variant="outline">Karmashala on GitHub</Button>
+				{/if}
+			</div>
+		</div>
+	</div>
+</section>
 
 <section class="max-w-3xl mx-auto px-6 pb-24 text-center">
 	<h2 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight">

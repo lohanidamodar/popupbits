@@ -4,6 +4,7 @@ import { company } from './company.js';
 import { visibleProducts, platformLabels, type Product } from './products.js';
 import { getAppMeta } from './app-meta.js';
 import { absoluteUrl as absolute } from '../seo.js';
+import { developerToolsCatalogue } from './developer-tools.js';
 
 export type CatalogueApp = {
 	name: string;
@@ -78,7 +79,10 @@ export const catalogue = () => ({
 	},
 	docs: {
 		llms: `${company.url}/llms.txt`,
-		llmsFull: `${company.url}/llms-full.txt`
+		llmsFull: `${company.url}/llms-full.txt`,
+		developers: `${company.url}/developers`
 	},
-	apps: visibleProducts.map(catalogueApp)
+	apps: visibleProducts.map(catalogueApp),
+	/** Developer tools, open source and paid; some are also apps above. */
+	developerTools: developerToolsCatalogue()
 });

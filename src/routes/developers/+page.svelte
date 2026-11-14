@@ -118,15 +118,17 @@
 			{/if}
 		</div>
 
-		<!-- TODO(screenshot): no Karmashala screenshot exists in the site or the
-		     karmashala repo yet. Add one at static/products/karmashala/ and replace
-		     this placeholder with an <img> carrying width, height and alt text. -->
-		<div
-			class="mt-10 aspect-[16/9] rounded-2xl border border-dashed border-border bg-muted/40 grid place-items-center text-sm text-muted-foreground"
-			aria-hidden="true"
-		>
-			Screenshot coming soon
-		</div>
+		<a href="/products/karmashala/dashboard.webp" class="mt-10 block">
+			<img
+				src="/products/karmashala/dashboard.webp"
+				alt="Karmashala's agent dashboard on Windows: running and finished sessions grouped by project with their sub-sessions, and glances for todos, listening ports, store reviews and agent usage limits."
+				width="1920"
+				height="1080"
+				loading="lazy"
+				decoding="async"
+				class="w-full h-auto rounded-2xl border border-border"
+			/>
+		</a>
 
 		<ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each highlights as h (h.title)}

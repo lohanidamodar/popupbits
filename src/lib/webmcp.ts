@@ -125,6 +125,7 @@ const tools: Tool[] = [
 				name: company.legalName,
 				email: company.contact.email,
 				phone: company.contact.phone,
+				whatsapp: company.contact.whatsapp,
 				address: `${company.contact.address.street}, ${company.contact.address.city}, ${company.contact.address.country}`,
 				timezone: company.contact.timezone,
 				contactPage: `${company.url}/contact`

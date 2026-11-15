@@ -12,6 +12,8 @@ export type CompanyStat = {
 	description: string;
 };
 
+const PHONE = '+977-9823341413';
+
 export const company = {
 	name: 'Popup Bits',
 	legalName: 'Popup Bits Pvt. Ltd.',
@@ -24,7 +26,9 @@ export const company = {
 	url: 'https://www.popupbits.com',
 	contact: {
 		email: 'info@popupbits.com.np',
-		phone: '+977-9823341413',
+		phone: PHONE,
+		/** WhatsApp chat on the same number. */
+		whatsapp: `https://wa.me/${PHONE.replace(/\D/g, '')}`,
 		address: {
 			street: 'Gaurighat',
 			city: 'Kathmandu',

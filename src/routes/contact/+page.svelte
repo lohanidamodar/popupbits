@@ -69,8 +69,21 @@
 		<div class="flex gap-3 items-start">
 			<Phone class="size-5 text-primary mt-0.5 shrink-0" />
 			<div>
-				<div class="font-semibold text-sm">Phone</div>
-				<div class="text-sm text-muted-foreground">{company.contact.phone}</div>
+				<div class="font-semibold text-sm">Phone and WhatsApp</div>
+				<a
+					class="text-sm text-muted-foreground hover:text-foreground hover:underline"
+					href="tel:{company.contact.phone.replace(/[^+\d]/g, '')}"
+				>
+					{company.contact.phone}
+				</a>
+				<div class="text-sm">
+					<a
+						class="font-semibold text-primary hover:underline"
+						href={company.contact.whatsapp}
+						target="_blank"
+						rel="noopener">Chat on WhatsApp</a
+					>
+				</div>
 				<div class="text-xs text-muted-foreground mt-1">{company.contact.timezone}</div>
 			</div>
 		</div>

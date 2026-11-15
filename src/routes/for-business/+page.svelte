@@ -6,7 +6,7 @@
 	import { services, process, businessFaq } from '$lib/data/services.js';
 	import { jsonLd } from '$lib/jsonld.js';
 	import { ORG_ID, absoluteUrl } from '$lib/seo.js';
-	import { Check, Phone, Mail } from '@lucide/svelte';
+	import { Check, Phone, Mail, MessageCircle } from '@lucide/svelte';
 
 	const tel = `tel:${company.contact.phone.replace(/[^+\d]/g, '')}`;
 	const mailto = `mailto:${company.contact.email}?subject=${encodeURIComponent('Free check-up')}`;
@@ -71,6 +71,9 @@
 
 <section class="max-w-6xl mx-auto px-6 pb-8 flex flex-wrap gap-3">
 	<Button href={tel} size="lg"><Phone class="size-4" /> Call {company.contact.phone}</Button>
+	<Button href={company.contact.whatsapp} target="_blank" rel="noopener" size="lg" variant="outline"
+		><MessageCircle class="size-4" /> WhatsApp</Button
+	>
 	<Button href={mailto} size="lg" variant="outline"
 		><Mail class="size-4" /> Book a free check-up</Button
 	>
@@ -204,6 +207,13 @@
 		</p>
 		<div class="mt-6 flex flex-wrap justify-center gap-3">
 			<Button href={tel} size="lg"><Phone class="size-4" /> Call us</Button>
+			<Button
+				href={company.contact.whatsapp}
+				target="_blank"
+				rel="noopener"
+				size="lg"
+				variant="outline"><MessageCircle class="size-4" /> WhatsApp</Button
+			>
 			<Button href={mailto} size="lg" variant="outline"><Mail class="size-4" /> Email us</Button>
 		</div>
 	</div>

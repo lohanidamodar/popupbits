@@ -605,12 +605,17 @@ export const products: Product[] = [
 		description:
 			'SpellCraft turns spelling and word puzzles into a daily game — with bilingual support for English and Nepali wordlists.',
 		themeClass: 'theme-spellcraft',
-		platforms: ['android'],
+		platforms: ['android', 'ios'],
 		links: [
 			{
 				label: 'Get on Play Store',
 				href: 'https://play.google.com/store/apps/details?id=com.popupbits.spellcraft',
 				kind: 'play'
+			},
+			{
+				label: 'Get on App Store',
+				href: 'https://apps.apple.com/us/app/spellcraft-spelling-practice/id6806536143',
+				kind: 'appstore'
 			}
 		],
 		iconSrc: '/products/spellcraft/icon.png',

@@ -363,12 +363,17 @@ export const products: Product[] = [
 		description:
 			'Jyotisha (ज्योतिष) calculates the kundali and its divisional charts, dashas, transits, varshaphal, kundali milan and muhurta, alongside the daily panchanga, the Bikram Sambat calendar and festivals — with saved records for a jyotishi’s clients. Fully offline, with no account, ads or tracking.',
 		themeClass: 'theme-popupbits',
-		platforms: ['android'],
+		platforms: ['android', 'ios'],
 		links: [
 			{
 				label: 'Get on Play Store',
 				href: 'https://play.google.com/store/apps/details?id=com.popupbits.jyotisha',
 				kind: 'play'
+			},
+			{
+				label: 'Get on App Store',
+				href: 'https://apps.apple.com/us/app/jyotisha-kundali-panchang/id6761538078',
+				kind: 'appstore'
 			}
 		],
 		iconSrc: '/products/jyotisha/icon.png',
@@ -409,12 +414,17 @@ export const products: Product[] = [
 		description:
 			'Momo Pasal (मोमो पसल) puts you behind the counter of a little veg momo shop in Kathmandu — fill the steamer, plate the momos with achar and serve before customers lose patience. Level up from a street cart to momo emperor, unlock jhol, fried and C-momo, pay the weekly khata, decorate the shop and take delivery orders, in timed or cozy mode. Fully in Nepali and English, and offline with no ads, in-app purchases or account.',
 		themeClass: 'theme-popupbits',
-		platforms: ['android'],
+		platforms: ['android', 'ios'],
 		links: [
 			{
 				label: 'Get on Play Store',
 				href: 'https://play.google.com/store/apps/details?id=com.popupbits.momo_pasal',
 				kind: 'play'
+			},
+			{
+				label: 'Get on App Store',
+				href: 'https://apps.apple.com/us/app/momo-pasal-momo-cooking-game/id6836201006',
+				kind: 'appstore'
 			}
 		],
 		iconSrc: '/products/momo-pasal/icon.png',
